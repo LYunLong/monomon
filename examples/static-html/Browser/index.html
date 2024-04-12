@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 100vh;
+            width: 100vw;
+            background-color: black;
+        }
+        .shapeMe {
+            position: fixed;
+            left: calc(50vw - 50px);
+            top: calc(50vh - 50px);
+            height: 100px;
+            width: 100px;
+            background-color: white;
+        }
+        .shapeHim {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100px;
+            width: 100px;
+            transform: translate(var(--tx), var(--ty));
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="shapeMe"></div>
+        <div class="shapeHim" style="--tx: -100px; --ty: -100px"></div>
+    </div>
+    <script>
+        
+        let keyCache = 'keyCache1';   //临时用户key
+        if (localStorage.getItem('keyCache1')) {
+            keyCache = 'keyCache2';
+        }
+        let infoMe = {
+                screenX: window.screenX,
+                screenY: window.screenY,
+                clientWidth: window.outerWidth,
+                clientHeight: window.outerHeight,
+            }
+        function updateInfoMe() {
+            infoMe = {
+                screenX: window.screenX,
+                screenY: window.screenY,
+                clientWidth: window.outerWidth,
+                clientHeight: window.outerHeight,
+            }
+            localStorage.setItem(keyCache, JSON.stringify(infoMe))
+        }      
+        let infoHim = null;
+        function getHimInfo() {
+            let himKey = keyCache == 'keyCache1'? 'keyCache2' : 'keyCache1';
+            himInfoStr = localStorage.getItem(himKey)
+            if (himInfoStr) { infoHim = JSON.parse(himInfoStr) } else {infoHim = null}  //如果有“他”，获取他最新的info
+        }
+        let myCube
+        let himCube
+        let inter = setInterval(function() {
+            updateInfoMe()
+            myCube = getMyCubePosition()
+            getHimInfo()
+            himCube = getHimCubePosition()
+
+            //获取到了我的位置和他的位置，计算相对位置
+            calcHimPositionInMe()
+        }, 18)
+
+        function getMyCubePosition() {
+            let myCubeX = infoMe.screenX + infoMe.clientWidth / 2 - 50 //我的方块在屏幕中的相对位置
+            let myCubeY = infoMe.screenY + infoMe.clientHeight / 2 - 50 //我的方块在屏幕中的相对位置
+            return { x: myCubeX, y: myCubeY }
+        }
+        function getHimCubePosition() {
+            if (!infoHim) {return null}
+            let himCubeX = infoHim.screenX + infoHim.clientWidth / 2 - 50 // him的方块在屏幕中的相对位置
+            let himCubeY = infoHim.screenY + infoHim.clientHeight / 2 - 50 // him的方块在屏幕中的相对位置
+            return { x: himCubeX, y: himCubeY }
+        }
+
+        let shapeHim = document.getElementsByClassName('shapeHim')[0]
+    
+        function calcHimPositionInMe() {
+            // console.info(himCube)
+            // console.info(infoMe)
+            if (!infoHim || !himCube) return
+            let himXInMe = himCube.x - infoMe.screenX - 450
+            let himYInMe = himCube.y - infoMe.screenY - 20
+            
+            shapeHim.setAttribute('style', `--tx: ${himXInMe}px; --ty: ${himYInMe}px`)
+        }
+
+
+
+
+        window.onbeforeunload = function(){localStorage.removeItem(keyCache)}
+        window.onclose = function(){localStorage.removeItem(keyCache)}
+    </script>
+</body>
+</html>

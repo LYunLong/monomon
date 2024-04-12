@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="cvs"></canvas>
+    <script type="module">
+
+        import * as shader3 from './shader3.js'
+
+        console.info(shader3)
+
+        import * as dat from './lil-gui.module.min.js'
+        console.info(dat)
+
+
+        import {pgl_axes, colorValueToColorArray} from './axes.js'
+
+        console.info(222, pgl_axes)
+
+        let ctrl = new dat.GUI()
+        let bgCtrlObj = { backColor: 0xffffff }
+        let bgGroup = ctrl.addFolder('背景色')
+        bgGroup.addColor(bgCtrlObj, 'backColor').onChange(function(value) {
+            bgCtrlObj.backColor = (value)
+        })
+
+
+        var canvas = document.getElementById('cvs')
+        canvas.width = window.innerWidth
+        canvas.height = window.innerHeight
+        
+        const gl = canvas.getContext('webgl');
+       
+        gl.viewport(0,0,canvas.width, canvas.height)
+        gl.clearColor(1.0, 1.0, 1.0, 1.0)
+        gl.clear(gl.COLOR_BUFFER_BIT)
+
+        // var vshader_src = document.getElementById('vshader_src').innerHTML;
+        var vshader_src = shader3.vertex;
+        var vshader = gl.createShader(gl.VERTEX_SHADER)
+        gl.shaderSource(vshader, vshader_src)
+        gl.compileShader(vshader);
+
+        console.info(vshader)
+
+        // var fshader_src = document.getElementById('fshader_src').innerHTML;
+        var fshader_src = shader3.fragment;
+        var fshader = gl.createShader(gl.FRAGMENT_SHADER)
+        gl.shaderSource(fshader, fshader_src)
+        gl.compileShader(fshader)
+
+        console.info(fshader)
+
+
+        var glProgram = gl.createProgram()
+        gl.attachShader(glProgram, vshader)
+        gl.attachShader(glProgram, fshader)
+
+        console.info(glProgram)
+
+        gl.linkProgram(glProgram)
+        gl.useProgram(glProgram)
+
+        /////////////////////////////////////////////////
+
+        let a_Position = gl.getAttribLocation(glProgram, 'a_Position');
+        let a_Color = gl.getAttribLocation(glProgram, 'a_Color');
+
+        let axesInstance = new pgl_axes(gl, a_Position, a_Color, 1, 0xff0000, 0x00ff00, 0x0000ff, ctrl)
+
+        draw()
+
+        function draw() {
+
+            let clrArray = new Float32Array([1.0, 1.0, 1.0, 1.0])
+            colorValueToColorArray(bgCtrlObj.backColor, clrArray);
+            gl.clearColor(clrArray[0], clrArray[1], clrArray[2], clrArray[3])
+            gl.clear(gl.COLOR_BUFFER_BIT)
+            
+            axesInstance.draw()
+
+            gl.drawArrays(gl.POINTS,0,1)
+
+        }
+
+        function renderScene () {
+            draw()
+            requestAnimationFrame(renderScene)
+        }
+        renderScene()
+
+        
+
+        window.addEventListener('resize', function(){
+            canvas.width = window.innerWidth
+            canvas.height = window.innerHeight
+            gl.viewport(0,0,canvas.width, canvas.height)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2023 WOWS Holiday Income</title>
+    <link rel="preload" href="https://s4.ssl.qhres2.com/static/aa501338ec7b5b65.otf" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" href="https://s0.ssl.qhres2.com/static/261613e2c4318799.otf" as="font" type="font/woff" crossorigin="anonymous">
+    <style>
+        @font-face {
+            font-family: 'DDIN';
+            src: url(https://s4.ssl.qhres2.com/static/aa501338ec7b5b65.otf);
+        }
+        @font-face {
+            font-family: 'DDINBOLD';
+            src: url(https://s4.ssl.qhres2.com/static/261613e2c4318799.otf);
+        }
+
+        
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 100px;
+            font-family: 'DDIN';
+        }
+        .container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            background-color: rgb(16, 12, 42)
+        }
+        .title {
+            color: rgb(137, 134, 151);
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.6rem;
+            height: 1.2rem;
+            font-size: .4rem;
+            width: 90vw;
+            font-family: 'DDINBOLD';
+            margin-bottom: -.6rem;
+            display: flex;
+            justify-content: center;
+        }
+        .title #time_camp {
+            display: block;
+            width: 4rem;
+            margin-left: .6rem;
+            margin-right: .8rem;
+            color: #C9B190;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.6rem;
+            height: 1.2rem;
+            font-size: .4rem;
+            font-family: 'DDINBOLD';
+        }
+        .total-income {
+            display: flex;
+        }
+        .total-income .label {
+            font-size: .4rem;
+            line-height: .6rem;
+            font-weight: bold;
+            font-family: 'DDINBOLD';
+            color: white;
+            margin-right: .2rem;
+        }
+        .total-income .values {
+            display: flex;
+            flex-direction: column;
+        }
+        .total-income .values .up {
+            display: flex;
+            align-items: center;
+            font-size: .4rem;
+            font-family: 'DDIN';
+            color: white;
+        }
+        .total-income .values .up span {
+            font-size: .4rem;
+        }
+        .total-income .values .up .offset {
+            margin-left: .18rem;
+            font-size: .3rem;
+            color: rgba(138, 214, 153, 1);
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        .total-income .values .up .offset.show {
+            opacity: 1;
+        }
+        .total-income .values .up .offset::before {
+            content: '+';
+            font-size: .14rem;
+            font-size: .3rem;
+            font-weight: bold;
+        }
+        .total-income .values .mid {
+            font-size: .4rem;
+            font-family: 'DDIN';
+            color: white;
+            line-height: .3rem;
+            opacity: .2;
+            margin-left: .06rem;
+        }
+        .total-income .values .down {
+            margin-left: .06rem;
+            font-size: .5rem;
+            font-weight: bold;
+            font-family: 'DDINBOLD';
+            color: rgba(229, 76, 76, .37);
+            display: flex;
+        }
+        .total-income .values .down span {
+            font-weight: bold;
+            font-family: 'DDINBOLD';
+            font-size: .5rem;
+            color: rgba(229, 76, 76, 1);
+        }
+        .income-area {
+            padding-left: .5rem;
+        } 
+        #income {
+            /* width: 900px;
+            height: 1080px; */
+        }
+        #gifts {
+            margin-left: .3rem;
+        }
+
+
+        .content {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-left: .1rem;
+        }
+
+        .content-item {
+            /* width: .24rem; */
+            height: .5rem;
+            display: block;
+            text-align: center;
+            line-height: .5rem;
+            font-size: .5rem;
+        }
+
+        /* .content-item+.content-item {
+            margin-left: 4px;
+        } */
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">2023 WOWS HOLIDAY OPS DAY 1<span id="time_camp"></span></div>
+        <div class="income-area">
+            <div class="total-income">
+                <div class="label">Sales</div>
+                <div class="values">
+                    <div class="up">￥<span id="yuanIncome">
+                        <div id="yuanIncomeList" class="content">
+                        </div>
+                    </span><div id="yuanOffset" class="offset">0</div>
+                    </div>
+                    <div class="mid">=</div>
+                    <!-- <div class="down"> $ <span id="daoIncome">0</span> -->
+                    <div class="down"> $ <span id="daoIncome">
+                        <div id="daoIncomeList" class="content">
+                        </div>
+                    </span>
+                    </div>
+                </div>
+            </div>
+            <div id="income"></div>
+        </div>
+        
+        <div id="gifts"></div>
+    </div>
+    <script src="https://s4.ssl.qhres2.com/static/9b0eea1782b4c2b7.js"></script> 
+    <script src="https://s2.ssl.qhres2.com/static/a9d66c10101e51b1.js"></script>
+
+    <!-- 滚动数字 -->
+    <style>.roll-box{overflow:hidden}.roll-box .roll-el{transition:transform 1s linear;display:block;width:100%;height:100%}</style>
+    <script>
+        jQuery.fn.extend({
+            rollNumber({ num }) {
+                let _this = this;
+                this.checkLength = function(num) {
+                    let $children = $(this).children()
+                    let numLength = num.toString().length;
+                    if (numLength <= $children.length) { return } //够长就不变
+                    let offsetCount = numLength - $children.length;  //需要加的位数
+                    for (let i=0; i<offsetCount; i++) {
+                        let rollBox = document.createElement('div');
+                        $(rollBox).addClass('content-item').addClass('roll-box').html(new Array(11).fill('0').map((_, i) => {
+                            return `<span class="roll-el">${i<10?i:'.'}</span>`
+                            }))
+                        $(this).prepend(rollBox)    
+                    } 
+                }
+                function updateNum(num) {
+                    _this.checkLength(num)  //空间已准备
+                    let nums = num.toString().split("")
+                    Array.from($(_this).children()).forEach((rollBox, i) => {
+                         $(rollBox).children().css('transform', `translateY(-${( nums[i] == '.' ? 10: nums[i] ) || 0}00%)`)
+                    })
+                }
+                setTimeout(() => {
+                    updateNum(num)
+                }, 100)
+                return updateNum
+            }
+        })
+        // window.addEventListener('resize', function(e){
+        //     location.reload()
+        // })
+        window.addEventListener('keydown', function(e){
+            if (e.key == 'F' ) { document.documentElement.requestFullscreen(); }
+        })
+
+        const apiDomain = 'https://demoapi.wg.360.cn'
+
+        const transNum = 7.15  //汇率
+
+        const baseWidth = 1920;
+        const baseHeight = 1080;
+        const browserWidth = window.innerWidth;
+        const browserHeight = window.innerHeight;
+        document.documentElement.style.fontSize = 100 / baseWidth * browserWidth + 'px'
+
+
+        const boxKeyVal = {
+            sh_516: "1x Santa's Mega Gift container",
+            sh_518: "20x Santa's Mega Gift container",
+            sh_517: "8x Santa's Mega Gift container",
+
+            sh_513: "1x Santa's Big Gift container",
+            sh_515: "20x Santa's Big Gift container",
+            sh_514: "8x Santa's Big Gift container",
+
+            sh_510: "1x Santa's Gift container",
+            sh_512: "20x Santa's Gift container",
+            sh_511: "8x Santa's Gift container",
+            
+
+        }
+        const boxKeyColor = {
+            sh_516: "rgba(255, 219, 20, 1)",
+            sh_518: "rgba(255, 219, 20, 1)",
+            sh_517: "rgba(255, 219, 20, 1)",
+
+            sh_513: "rgba(20, 255, 225, 1)",
+            sh_515: "rgba(20, 255, 225, 1)",
+            sh_514: "rgba(20, 255, 225, 1)",
+
+            sh_510: "rgba(238, 20, 255, 1)",
+            sh_512: "rgba(238, 20, 255, 1)",
+            sh_511: "rgba(238, 20, 255, 1)",
+        }
+        const boxKeyCount = {
+            sh_516: 0,
+            sh_518: 0,
+            sh_517: 0,
+
+            sh_513: 0,
+            sh_515: 0,
+            sh_514: 0,
+
+            sh_510: 0,
+            sh_512: 0,
+            sh_511: 0,
+        }
+        
+        let incomeChart = null;
+        let boxChart = null;
+
+        let yuanIncome = document.getElementById('yuanIncome')
+        let yuanOffset = document.getElementById('yuanOffset')
+        let daoIncome = document.getElementById('daoIncome')
+
+        let incomeInfos = []
+        let boxInfos = []
+
+        let num = 0
+        let updateDaoIncome = $("#daoIncomeList").rollNumber({ num })
+        let updateYuanIncome = $("#yuanIncomeList").rollNumber({ num })
+
+        function getIncome() {
+            return new Promise(function(resolve, reject){
+                    $.ajax({
+                        url: apiDomain+ '/xmall/getorderFromSQl',
+                        success: function(res){ resolve(res) }
+                    })
+            })
+        }
+
+        function getBox() {
+            return new Promise(function(resolve, reject){
+                    $.ajax({
+                        url: apiDomain+ '/xmall/getByCode',
+                        success: function(res){ resolve(res) }
+                    })
+            })
+        }
+
+
+        async function update () {
+            let income = await getIncome()
+            if (income.errno == 0 && income.data && income.data.length) {
+                income = income.data;
+                let maxIncome = income[income.length - 1].mySum
+                let offsetIncome = income[income.length - 1].mySum - income[income.length - 2].mySum
+                // offsetIncome && (yuanOffset.innerHTML = offsetIncome) //不加就保持上一阶段
+                if (offsetIncome) {
+                    yuanOffset.innerHTML = offsetIncome.toFixed(2)
+                    yuanOffset.setAttribute('class', 'offset show')
+                    setTimeout(() => {
+                        yuanOffset.setAttribute('class', 'offset')  
+                    }, 2000);
+                }
+                if (maxIncome) {
+                    updateYuanIncome(Number(maxIncome).toFixed(2))
+                }
+                updateDaoIncome((maxIncome / transNum ).toFixed(2))
+                incomeInfos.length = 0;
+                income.forEach(function(i){
+                    let thisTime = i.time.replaceAll('-','/')
+                    incomeInfos.push({
+                        name: thisTime,
+                        value: [ thisTime, i.mySum ]
+                    })
+                })
+                incomeChart.setOption({
+                    series: [ { data: incomeInfos } ]
+                });
+            }
+
+            let box = await getBox()
+            if (box.errno == 0) {
+                box = box.data
+                Object.keys(box).forEach(function(k){
+                        boxKeyCount[k] = box[k].count
+                })
+                boxInfos.length = 0
+                Object.keys(boxKeyCount).forEach(function(c){
+                    if (boxKeyCount.hasOwnProperty(c)) {
+                        boxInfos.push(boxKeyCount[c])
+                    }
+                })
+                boxChart.setOption({
+                    series: [
+                        {
+                            type: 'bar',
+                            data: boxInfos
+                        }
+                    ]
+                });
+            }
+
+        }
+        setTimeout(() => {
+            update()
+        }, 100);
+        setInterval(update, 60000)
+
+        
+
+
+        var chartDom = document.getElementById('income');
+        incomeChart = echarts.init(chartDom, 'dark', { width: 740 / baseWidth * browserWidth , height: 660 / baseHeight * browserHeight });
+        var incomeOption ;
+        incomeOption = {
+            textStyle:{
+                fontFamily: 'DDIN'
+            }, 
+            tooltip: {
+                trigger: 'axis',
+                formatter: function (params) {
+                    params = params[0];
+                    var date = new Date(params.name);
+                    return (
+                        'Sales: ' +
+                        params.value[1]
+                    );
+                },
+                axisPointer: {
+                animation: false
+                }
+            },
+            xAxis: {
+                type: 'time',
+                splitLine: {
+                    show: false
+                },
+                minInterval: 1000 * 60,
+                maxInterval: 1000 * 60 * 60, 
+                axisLabel: {
+                    fontSize: 14 / baseWidth * browserWidth,
+                    showMinLabel: false
+                },
+                axisPointer: {
+                    type: 'shadow',
+                    label: {
+                        show: true,
+                        fontSize: 14 / baseWidth * browserWidth,
+                    }
+                },
+                axisLine: {
+                    show: true,    // 是否显示坐标轴轴线
+                    lineStyle: {
+                        color: '#333',    // 坐标轴线线的颜色
+                        width: '2',    // 坐标轴线线宽
+                        type: 'solid',     // 坐标轴线线的类型（'solid'，实线类型；'dashed'，虚线类型；'dotted',点状类型）
+                    },
+                },
+            },
+            yAxis: {
+                type: 'value',
+                scale: true,
+                axisLabel: {
+                    fontSize: 14 / baseWidth * browserWidth
+                },
+                splitLine: {
+                    show: true
+                }
+            },
+            series: [
+                {
+                name: 'Income Data',
+                type: 'line',
+                showSymbol: false,
+                data: incomeInfos,
+                color: 'rgba(229, 76, 76, 1)'
+                }
+            ]
+        };
+        
+        incomeOption && incomeChart.setOption(incomeOption);
+    
+
+        //  箱子数据↓
+
+        var chartDom = document.getElementById('gifts');
+        boxChart = echarts.init(chartDom, 'dark', {
+            width: 900 / baseWidth * browserWidth,
+            height: 800 / baseHeight * browserHeight
+        });
+        var boxOption;
+        
+        boxOption = {
+            title: {
+                text: 'Sales volume',
+                textStyle: {
+                    fontFamily: 'DDINBOLD',
+                    fontSize: 40 / baseWidth * browserWidth
+                }
+            },
+            textStyle:{
+                fontFamily: 'DDIN'
+            }, 
+        xAxis: {
+            max: 'dataMax',
+            axisLabel: {
+                    fontSize: 14 / baseWidth * browserWidth
+                },
+            gridIndex: 0
+        },
+        grid: [
+            { left: '30%', top: '7%' }
+        ],
+        yAxis: {
+            gridIndex: 0,
+            type: 'category',
+            data: [
+                'sh_516',
+                'sh_518',
+                'sh_517',
+                'sh_513',
+                'sh_515',
+                'sh_514',
+                'sh_510',
+                'sh_512',
+                'sh_511',
+            ],
+            axisLabel: {
+                width: 250 / baseWidth * browserWidth,
+                overflow: 'breakAll',
+                formatter: function(value, index) {
+                    return boxKeyVal[value]
+                },
+                color: function (value, index) {
+                    return boxKeyColor[value] || 'white';
+                },
+                fontSize: 18 / baseWidth * browserWidth
+            }, 
+            inverse: true,
+            animationDuration: 300,
+            animationDurationUpdate: 300,
+            max: 9 // only the largest 3 bars will be displayed
+        },
+        series: [
+            {
+            realtimeSort: true,
+            type: 'bar',
+            data: boxInfos,
+            label: {
+                show: true,
+                position: 'right',
+                valueAnimation: true,
+                fontSize: 20 / baseWidth * browserWidth,
+            },
+            itemStyle: {
+                color: function (param) {
+                    return boxKeyColor[param.name] || '#5470c6';
+                }
+            },
+            }
+        ],
+        legend: {
+            show: true,
+        },
+        animationDuration: 0,
+        animationDurationUpdate: 3000,
+        animationEasing: 'linear',
+        animationEasingUpdate: 'linear'
+        };
+        boxOption && boxChart.setOption(boxOption);
+
+        function addZero(num) {
+            return (num>9? num : '0'+num)
+        }
+        let timeCamp = document.getElementById('time_camp')
+        function updateTimeCamp () {
+            let ti = new Date()
+            let tis = `${ti.getFullYear()}-${addZero(ti.getMonth()+1)}-${addZero(ti.getDate())} ${addZero(ti.getHours())}:${addZero(ti.getMinutes())}:${addZero(ti.getSeconds())}`
+            timeCamp.innerHTML = tis
+        }
+        setInterval(updateTimeCamp, 1000)
+
+    </script>
+</body>
+</html>

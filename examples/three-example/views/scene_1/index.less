@@ -1,0 +1,78 @@
+@base:0.005rem;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    // 不可选中文本
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    // 去除阴影快
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+html{
+    font-size: 100px;
+    color: #282828;
+    font-family: PingFangSC-Regular, PingFang SC;
+}
+body{
+    font-size: 30*@base;
+}
+
+.page-header {
+    // display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 0.88rem;
+    padding-top: 0.34rem;
+    width: 100%;
+    // background-color: white;
+    background-image: linear-gradient(to bottom, rgba(255,255,255, .5), rgba(255,255,255,.05));
+    z-index: 99;
+    .back-btn {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        background-color: rgba(255,255,255,.2);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        height: .28rem;
+        width: .28rem;
+        left: .2rem;
+        top: calc( 0.34rem + .12rem );
+        .back-btn-icon {
+            display: block;
+            height: .12rem;
+            width: .12rem;
+        }
+    }
+    .page-title {
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        font-weight: 500;
+        font-size: .18rem;
+        line-height: calc( 0.88rem - 0.35rem );
+    }
+}
+
+#container{
+    // 下载进度相关
+    // background: linear-gradient(to bottom, blue, red);
+    &.blank {
+        .page-header {
+            .back-btn {
+                background-color: rgba(0,0,0,.2);
+            }
+            .page-title {
+                color: #282828;
+            }
+        }
+    }
+}
+

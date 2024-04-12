@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>志愿者招募</title>
+    <meta name="description" content="《坦克世界》全球最新1.10版本强势登场，经典还原，历史级复刻，数百辆经典战车高清重现任君驾驭；深入沙漠、丘陵等地形，亲临让人肾上腺素飙升的火爆场面，完成海量传奇战役。电影级引擎特效完美重制真实战场，极具临场感的坦克突击战，带你深入前线阵地，在超大规模战场中尽情驰骋！">
+    <meta name="keywords" content="坦克世界,坦克世界官网,坦克世界游戏下载,wot,tksj,坦克世界公测,wot官网,坦克世界新版,坦克装甲,坦克百科,坦克贴吧,坦克世界官方下载,WOT官网,坦克世界下载,战争网游,新兵指南,轻型坦克,中型坦克,重型坦克,自行反坦克,坦克歼击车,坦克射击游戏,坦克游戏,战争游戏,360战争网游,360战游,360战游平台,军事游戏,二战题材,MMOTPS,TPS,坦克世界亚服,美系坦克,德系坦克,苏系坦克,中系坦克,法系坦克,虎式坦克,T34坦克,黑豹坦克,M4谢尔曼,丘吉尔坦克,克伦威尔,97式坦克,4号坦克 ,kv-1坦克,is-2,猎虎反坦克炮">
+    <link rel="stylesheet" href="//s3.ssl.qhres2.com/!5377768b/static/css/jquery.mcustomscrollbar.css">
+    <style>
+        /*reset start*/
+*, ::after, ::before { -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+blockquote, body, button, dd, dl, dt, form, h1, h2, h3, h4, h5, h6, hr, input, ol, p, td, textarea, th, ul { margin: 0; padding: 0; }
+
+a { color: inherit; text-decoration: none; }
+
+button, input, select, textarea { border: none; outline: none; font: inherit; color: inherit; }
+
+button { background: none; cursor: pointer; }
+
+img { border: 0; }
+
+ol, ul { padding-left: 1.3em; }
+
+table { width: 100%; border-collapse: collapse; border-spacing: 0; }
+
+/*reset end*/
+/*IE*/
+main { display: block; }
+
+body { overflow-x: hidden; min-width: 1070px; font: 14px/2 'Microsoft Yahei', Arial, Helvetica, sans-serif; color: #ccc; background-color: #020712; }
+
+.clearfix { zoom: 1; }
+
+.clearfix:after { content: ""; display: block; visibility: hidden; clear: both; height: 0; }
+
+.bg { position: absolute; z-index: -1; top: 0; right: 0; bottom: 0; left: 0; }
+
+.bg > div { background-position: center 0; background-repeat: no-repeat; }
+
+.bg .bg1 { height: 1733px; background-image: url(https://p2.ssl.qhimg.com/t01f78339871c106ffb.png); }
+
+#wrapper { position: relative; }
+
+.container { position: relative; margin: 0 auto; width: 1070px; }
+
+.header { position: absolute; z-index: 9; top: 20px; right: 0; left: 0; }
+
+.header-container { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; position: relative; margin: 0 auto; width: 1070px; }
+
+.userName span { color: #3c3d3d; }
+
+.signOut { color: #c79c5f; }
+
+.has-signIn { display: none; color: #3c3d3d; }
+
+.slogan { position: absolute; top: 100px; left: 50%; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%); }
+
+.btn { display: block; margin: 50px auto 0; -webkit-transition: all .3s; -o-transition: all .3s; transition: all .3s; width: 264px; height: 50px; line-height: 50px; font-size: 20px; font-weight: bold; color: #e4e3e8; background-image: url(https://p5.ssl.qhimg.com/t01d72be21df393ce89.png); }
+
+.btn:hover { -webkit-filter: brightness(1.1); filter: brightness(1.1); }
+
+.section1 { height: 1733px; }
+
+.section1 .container { padding-top: 645px; }
+
+.content { background-image: url(https://p5.ssl.qhimg.com/t0123c6481d2b41f77f.png); background-repeat: no-repeat; }
+
+.content.no-apply .content-bd { padding-right: 130px; padding-left: 130px; }
+
+.content.has-apply { display: none;  }
+
+.content.has-apply .content-bd { padding-right: 180px; padding-left: 180px; }
+
+.content.agreement .content-bd { padding-right: 140px; padding-left: 140px; }
+
+.content-hd { width: 1070px; height: 114px; line-height: 120px; text-align: center; padding-top: 60px;}
+
+.content-bd { padding: 40px; padding-bottom: 80px; }
+
+.content-item:not(:first-child) { margin-top: 20px; }
+
+.content-item.audit { display: none; }
+
+.apply-tip { position: absolute; color: red; right: 0; bottom: 50px; left: 0; text-align: center; }
+
+.apply-state1 { color: #d77a2f; }
+
+.apply-state2 { color: #06ae56; }
+
+.apply-state3 { color: #fa5151; }
+
+.apply-state a { text-decoration: underline; }
+
+.question, .answer { padding-left: 70px; height: 46px; line-height: 46px; }
+
+.question { margin-bottom: 40px; font-size: 18px; font-weight: bold; background: url(https://p5.ssl.qhimg.com/d/inn/67220b61ceea/static/images/icon-q.png) no-repeat 0 center; }
+
+.answer { line-height: 1.7em; font-size: 14px; color: #ccc; background: url(https://p5.ssl.qhimg.com/d/inn/67220b61ceea/static/images/icon-a.png) no-repeat 0 center; }
+
+.tit { margin-bottom: 10px; font-size: 18px; color: #fff; }
+
+.form-item { position: relative; width: 335px; line-height: 26px; }
+
+.form-item:not(:first-child) { margin-top: 5px; }
+
+.form-item.required::after { content: '*'; position: absolute; top: 16%; right: -15px; color: red; }
+
+.form label { display: inline-block; width: 80px; }
+
+.form input { display: inline-block; padding: 0 .5em; border-radius: 2px; width: 250px; height: 26px; line-height: 26px; background-color: #262626; }
+
+.form .userName { color: #fff; }
+
+.agreement-wrap { overflow: hidden; margin-top: 20px; height: 570px; background-color: rgb(195,195,195); color: #3c3d3d; }
+
+.agreement-item { margin: 0 20px; padding-bottom: 20px; line-height: 1.8; }
+
+.agreement-item:not(:last-child) { border-bottom: 1px solid #474747; }
+
+.agreement-tit { margin-top: 20px; font-size: 14px; text-align: center; }
+
+.agreement-content { margin-top: 20px; font-size: 12px; }
+
+.agreement-tip { position: absolute; bottom: 160px; right: 0; left: 0; color: red; font-size: 12px; text-align: center; }
+
+.checkbox { margin-top: 20px; text-align: center; }
+
+.checkbox label { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; color: #3c3d3d; }
+
+.checkbox input { margin-right: 8px; }
+
+.checkbox span { color: red; }
+
+.mCSB_container { margin-right: 0; }
+
+.mCustomScrollBox > .mCSB_scrollTools { width: 4px; }
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar { border-radius: 0; background-color: #3d3d3d; }
+
+.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar { background-color: #3d3d3d; }
+
+.mCSB_scrollTools .mCSB_draggerRail { background: none; }
+
+.mask { display: none; position: fixed; z-index: 1000; top: 0; right: 0; bottom: 0; left: 0; background-color: rgba(0, 0, 0, 0.6); }
+
+.modal { display: none; position: fixed; z-index: 1001; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); padding-top: 20px; width: 380px; height: 280px; font-size: 20px; text-align: center; line-height: 1.5; color: #d7d7d7; background-color: #272727; }
+
+.modal-close { position: absolute; top: 0; right: 0; width: 45px; height: 45px; line-height: 45px; text-align: center; }
+
+.modal-close:hover { -webkit-filter: brightness(1.5); filter: brightness(1.5); -webkit-transition: all .3s; -o-transition: all .3s; transition: all .3s; }
+
+.modal-close img { vertical-align: middle; }
+
+.modal-header { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; font-weight: bold; font-size: 20px; color: #d7d7d7; }
+
+.modal-header img { margin-right: 10px; }
+
+.modal-body { font-size: 14px; margin: 45px 0; padding: 0 45px; text-align: left; }
+
+.modal-footer { position: relative; text-align: center; }
+
+.modal-footer button { width: 300px; height: 40px; line-height: 40px; font-size: 18px; font-weight: bold; color: #101011; text-align: center; background-color: #fbbd4d; }
+
+.modal-footer button:hover { -webkit-filter: brightness(1.1); filter: brightness(1.1); -webkit-transition: all .3s; -o-transition: all .3s; transition: all .3s; }
+
+body .quc-wrapper { background-color: #222429; }
+
+body .quc-panel-middle .quc-form-tips { display: none; }
+
+body .quc-wrapper .quc-button-primary:hover { color: #101011; }
+
+body .quc-wrapper a { color: #fff; }
+
+body .quc-wrapper .quc-input input { border-color: #222429; color: #fff; background-color: #141619; }
+/*# sourceMappingURL=css.css.map */
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <header class="header">
+            <div class="header-container">
+                <a class="logo" href="/" target="_blank" rel="noopener noreferrer">
+                    <img src="//p5.ssl.qhimg.com/d/inn/08635377768b/static/images/logo.png" alt="">
+                </a>
+                <div class="signIn">
+                    <div class="js-no-signIn">
+                        <button class="js-signIn">登录</button>
+                    </div>
+                    <div class="has-signIn js-has-signIn">
+                        <a class="userName js-userName" href="//i.360.cn/" target="_blank" rel="noopener noreferrer"></a>，您好！
+                        <button class="signOut js-signOut">退出</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <div class="section1">
+                <div class="container">
+                    <div class="content agreement">
+                        <div class="content-hd">
+                            <!-- <img class="js-no-signIn" src="//p5.ssl.qhimg.com/d/inn/8a048c4339cc/tit4.png" alt=""> -->
+                            <img class="has-signIn js-has-signIn" src="https://p5.ssl.qhimg.com/t01212c3ff7f79f8307.png" alt="">
+                        </div>
+                        <div class="content-bd">
+                            <div class="js-no-signIn">
+                                <button class="btn js-signIn">登录</button>
+                            </div>
+                            <div class="has-signIn js-has-signIn">
+                                恭喜您获得成为《坦克世界》志愿者的资格！<br>为了《坦克世界》与您更好的合作，您应当阅读并遵守《坦克世界志愿者服务协议》（以下简称“本协议”）本协议及其所有附件（包括但不限于保密协议以及〈《坦克世界》新手教官招募计划》〉等）提供了360官方与志愿者之间合作的机制，以及双方的权利和义务。本协议的所有附件均是本协议的组成部分，与本协议具有同等效力，所有志愿者均应认真阅读并执行本协议。
+                                <div class="agreement-wrap mCustomScrollbar _mCS_1">
+
+
+                                    <div class="agreement-item">
+                                        <h2 class="agreement-tit">《坦克世界》志愿者服务协议</h2>
+                                        <div class="agreement-content">
+                                            <p>1.  总则</p>
+                                            <ul>
+                                                <li>志愿人员是360《坦克世界》项目组的志愿助手;</li>
+                                                <li>志愿人员是由360《坦克世界》项目组的社区负责人，根据一定筛选标准从志愿者申请网站中最有能力的报名者选出。具体选拔标准参见：https://wot.360.cn/event/trainer_volunteer/</li>
+                                                <p style="font-weight: bold;">您知悉并确认，一旦您成为《坦克世界》的志愿人员，您将获得一个非独家、360/Wargaming无需支付费用、不可用于商业目的、不可转委托他人代为行使的资格。360根据本项目服务的具体情况，评选优秀志愿者并对优秀志愿者给与适当奖励。该奖励为游戏中的资产，可以记入您的对应游戏账号。奖励内容为10000金币，将会在每个月的服务考核结束后发放给通过考核的志愿人员。参与本计划的志愿人员与您的实名认证的游戏账号具有强关联关系，请确认您账号资料的填写真实有效。资格审核期间，360会对报名志愿人员账号实名及身份信息进行审校。您服务期间获得的奖励将会发放至您提供的实名制账号，账号信息不可更改、替换。不符合考核标准或出现违反本协议中禁止行为的志愿人员，当月奖励会被酌情削减或全部扣除。连续两个月考核未达标，或造成严重负面影响的志愿人员将被取消志愿者资格。</p>
+                                                <li style="font-weight: bold;">360有权基于运营策略、产品规划、您担任志愿人员期间的表现等原因在适当通知后终止与志愿人员的合作或终止本项目。</li>
+                                            </ul>
+                                            <p>2.  志愿人员的权利和义务</p>
+                                            <p>2.1.  您保证：</p>
+                                            <ul>
+                                                <li>在您正式进行志愿服务前，您没有任何因游戏违规行为而被处罚的记录。</li>
+                                                <li>您的任何志愿行为，遵守本协议、志愿规则、游戏规则和用户协议、保密协议等与本合作有关的所有条款及相关法律法规，不会侵犯任何人的合法权益；</li>
+                                                <li>监督其他志愿者对条款的遵守情况，如发现任何志愿者的违规行为应及时制止并及时上报给360《坦克世界》官方负责人；</li>
+                                                <li>在上述条款的范围内，对所有用户保持中立，不得偏袒任意用户或游戏内组织；</li>
+                                                <li> 如果出现无法访问志愿者网站，邮箱或游戏帐号的情况，则您有义务立即通过任何可行方式将此事通知管理部门的负责人。</li>
+                                                <li>严格按照上述条款履行志愿者义务；</li>
+                                                <li>您确认，您作为志愿者在提供服务过程中所发表的任何言论或建议均属个人行为，不代表《坦克世界》的官方立场或意见。360或Wargaming保留在任何时候对您的言论或行为进行审查的权利，并有权要求您对其不当言论或行为进行更正或撤回。360或Wargaming对志愿者的个人言论不承担任何责任。您应明确向玩家表明您的志愿者身份及言论的非官方性质，以避免造成玩家的误解或混淆。若您的言论或行为导致玩家或其他第三方产生误解，或引发任何争议和/或损害，您应承担由此产生的全部责任，并保障360或 Wargaming免受任何索赔、诉讼、责任或的影响。</li>
+                                            </ul>
+                                            
+                                            <p>2.2.  您的权利</p>
+                                            <ul>
+                                                <li>您有权参与志愿者项目的整个过程，与其他玩家一起组队游戏，为新玩家们提供在线答疑、实战教学、结交队友、加入军团等支持；</li>
+                                                <li>在官方指定的聊天群或语音软件中与玩家进行交流，回答玩家的问题，帮助玩家了解游戏，并为玩家提供包括组队教学、图文及直播演示教学等帮助；</li>
+                                                <li style="font-weight: bold;">您有权因个人情况暂停志愿服务，但需提前七个工作日向360志愿服务工作人员提出申请，获允后可暂停服务。暂停周期以自然月为单位，每个自然年暂停志愿服务期限最多为两个自然月。暂停服务期间若您提供服务将不被计入考核，奖励停发。</li>
+                                            </ul>
+                                            <p>2.3.  您不得从事以下行为：</p>
+                                            <ul>
+                                                <li>将志愿者权限用于与您的职责无关的任何个人目的；</li>
+                                                <li>违反论坛规则、游戏规则或用户协议等相关文件及条款；</li>
+                                                <li>发表任何不恰当的言论或内容，包括但不仅限于：</li>
+                                                <li>a.反对宪法所确定的基本原则的内容； </li>
+                                                <li>b.危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的内容；</li>
+                                                <li>c.损害国家荣誉和利益的内容；</li>
+                                                <li>d.煽动民族仇恨、民族歧视，破坏民族团结的内容；</li>
+                                                <li>e.破坏国家宗教政策，宣扬邪教和封建迷信的内容；</li>
+                                                <li>f.散布谣言，扰乱社会秩序，破坏社会稳定的内容；</li>
+                                                <li>g.散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的内容；</li>
+                                                <li>h.侮辱或者诽谤他人，侵害他人合法权益的内容；</li>
+                                                <li>i.侵害他人知识产权、商业秘密等合法权利的内容；</li>
+                                                <li>j.恶意虚构事实、隐瞒真相以误导、欺骗他人的内容；</li>
+                                                <li>k.发布、传送、传播广告信息及垃圾信息的内容；</li>
+                                                <li>l.其他法律法规禁止的内容。</li>
+                                            </ul>
+                                            <ul>
+                                                <li>以任何形式公开表达对Wargaming或360《坦克世界》官方的不满，发表任何对Wargaming或360《坦克世界》及其员工的侮辱、威胁，和其他暴力的、不恰当的、非建设性的言论； </li>
+                                                <li>违反保密协议披露非公开信息；</li>
+                                                <li>在公司项目论坛的签名中使用Wargaming或360的任何未经360授权的内容（包括但不限于商标、logo、企业字号、徽标、作品等）。</li>
+                                                <li>未经许可以Wargaming或360的名义对外进行任何活动。</li>
+                                                <li>分享有关其他志愿者、Wargaming及360工作人员、玩家或任何其他社区成员的私人或敏感信息。</li>
+                                                <li>滥用或炫耀作为志愿者的职位，包括但不限于：1.在论坛、社区、社交媒体、网站或与其他玩家互动的状态下，添加对志愿人员的不恰当的描述；2.威胁恐吓要挟其他玩家或其他志愿人员；3.任何利用志愿者权利谋取私利的行为。</li>
+                                                <li>其他360或Wargaming认为不应该、不适当的行为、内容</li>
+                                            </ul>
+                                            <p style="font-weight: bold;">3.保密义务</p>
+                                            <p style="font-weight: bold;">3.1您确认并遵守本协议约定的保密义务，您不得泄露志愿服务活动中获悉的所有应当保密的信息，为本条款之目的，“保密信息”指您在履行志愿人员职能期间所获得的所有关于360、Wargaming及其关联公司的非公开信息，包括但不限于商业、策略、管理、技术、财务活动等各个方面和领域的信息。包括但不限于：</p>
+                                            <ul style="font-weight: bold;">
+                                                <li>有关360员工的信息，包括员工和其他志愿者的联系方式，但已对外公开的信息除外；</li>
+                                                <li>向志愿者提供的有关360所有项目中即将进行的更新和活动的信息，但在公开信息发布前；</li>
+                                                <li>有关在活动正式发布之前由一组志愿者参加的活动和比赛的信息，以及举办此类活动的机制；</li>
+                                                <li>有关论坛和游戏客户端中所有类型的用户限制的信息；</li>
+                                                <li>提供给志愿者论坛或公共聊天的功能说明（例如：论坛和公共聊天管理员的惩罚系统的机制以及其他信息）；</li>
+                                                <li>志愿者小组工作的机制、条例、组成和时间表；</li>
+                                                <li>在会议中，在简报会上或从不公开访问的论坛部分中，从管理部门或其他志愿者那里获得的信息，由于非正式通信而获得的个人信息；</li>
+                                            </ul>
+                                            <p style="font-weight: bold;">3.2 您同意在履行职责期间及职责终止后，未经360书面同意，不得泄露、公开或利用任何保密信息，亦不得将保密信息用于非360授权的目的。</p>
+                                            <ul style="font-weight: bold;">
+                                                <li>如您违反本保密条款，360保留立即终止与您合作的权利，并可采取包括但不限于在360所有项目中封锁乙方账号等措施。此外，360有权追究您因违反保密义务而产生的一切法律责任，并要求您赔偿360或任何第三方因此遭受的损失。</li>
+                                                <li>本保密条款构成本协议不可分割的一部分，并在您履行志愿人员职能期间及其后持续有效。</li>
+                                            </ul>
+                                            <p>4.军团</p>
+                                            <p>在360《坦克世界》项目组建立游戏内志愿者军团的前提下，志愿人员需要服从相关工作人员的安排加入特定军团。未经允许不得脱离军团组织，包括退出军团或退出军团后重新进入，一经发现则代表您自愿退出志愿组织。
+                                            </p>
+                                            <p>5.违约责任</p>
+                                            <p style="font-weight: bold;">5.1 若您违反本协议及相关协议、条款约定，或侵犯他人合法权益的，360有权随时单方采取以下一项或多项措施：1.立即终止与您的合作；2.永久或一段时间内封禁您的违规账号；3.追究您的法律责任，并要求您赔偿360或任何第三方因此遭受的损失。</p>
+                                            <p>5.2 若360按照上述条款、本协议的其他相关约定或因您违反相关法律法规的规定，终止与您的合作或对您的账号采取任何行为或措施，所引起的纠纷、责任等一概由您自行负责，造成您损失的，您应自行全部承担，造成360或他人损失的，您也应自行承担全部责任。</p>
+                                            <p>6.隐私政策</p>
+                                            <p>您同意并授权360为履行本协议之目的收集您的相关信息，这些信息包括您在注册系统中注册的信息、您账号下的数据以及其他您在提供志愿者的过程中向360提供或360基于合作需要、安全、用户体验优化等考虑而需收集的信息，360对您的信息的收集将遵循相关法律规定。</p>
+                                            <p>7.其他</p>
+                                            <p style="font-weight: bold;">7.1除了另行有约定外，360无需为按照本协议约定的合作而向您支付任何费用。</p>
+                                            <p>7.2 360有权随时根据有关法律、法规的变化以及公司经营状况和经营策略的调整等修改本协议。补充、更改和修改将在网站上发布后立即生效。修改后的协议会及时公布。当发生有关争议时，以最新的协议文本为准。</p>
+                                            <p>7.3本协议签订地为中华人民共和国北京市。</p>
+                                            <p>7.4本协议的成立、生效、履行、解释及纠纷解决，适用中华人民共和国大陆地区法律（不包括冲突法）。</p>
+                                            <p>7.5若您和360之间发生任何纠纷或争议，首先应友好协商解决；协商不成功的，双方均同意将纠纷或争议提交本协议签订地有管辖权的人民法院解决。</p>
+                                            <p>7.6如果本协议中的任何条款无论因何种原因完全或部分无效或不具有执行力，或违反任何适用的法律，则该条款被视为删除，但本协议的其余条款仍应有效并且有约束力。</p>
+                                            <p>7.7您点击确认即代表您同意并认可接受本协议各项条款的约束。本协议由您通过网络页面点击确认选择接受后即生效。</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="checkbox">
+                                    <label class="js-checkbox-label">
+                                        <input class="js-checkbox" type="checkbox">
+                                        阅读并同意<span>《坦克世界》志愿者服务协议</span></span>
+                                    </label>
+                                </div>
+                                <div class="agreement-tip"></div>
+                                <button class="btn js-agreement-submit">确认</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg">
+                <div class="bg1"></div>
+            </div>
+        </main>
+        {qcms_block id="610475420" qcms-label-hint="footer"}
+    </div>
+    <div class="mask"></div>
+    <div class="modal modal-submit">
+        <button class="modal-close js-modal-close">
+            <img src="//p5.ssl.qhimg.com/d/inn/08635377768b/static/images/modal-close.png" alt="">
+        </button>
+        <div class="modal-header">
+            <img src="//p5.ssl.qhimg.com/d/inn/08635377768b/static/images/icon-correct.png" alt="">
+            申请已提交
+        </div>
+        <div class="modal-body">
+            感谢您的申请，为了保证志愿者的服务能力和品格，我们将会在所有报名玩家中挑选合格的玩家成为志愿者。
+        </div>
+        <div class="modal-footer">
+            <button class="js-modal-close">确认</button>
+        </div>
+    </div>
+    <script src="//s4.ssl.qhres2.com/!42519d2a/theme/js/jquery-2.1.4.min.js"></script>
+    <script src="//s.ssl.qhimg.com/quc/quc6.js"></script>
+    <script src="//s3.ssl.qhres2.com/!8463edc5/theme/js/jquery.mcustomscrollbar.js"></script>
+    <script>
+        $(".mCustomScrollbar").mCustomScrollbar();
+        $(document).on('click', '.js-checkbox-label', function () {
+            var isChecked = $(".js-checkbox").prop("checked");
+            if (isChecked) {
+                $('.agreement-tip').html('');
+            }
+        });
+        //关闭弹窗
+        $(document).on('click', '.js-modal-close', function () {
+            location.href = '/event/trainer_volunteer/';
+        });
+        //登录
+        $(document).on('click', '.js-signIn', function () {
+            QHPass.signIn(true);
+        });
+        //登出
+        $(document).on('click', '.js-signOut', function () {
+            QHPass.signOut(true);
+        });
+        // 登录 判断域名
+        function qHPassInit() {
+            var hostname = window.location.host;
+            if (hostname.indexOf('beta') !== -1) {
+                hostname = hostname.substring(5, hostname.length);
+            }
+            if (hostname.indexOf('360.cn') !== -1) {
+                hostname = '360.cn';
+            }
+            QHPass.init({
+                'src': 'pcw_wargame',
+                'primaryColor': '#fbbd4d',
+                'domainList': ['so.com', '360.cn', 'wot.youxi.com', 'wows.youxi.com', 'wg.youxi.com'],
+                'signIn': {
+                    'panelSize': 'middle',
+                    'thirdPart': { 'providers': [] },
+                    'hideKeepAlive': false
+                },
+                'signUp': { 'types': ['mobile', 'email'] }
+            });
+            QHPass.setConfig('currentDomain', hostname);
+        }
+        qHPassInit();
+        ; (function () {
+            var event = {
+                host: '//profile.wg.360.cn',
+                path: '/volunteer',
+                getUserInfo: function () {
+                    var self = this;
+                    $.ajax({
+                        url: self.host + self.path + '/index',
+                        dataType: 'jsonp',
+                        success: function (res) {
+                            console.log('个人信息', res);
+                            if (res.errno === 0) {//已登录
+                                var apply = res.data.apply;
+                                var isok = res.data.isok;
+                                var username = res.data.username;
+                                var nickname = res.data.nickname;
+                                var nickname = nickname ? '<span>（' + nickname + '）</span>' : '';
+                                $('.js-userName').html(username + nickname);
+                                $('.js-no-signIn').hide();
+                                $('.js-has-signIn').show();
+                                $(".mCustomScrollbar").mCustomScrollbar();
+                                if (apply !== 1 || (apply === 1 && isok === 1)) {//未申请||已成为志愿者
+                                    location.href = '/event/trainer_volunteer/';
+                                }
+                            }
+                        }
+                    });
+                },
+                agreementSubmit: function () {
+                    var self = this;
+                    $(document).on('click', '.js-agreement-submit', function () {
+                        var isChecked = $(".js-checkbox").prop("checked");
+                        if (!isChecked) {
+                            $('.agreement-tip').html('请先阅读并同意《坦克世界》志愿者协议');
+                            return;
+                        } else {
+                            $('.agreement-tip').html('');
+                        }
+                        QHPass.getUserInfo(function () {
+                            var name = $('#name').val();
+                            var phone = $('#phone').val();
+                            var qq = $('#qq').val();
+                            $.ajax({
+                                url: self.host + self.path + '/confirm',
+                                data: {
+                                    isok: 1,
+                                },
+                                dataType: 'jsonp',
+                                success: function (res) {
+                                    console.log('提交申请返回', res);
+                                    if (res.errno === 0) {
+                                        $('.mask,.modal-submit').fadeIn();
+                                    } else {
+                                        $('.agreement-tip').html(res.errmsg);
+                                    }
+                                }
+                            });
+                        }, function () {
+                            QHPass.signIn(true);
+                        });
+                    });
+                },
+                init: function () {
+                    var self = this;
+                    self.getUserInfo();
+                    self.agreementSubmit();
+                }
+            };
+            event.init();
+        })()
+    </script>
+</body>
+
+</html>
