@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+    <head><title>基于THREEjs的3D场景基本构成</title>
+    <style>
+        * { padding: 0; margin: 0; }
+        img {
+            max-width: 300px;
+        }
+        body {
+            padding-left: 150px;
+            padding-right: 100px;
+            padding-bottom: 200px;
+        }
+        h3 {
+            margin-top: 20px;
+        }
+        div {
+
+        }
+
+    </style>
+    </head>
+    <body>
+        <div id="three"></div>
+        <h1>"其实没有3D"</h1>
+        <h2>载体："canvas"标签</h2>
+        <h3>canvas本质上，就是一张内存中的待定图片</h3>
+        <div>在2d的图片框架中，按位像素点填入颜色数据，通过透视以及光影效果，实现“3D”的视觉等效</div>
+        <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fcbu01.alicdn.com%2Fimg%2Fibank%2FO1CN01K9WGQE25bCeNBLDMl_%21%212211425537544-0-cib.jpg_Q75.jpg&refer=http%3A%2F%2Fcbu01.alicdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1717726856&t=044074af928b0224efb5c56113bfa075">
+        <h2>由简</h2>
+        <h3>标准3D场景的构成结构</h3>
+        <div>市面上常见的几个3d相关类软件，游戏、建筑、影视相关的应用，例： Unity、Unreal、C4D，以及我们的常用3D库ThreeJS，基本都由如下几大块构成</div>
+        <br>
+        <h3>1.舞台、场景、scene</h3>
+        <div>舞台的概念，其实是一个小世界，小沙箱，一些软件中，它叫view，一些软件中它叫scene，初始状态下，它是虚无一物，但是包含空间与时间概念，它是一个3D场景的基础容器</div>
+        <br>
+        <h3>2.摄像机、camera</h3>
+        <div>世界有了，还需要有观察世界的“眼睛”来传递图像，摄像机常用的有两种，一种是近大远小的透视相机，一种是无透视效应的正交相机，一般描述正常的三维世界会用透视相机，符合人眼，正交相机常用于3d转2d的场景，例如low poly风格场景的俯视效果</div>
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/Perspectiva-2.svg/2560px-Perspectiva-2.svg.png">
+        <div>透视相机</div>
+        <br>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Axonometric_projection.svg/2560px-Axonometric_projection.svg.png">
+        <div>正交相机</div>
+        <br>
+        <h3>3.光源、light</h3>
+        <br>
+        <div>神说，要有光，不然乌漆嘛黑。大多数的3D相关技术栈都提供如下几种模拟真实世界发光场景的光源类型：
+        <br>
+            <div>全局光照，环境光，AmbientLight。全局光照是一种均匀地没有角度方向的，无孔不入的光源类型，会均匀地照亮所有物体的所有位置。</div>
+            <div>平行光，方向光，DirectionalLight。此类型光源特点为无焦点，适合模拟非常远且非常大的光源。</div>
+            <div>天光，半球光，HemiSphereLight。此光源类型为模拟天空大气折射下的阳光效果所用，常见的效果为天空头顶为蓝色，越接近地面越发白发黄。
+                <a target="_blank" href="https://threejs.org/examples/#webgl_lights_hemisphere">demo</a>
+            </div>
+            <img src="https://p0.ssl.qhimg.com/t012e763463bd9997db.png">
+            <br>
+            <div>椎体光源，聚光灯，SpotLight。模拟手电筒，路灯等等带半边遮罩的光源。
+                <a target="_blank" href="https://threejs.org/examples/?q=light#webgl_lights_spotlight">demo</a>
+            </div>
+            <img src="https://p0.ssl.qhimg.com/t014bbcb1cc381676cf.png">
+            <div>点光源，PointLight。点状发光，区别于SpotLight是，把遮光罩给摘了。</div>
+            <div>发光体，RectAreaLight，模拟平板灯，几乎用不到。</div>
+            <img src="https://p2.ssl.qhimg.com/t013752fb24d07871d4.png">
+        </div>
+
+        <h3>OK，以上三点已经构成了一个基础的3D空间，只不过其中空无一物，眼中无物</h3>
+        <div>接下来加点东西到这个小宇宙，加个宇宙魔方先，cube，正方体，是3D世界中既简单又复杂的一个结构体，为什么这么说，在入繁里讲</div>
+        <br>
+        <br>
+
+        <h3>4.网格体Mesh</h3>
+        <br>
+        <div>网格体是一种“简易预设体”的概念，由骨架（或者框架）和蒙皮构成，就像灯笼一样，外边华丽，里面空壳。</div>
+        <img src="https://p3.ssl.qhimg.com/t01b10039096b81b18b.png"></img>
+        <div>骨架部分，称为几何体Geometry，是描述一个物体“形状”的基础抽象概念。下文详解</div>
+        <div>蒙皮部分，称为材质Material，是描述物体表面状态的一组数据，包括颜色、轻微凹凸、金属度、不透明度等</div>
+        <h4>4.1 几何体Geometry</h4>
+        <div>数学中，点点成线，三线成面，多面成体，Attributes</div>
+        <div>(1)在计算机图形学3D场景中，定义一个点需要3个浮点型数据x、y、z来定义位置，会在Geometry中的position对象的itemSize属性中体现，由此，一个几何体的所有点的数据集position的数据结构一般为如下形式</div>
+        <div>[0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0]</div>
+        <div>一般来说，3个点构成一个三角形基础面，也有4个点构成基础面的情况，非常少见，3 or 4 or more</div>
+        <div>(2)法线 normal，物体的形状，很大程度是由光影的呈现所表现，法线是一个矢量Vector3， 它定义了顶点或者基础面的垂直朝向，用于计算物体在光照下的受影响程度</div>
+        <div>(3)贴图坐标 UV，既然是骨架，那一定需要定义蒙皮所覆盖的位置和拉扯的形状，UV存储了顶点点对点的贴图xy坐标信息</div>
+        <div>面的数据定义index，使用position中的点的脚标信息来实现三点成面</div>
+        <h4>4.2 材质Material</h4>
+        <div>材质用来表现物体表面的状态，为了模拟现实中的各个场景，常用的材质内置了多种类型可供选择</div>
+        <div>
+            <div>基础材质MeshBasicMaterial， 此种材质不接受光照，因此也不产生阴影，只表现颜色，所以一般用来做不受虚拟世界环境影响的标识物，标志牌之类的内置类UI功能</div>
+            <img src="https://p3.ssl.qhimg.com/t015f8448342a553afb.png">
+            <div>反射材质MeshPhongMaterial， 此种材质可以表现高光，可以呈现阴影，也可以产生阴影，可以用来表现模拟的现实大部分物品</div>
+            <img src="https://p3.ssl.qhimg.com/t01f4f8bea0aea32a4b.png">
+            <div>(1)颜色color/颜色贴图map，用来定义应用此材质的物体，在光照下所呈现出的颜色/花纹图案</div>
+            <img src="https://p1.ssl.qhimg.com/t010af4ce7f3efd4f3b.png">
+            <div>(2)法线贴图normalMap/凹凸贴图bumpMap，用来定义物体表面的细微凹凸感，法线贴图是用rgb/xyz来定义法线，而凹凸贴图是用灰度来定义法线</div>
+            <img src="https://p1.ssl.qhimg.com/t0102d7d298337de9c8.png">
+            <div>(3)反射贴图specularMap， 用来定义物体表面在被光线照射时候所呈现的反光质感，是粗糙的泥土不反光，还是磨亮的金属边缘完全反射</div>
+            <img src="https://p0.ssl.qhimg.com/t019762fc7f9b333fc0.png">
+            <div>(4)自发光贴图emissiveMao，用来定义物体表面“透出来”的自带颜色</div>
+            <div>物理材质MeshPhysicalMaterial， 此种材质更加精细的模拟了自然中各种物体表面的效果，添加了诸如金属度贴图、粗糙度贴图等，但是同样的，性能损耗巨大，移动端帧数骤降，尽量不用</div>
+        </div>
+        <div>接下来，我们向小宇宙的坐标原点(0,0,0)位置加入一个带有反射材质的立方体cube</div>
+
+        <h3>5.控制器controls</h3>
+        <br>
+
+        <div>场景建立起来了，但是摄像机位置固定，如何体现3D场景的通透感</div>
+        <br>
+
+        <div>控制器是通过用户输入操作对摄像机位置进行变化并刷新的控制单元，常见的几种控制器</div>
+        <br>
+
+        <div>5.1 第一人称控制器FirstPersonControls，玩过cs的都懂，就像人嘴里叼一个摄像机一样的视角，行业通用的控制逻辑是，前进，后退，左平移，右平移，以及旋转镜头朝向角度
+            <a href="https://threejs.org/examples/?q=control#misc_controls_pointerlock" target="_blank">demo</a>
+        </div>
+        <div>5.2 轨迹球控制器，OrbitControls，表现为，摄像机围着一个点旋转，视口时刻朝向点位置，常用来表现展示某个物体的场景。
+            <a href="https://threejs.org/examples/#misc_controls_orbit" target="_blank">demo</a>
+        </div>
+        <div>5.3 变换控制器，TransformControls，变现为，可以像编辑器一样拖动旋转放大缩小模型，常用在，额，编辑器
+            <a href="https://threejs.org/examples/?q=control#misc_controls_transform" target="_blank">demo</a>
+        </div>
+        <br>
+        <div>接下来，向宇宙中加入轨迹球控制器，用来操作相机，360度观察cube</div>
+
+        <script type="importmap">
+            {
+				"imports": {
+					"three": "../node_modules/three/build/three.module.js",
+					"three/addons/": "../node_modules/three/examples/jsm/"
+				}
+			}
+        </script>
+        <script type="module">
+            import * as THREE from 'three';
+
+            import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
+            console.info(OrbitControls)
+
+            let scene, camera, light;
+            let w = 400, h= 400;
+
+            scene = new THREE.Scene();
+
+            camera = new THREE.PerspectiveCamera(45, w/ h, 1, 1000);
+            camera.position.set(500, 500, 200);
+            camera.lookAt(0,0,0);
+            scene.add(camera);
+
+            // light = new THREE.AmbientLight(0xffff00, 1);
+            light = new THREE.AmbientLight(0xffffff, 1);
+            scene.add(light)
+
+            // let light2 = new THREE.DirectionalLight(0xffffff, 1)
+            // light2.position.set(300, 500, 100)
+            // scene.add(light2)
+
+            let texture = new THREE.TextureLoader().load(
+                'https://p2.ssl.qhimg.com/t010c19b7698c214192.png'
+            )
+            console.info(texture)
+
+            let cube = new THREE.Mesh(new THREE.BoxGeometry(200, 200, 200), 
+                // new THREE.MeshBasicMaterial({color: 0x00ff00,
+                //      wireframe: true
+                //     })
+                new THREE.MeshPhongMaterial({
+                    // color: 0x00ff00,
+                    transparent: true,
+                    map: texture
+                })
+            )
+            console.info(cube.geometry.attributes.uv.array)
+            console.info(cube.geometry.attributes.uv.array[0] = .5)
+            console.info(cube.geometry.attributes.uv.array[1] = .5)
+            console.info(cube.geometry.attributes.uv.array[2] = .5)
+            console.info(cube.geometry.attributes.uv.array[3] = .5)
+            scene.add(cube)
+
+
+            let renderer = new THREE.WebGLRenderer()
+            renderer.setSize(w, h)
+            let container = document.getElementById('three')
+            container.appendChild(renderer.domElement);
+
+
+            let control = new OrbitControls(camera, renderer.domElement);
+
+
+            function animate() {
+                requestAnimationFrame(animate)
+                cube.needUpdate = true;
+                control.update()
+                renderer.render(scene, camera)
+            }
+            animate()
+
+        </script>
+    </body>
+</html>

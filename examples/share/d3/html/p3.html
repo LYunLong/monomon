@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+    <head><title></title></head>
+    <body>
+        
+        <h1>"有些无聊，这些我之前看过"</h1>
+        <h2>来吧，上强度</h2>
+        <div id="three"></div>
+        <h2>入繁</h2>
+        <div>THREEjs是一个类似于jquery一样的，框架，或者说是类库，而它的基础是什么</div>
+        <div>OpenGL 2.0 ES/ WebGL</div>
+        <div>WebGL是浏览器公共协议下诞生的一套图形学框架，它比较简单，常用的抛出的只有两个着色器方法，顶点着色器与片元着色器，但是往往越简单的结构，越能组成复杂的成体</div>
+        <div>方法其一：顶点着色器 vertexShader</div>
+        <div>一套模型数据传入引擎框架中时，它所携带的Attributes往往包含如下信息，顶点位置、顶点法线、顶点UV、面的组成结构等等信息，而其中position、normal、uv都是每个点均有一套的配套数据（理想情况，特殊情况细嗦），这三个数据会以参数的形式传入vertexShader中，而这个方法最后会通过计算，返回一个此点最后实际的点位坐标信息</div>
+        <div>方法其二：片元着色器fragmentShader</div>
+        <div>不知道当初大神起名字的时候，什么精神状态，反正我喜欢称之为“像素点颜色着色器”，这个着色器会接收顶点着色器中传达过来的数据，而最后会输出一个vector4类型的颜色数据，你有可能会问了，例如cube，默认一共就8个顶点，那中间空的像素呢，中间空的像素，咱们补间了（补间是指平缓的过度从一个值到另一个值）</div>
+        <div>就这么简单，一个位置，一个颜色，就构成了3D的几乎全部内容</div>
+        <div>习题项目，在场景中，构建一个国旗台，下边是矩形，中间旗杆是圆柱，上面有一面国旗，国旗，要随风飘扬</div>
+        <script type="importmap">
+            {
+				"imports": {
+					"three": "../node_modules/three/build/three.module.js",
+					"three/addons/": "../node_modules/three/examples/jsm/"
+				}
+			}
+        </script>
+        <script type="module">
+            import * as THREE from 'three';
+
+            import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
+            console.info(OrbitControls)
+
+            let scene, camera, light;
+            let w = 800, h= 800;
+
+            scene = new THREE.Scene();
+
+            camera = new THREE.PerspectiveCamera(45, w/ h, 1, 10000);
+            camera.position.set(500, 500, 200);
+            camera.lookAt(0,0,0);
+            scene.add(camera);
+
+            light = new THREE.AmbientLight(0xffffff, 1);
+            scene.add(light)
+            let light2 = new THREE.DirectionalLight(0xffffff, 1)
+            light2.position.set(300, 500, 100)
+            scene.add(light2)
+
+            let ringUniform = {
+                u_timeStamp: {
+                    value: 0
+                }
+            }
+            let ring = new THREE.Points(
+                new THREE.RingGeometry(1, 800, 50, 30),
+                new THREE.ShaderMaterial({
+                    uniforms: ringUniform,
+                    vertexShader: `
+                    uniform float u_timeStamp;
+                    varying float v_waveTopDistance;
+                    varying float v_zeroDistance;
+                    //此处隐式传入了attributes: position等
+                        void main() {
+                            vec3 nowPoint = position;
+                            float waveFactor = ( sin(u_timeStamp) + 1.0 ) / 2.0;
+                            // 0-1 循环的位置系数
+                            waveFactor = -cos(u_timeStamp) > 0.? 0.: waveFactor;
+                            // 去掉正弦向下的曲线，使之正向
+                            float waveRadius = 800.0;
+                            // 圆盘的半径
+                            float waveDistance = waveFactor * waveRadius;
+                            // 当前波峰距离圆心的半径长度，确认波峰位置
+                            float PointDistance = sqrt(pow(nowPoint.x, 2.0) + pow(nowPoint.y, 2.0) + pow(nowPoint.z, 2.0));
+                            // 当前顶点距离圆心的长度
+
+                            v_zeroDistance = PointDistance;    
+
+                            float offsetMe = abs(waveDistance - PointDistance);
+                            // 当前顶点距离波峰的距离长度
+                            if (offsetMe > 50.) {
+                              offsetMe = 50.;
+                            }
+                            // 只对波峰50单位长度之内的点做影响
+                            nowPoint.z += offsetMe;
+                            // 根据距离波峰的长度，对高度进行操作
+
+                            v_waveTopDistance = offsetMe / 50.;
+                            // 取一个0-1的比例值，赋值给片元着色器
+                            gl_PointSize = 2.0;
+                            gl_Position = projectionMatrix * modelViewMatrix * vec4(nowPoint, 1.0);
+                        }
+                    `,
+                    fragmentShader: `
+                    uniform float u_timeStamp;
+                    varying float v_waveTopDistance;
+                    varying float v_zeroDistance;
+                        void main() {
+                            float zeroFactor = v_zeroDistance / 800.;
+                            gl_FragColor = vec4(
+                                (1.0 - v_waveTopDistance), sin(u_timeStamp * 2.) * v_waveTopDistance * zeroFactor, v_waveTopDistance * (1.- zeroFactor) , 1. * (1.-zeroFactor));
+                        }
+                    `
+                })
+            )
+            ring.rotation.x = 45
+            scene.add(ring)
+
+
+            let cube = new THREE.Points(
+                new THREE.SphereGeometry(100), 
+                // new THREE.PointsMaterial({color: 0x0000ff})
+                new THREE.ShaderMaterial({
+                    uniforms: ringUniform,
+                    vertexShader: `
+                        void main() {
+                            gl_PointSize = 1.6;
+                            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+                        }
+                    `,
+                    fragmentShader: `
+                    uniform float u_timeStamp;
+                        void main() {
+                            gl_FragColor = vec4(sin(u_timeStamp), cos(u_timeStamp), tan(u_timeStamp), 1.);
+                        }
+                    `
+                })
+            )
+            scene.add(cube)
+
+            let cube2 = new THREE.Mesh(new THREE.SphereGeometry(100), new THREE.MeshBasicMaterial({transparent: true, opacity: 0}))
+            scene.add(cube2)
+
+            let renderer = new THREE.WebGLRenderer()
+            renderer.setSize(w, h)
+            let container = document.getElementById('three')
+            container.appendChild(renderer.domElement);
+            let control = new OrbitControls(camera, renderer.domElement);
+
+
+            let raycaster = new THREE.Raycaster();
+            console.info(raycaster)
+            let pointer = new THREE.Vector2();
+            console.info(pointer)
+
+            function onPointerChange(event) {
+                pointer.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+	            pointer.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+            }
+            let intersects;
+
+            let sphere = new THREE.Mesh(new THREE.SphereGeometry(10), new THREE.MeshBasicMaterial({color: 0xff0000}))
+            scene.add(sphere)
+
+            window.addEventListener( 'pointermove', onPointerChange );
+            window.addEventListener( 'pointerdown', function () {
+                if (intersects.length) {
+                    sphere.position.set(...intersects[0].point)
+                    console.info(intersects[0].point)
+                }
+            } );
+
+            
+            function animate() {
+
+                ringUniform.u_timeStamp.value += 0.01
+                // console.info(ringUniform.timeStamp)
+
+                ring.rotation.z += .001;
+
+                raycaster.setFromCamera( pointer, camera );
+                intersects = raycaster.intersectObjects( scene.children );
+                
+                for ( let i = 0; i < intersects.length; i ++ ) {
+
+                    // intersects[ i ].object.material.color.set( 0xff0000 );
+
+                }
+
+                requestAnimationFrame(animate)
+                control.update()
+                renderer.render(scene, camera)
+
+            }
+            animate()
+
+        </script>
+    </body>
+</html>

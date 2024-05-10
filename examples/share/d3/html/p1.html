@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<head><title>web中的3d呈现以及“画布”</title></head>
+<body>
+<h1>web中的3d</h好>
+<h2>业务中3d的实现</h2>
+<h3>CSS</h3>
+<style>
+    .css-3d {
+        margin-left: 200px;
+        width: 200px;
+        perspective: 1000px;
+    }
+    @property --cube-deg-x {
+        syntax: '<angle>';
+        inherits: true;
+        initial-value: 0deg;
+    }
+    @property --cube-deg-y {
+        syntax: '<angle>';
+        inherits: true;
+        initial-value: 0deg;
+    }
+    @property --cube-deg-z {
+        syntax: '<angle>';
+        inherits: true;
+        initial-value: 0deg;
+    }
+    
+    .css-3d-child {
+        position: relative;
+        transform-style: preserve-3d;
+        transform-origin: center center;
+        width: 200px;
+        height: 200px;
+        transform: rotateX(var(--cube-deg-x)) rotateY(var(--cube-deg-y)) rotateZ(var(--cube-deg-z));
+    }
+    .css-3d-child div {
+        position: absolute;
+        height: 200px;
+        width: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: .6;
+        transform-style: preserve-3d;
+    }
+    .css-3d-child div:nth-child(1) {
+        transform: translateZ(100px);
+        background-color: aqua;
+    }
+    .css-3d-child div:nth-child(2) {
+        transform: translateZ(-100px) rotateY(180deg);
+        background-color: blanchedalmond;
+    }
+    .css-3d-child div:nth-child(3) {
+        transform: rotateY(90deg) translateZ(100px);
+        background-color: blueviolet;
+    }
+    .css-3d-child div:nth-child(4) {
+        transform: rotateY(-90deg) translateZ(100px);
+        background-color: brown;
+    }
+    .css-3d-child div:nth-child(5) {
+        transform: rotateX(90deg) translateZ(-100px);
+        background-color: greenyellow;
+    }
+    .css-3d-child div:nth-child(6) {
+        transform: rotateX(90deg) translateZ(100px);
+        background-color: blue;
+    }
+</style>
+<div class="css-3d">
+    <div class="css-3d-child">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+</div>
+<script>
+    document.documentElement.addEventListener('pointermove', function(e) {
+        document.documentElement.style.setProperty('--cube-deg-x', e.clientY + 'deg')
+        document.documentElement.style.setProperty('--cube-deg-y', e.clientX + 'deg')
+    })
+</script>
+
+
+<div id="three_3d"><h3>THREEjs(WebGL)</h3></div>
+<script type="importmap">
+			{
+				"imports": {
+					"three": "../node_modules/three/build/three.module.js",
+					"three/addons/": "../node_modules/three/examples/jsm/"
+				}
+			}
+		</script>
+<script type="module">
+    import * as THREE from 'three'
+    console.info(THREE)    
+    let camera, scene, renderer;
+    let width = 400;
+    let height = 400;
+    scene = new THREE.Scene();
+    camera = new THREE.PerspectiveCamera(45, width/ height, 1, 1000);
+    camera.position.set(500, 500, 0)
+    camera.lookAt(0,0,0);
+    scene.add(camera)
+
+    let ShaderMaterialInstance = new THREE.ShaderMaterial({
+        transparent: true,
+        uniforms: {
+
+        },
+        vertexShader: `
+            varying vec3 normalPoint;
+            void main() {
+                normalPoint = normal;
+                gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+            }
+        `
+        ,
+        fragmentShader: `
+            varying vec3 normalPoint;
+            void main() {
+                gl_FragColor = vec4((normalPoint + 1.0) / 2.0, 0.7);
+            }
+        `    
+    })
+    let cube = new THREE.Mesh(new THREE.BoxGeometry(200, 200, 200), ShaderMaterialInstance)
+    scene.add(cube)
+    console.info(cube)
+    let light = new THREE.AmbientLight(0x0000ff);
+    scene.add(light);
+    renderer = new THREE.WebGLRenderer();
+    renderer.setSize(width, height);
+    let container = document.getElementById('three_3d')
+    container.appendChild(renderer.domElement);
+    document.documentElement.addEventListener('pointermove', function(e) {
+        cube.rotation.x = e.clientX / 50
+        cube.rotation.z = -e.clientY / 50
+    })
+    function animate() {
+        requestAnimationFrame(animate);
+        renderer.render(scene, camera)
+    }
+    animate()
+
+</script>
+
+</body>
+</html>
