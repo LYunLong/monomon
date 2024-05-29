@@ -147,9 +147,9 @@
             light = new THREE.AmbientLight(0xffffff, 1);
             scene.add(light)
 
-            // let light2 = new THREE.DirectionalLight(0xffffff, 1)
-            // light2.position.set(300, 500, 100)
-            // scene.add(light2)
+            let light2 = new THREE.DirectionalLight(0xffffff, 1)
+            light2.position.set(300, 500, 100)
+            scene.add(light2)
 
             let texture = new THREE.TextureLoader().load(
                 'https://p2.ssl.qhimg.com/t010c19b7698c214192.png'
@@ -158,7 +158,7 @@
 
             let cube = new THREE.Mesh(new THREE.BoxGeometry(200, 200, 200), 
                 // new THREE.MeshBasicMaterial({color: 0x00ff00,
-                //      wireframe: true
+                //     //  wireframe: true
                 //     })
                 new THREE.MeshPhongMaterial({
                     // color: 0x00ff00,

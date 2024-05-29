@@ -63,7 +63,7 @@
                             vec3 nowPoint = position;
                             float waveFactor = ( sin(u_timeStamp) + 1.0 ) / 2.0;
                             // 0-1 循环的位置系数
-                            waveFactor = -cos(u_timeStamp) > 0.? 0.: waveFactor;
+                            waveFactor = -cos(u_timeStamp) >0.? 0.: waveFactor;
                             // 去掉正弦向下的曲线，使之正向
                             float waveRadius = 800.0;
                             // 圆盘的半径
@@ -126,7 +126,7 @@
             )
             scene.add(cube)
 
-            let cube2 = new THREE.Mesh(new THREE.SphereGeometry(100), new THREE.MeshBasicMaterial({transparent: true, opacity: 0}))
+            let cube2 = new THREE.Mesh(new THREE.SphereGeometry(100), new THREE.MeshBasicMaterial({transparent: true, opacity: 0.5}))
             scene.add(cube2)
 
             let renderer = new THREE.WebGLRenderer()

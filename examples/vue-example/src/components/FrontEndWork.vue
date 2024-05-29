@@ -1,5 +1,12 @@
+/* eslint-disable */
 <template>
     <Header></Header>
+    <ez_3d_show class="ezs" 
+        :mtlURL="'https://cgdl.qihucdn.com/wargame/AX2.mtl'"
+        :objURL="'https://cgdl.qihucdn.com/wargame/AX.obj'" 
+        :sceneWidth = "0"
+        :sceneHeight = "0"
+    ></ez_3d_show>
     <div class="Works">
         <div class="month-select">
             <div class="current">
@@ -46,6 +53,7 @@
 
 <script>
 import Header from './Header.vue';
+import ez_3d_show from 'ez-3d-show/views/ez_3d_show.vue';
 import { 
     reactive,
     ref,
@@ -53,7 +61,8 @@ import {
      } from 'vue';
 export default {
     components: {
-        Header
+        Header,
+        ez_3d_show
     },
     setup() {
         let heros = [

@@ -1,0 +1,127 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            let playerLeft = 
+                {
+
+                    shootRate: .53
+                    ,
+                    hurtPer: 490
+                    ,
+                    hp: 2500
+                    ,
+                    attackCrackProbability: .1 
+                    
+                }
+            let playerRight = 
+                {
+                    shootRate: .45
+                    ,
+                    hurtPer: 560
+                    ,
+                    hp: 2500
+                    ,
+                    attackCrackProbability: .1 
+                }    
+            
+            let pLeftCur  = playerLeft.hp
+            let pRightCur  = playerRight.hp  
+
+            let doLeft = ()=>{
+                //此次对局L
+                let shootResL = Math.random() <= playerLeft.shootRate ? //击中了
+                1: 0;
+                let hurtResL =  shootResL *  ( (Math.random() * 2 - 1) * playerLeft.hurtPer * .1 + playerLeft.hurtPer )
+                let criticalResL = (Math.random() <= .1) ? //击中弱点
+                1 * shootResL : 0;
+                //暂定暴击2倍伤害
+                hurtResL = criticalResL ? hurtResL * 2: hurtResL
+
+                hurtResL = hurtResL.toFixed(0)
+
+                if (!shootResL) {
+                    console.info('左侧玩家的攻击miss了')
+                }else {
+                    if (criticalResL) {
+                        console.info(`左侧玩家暴击了对方!造成${hurtResL}点伤害`)
+                    }else {
+                        console.info(`左侧玩家的攻击造成${hurtResL}点伤害`)
+                    }
+                }
+                makeStageCheck(1, hurtResL)
+            }
+
+            let doRight = () => {
+                //此次对局R
+                let shootResR = Math.random() <= playerRight.shootRate ? //击中了
+                1: 0;
+                let hurtResR =  shootResR * ( (Math.random() * 2 - 1) * playerRight.hurtPer * .1 + playerRight.hurtPer )
+                let criticalResR = (Math.random() <= .1) ? //击中弱点
+                1 * shootResR : 0;
+                //暂定暴击2倍伤害
+                hurtResR = criticalResR ? hurtResR * 2: hurtResR
+
+                hurtResR = hurtResR.toFixed(0)
+
+                if (!shootResR) {
+                    console.info('右侧玩家的攻击miss了')
+                }else {
+                    if (criticalResR) {
+                        console.info(`右侧玩家暴击了对方!造成${hurtResR}点伤害`)
+                    }else {
+                        console.info(`右侧玩家的攻击造成${hurtResR}点伤害`)
+                    }
+                }
+                makeStageCheck(0, hurtResR)
+
+            }
+
+
+            let offensiveOrder = 1
+
+
+            let over = false
+
+
+            let oneStep = ()=>{
+                
+                if (offensiveOrder) {
+                    doLeft()
+                    doRight()
+                }else {
+                    doRight()
+                    doLeft()
+                }
+
+                console.info(`左侧玩家剩余血量${pLeftCur}，右侧玩家剩余血量${pRightCur}`)
+
+                if (!over) {
+                    setTimeout(() => {
+                        oneStep()
+                    }, 2000);
+                }
+
+            }   
+
+
+            let makeStageCheck = (fromSide , hurtRes)=>{
+                if (fromSide) {
+                    pRightCur -= hurtRes
+                    if (pRightCur <0) {pRightCur = 0}
+                }else {
+                    pLeftCur -= hurtRes
+                    if (pLeftCur <0) {pLeftCur = 0}
+                }
+                if (!pLeftCur | !pRightCur) {
+                    over = true
+                    console.info('游戏结束')
+                }
+            }
+
+            oneStep()
+
+
+        </script>
+    </body>
+</html>

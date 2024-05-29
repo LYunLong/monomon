@@ -1,0 +1,630 @@
+@charset "UTF-8";
+        
+            .mCSB_container {
+                margin-right: .5rem
+            }
+        
+            .mask_wx,
+            .share_st {
+                display: none
+            }
+        
+            .mask_wx {
+                position: fixed
+            }
+        
+            *,
+            ::after,
+            ::before {
+                box-sizing: border-box
+            }
+        
+            blockquote,
+            body,
+            button,
+            dd,
+            dl,
+            dt,
+            form,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            hr,
+            input,
+            ol,
+            p,
+            td,
+            textarea,
+            th,
+            ul {
+                margin: 0;
+                padding: 0
+            }
+        
+            a {
+                color: inherit;
+                text-decoration: none
+            }
+        
+            button,
+            input,
+            select,
+            textarea {
+                border: none;
+                outline: none;
+                font: inherit;
+                color: inherit
+            }
+        
+            button {
+                background: none;
+                cursor: pointer
+            }
+        
+            img {
+                border: 0
+            }
+        
+            ol,
+            ul {
+                list-style: none
+            }
+        
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                border-spacing: 0
+            }
+        
+            body {
+                overflow-x: hidden;
+                font: .16rem/1.5 "Microsoft Yahei", Arial, Helvetica, sans-serif;
+                color: #fff;
+                background: #1d1f19
+            }
+        
+            .clearfix {
+                zoom: 1
+            }
+        
+            .clearfix:after {
+                content: "";
+                display: block;
+                visibility: hidden;
+                clear: both;
+                height: 0
+            }
+        
+            .wrap {
+                position: relative;
+                width: 100%;
+                background: url(https://p1.ssl.qhimg.com/t11b673bcd600aad38da246aa50.png) no-repeat 0 0 / 100%
+            }
+        
+            .wrap .main_container {
+                position: relative;
+                z-index: 2;
+                margin: 0 auto;
+                width: 100%
+            }
+        
+            .wrap .main_container .i-header {
+                padding-top: .76rem
+            }
+        
+            .wrap .main_container .i-header .header_l {
+                display: flex;
+                justify-content: center
+            }
+        
+            .wrap .main_container .i-header img {
+                width: 2.16rem;
+                height: 1.3rem
+            }
+        
+            .wrap .main_container .container {
+                margin-top: 7.1rem;
+                margin-bottom: 1rem
+            }
+        
+            .wrap .main_container .container .time {
+                margin: 0 auto .75rem;
+                width: 5.72rem;
+                height: .49rem;
+                /* background: url(https://p1.ssl.qhimg.com/d/inn/4cb6d0977f64/time.png) no-repeat center / 100% */
+            }
+        
+            .wrap .main_container .container .lottery_btn {
+                width: 8.15rem;
+                height: 2.39rem;
+                margin: 0 auto;
+                background: url(https://p3.ssl.qhimg.com/d/inn/e2c6fa12d471/lottery.png) no-repeat center / 100%
+            }
+        
+            .wrap .main_container .container .userinfo {
+                font-size: .46rem;
+                text-align: center;
+                margin: .1rem 0 .32rem 0;
+                color: #fc8b09
+            }
+        
+            .wrap .main_container .container .options {
+                width: 100%;
+                height: .65rem;
+                padding: 0 .68rem;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center
+            }
+        
+            .wrap .main_container .container .options div {
+                width: 4.27rem;
+                height: .65rem
+            }
+        
+            .wrap .main_container .container .options .reward-btn {
+                background: url(https://p5.ssl.qhimg.com/d/inn/42dc16e98949/images/gift_btn.png) no-repeat 0 0 / cover
+            }
+        
+            .wrap .main_container .container .options .address-btn {
+                background: url(https://p5.ssl.qhimg.com/d/inn/42dc16e98949/images/address_btn.png) no-repeat 0 0 / cover
+            }
+        
+            .wrap .main_container .container .part-tit {
+                text-align: center;
+                margin: .6rem 0 .28rem 0
+            }
+        
+            .wrap .main_container .container .part-tit img {
+                width: 5.59rem;
+                height: 1.06rem
+            }
+        
+            .wrap .main_container .container .rewards-container {
+                position: relative;
+                margin: 0 auto;
+                padding: .72rem .6rem 0;
+                width: 10.53rem;
+                min-height: 14.43rem;
+                background: url(https://p1.ssl.qhimg.com/d/inn/4cb6d0977f64/rewards_bg.png) no-repeat center / 100%
+            }
+        
+            .wrap .main_container .container .rewards-container .rewards {
+                width: 100%;
+                font-size: 0;
+                text-align: center
+            }
+        
+            .wrap .main_container .container .rewards-container .rewards .reward-item {
+                display: inline-block;
+                position: relative;
+                vertical-align: middle;
+                width: 2.95rem;
+                text-align: center;
+                margin-right: .22rem;
+                margin-bottom: .26rem;
+                justify-content: center;
+                align-items: center
+            }
+        
+            .wrap .main_container .container .rewards-container .rewards .reward-item:nth-child(3n) {
+                margin-right: 0
+            }
+        
+            .wrap .main_container .container .rewards-container .rewards .reward-item .reward-img {
+                width: 100%;
+                height: 2.76rem;
+                padding: .13rem;
+                line-height: 1.2rem;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: url(https://p5.ssl.qhimg.com/d/inn/42dc16e98949/images/reward_bg.png) no-repeat center / 100%
+            }
+        
+            .wrap .main_container .container .rewards-container .rewards .reward-item .reward-img img {
+                max-width: 80%
+            }
+        
+            .wrap .main_container .container .rewards-container .rewards .reward-item .reward-img p {
+                position: absolute;
+                bottom: .13rem;
+                left: .16rem;
+                font-size: .3rem;
+                color: #cfcdbe;
+                text-align: center;
+                width: calc(100% - .28rem);
+                background-color: #4a371e;
+                line-height: .5rem
+            }
+        
+            .wrap .main_container .container .rewards-container .rewards .reward-item .reward-desc {
+                width: 2.95rem;
+                height: 1.2rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+                font-size: .4rem;
+                background-color: #884015;
+                margin-top: .12rem;
+                line-height: 1;
+                border: .01rem solid #b4821f
+            }
+        
+            .wrap .main_container .container .rewards-container .lottery-box {
+                width: 3.43rem;
+                height: 3.43rem;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                -webkit-transform: translate(-51%, -51%);
+                -moz-transform: translate(-51%, -51%);
+                -ms-transform: translate(-51%, -51%);
+                -o-transform: translate(-51%, -51%);
+                transform: translate(-51%, -51%)
+            }
+        
+            .wrap .main_container .container .rewards-container .lottery-box .lottery-start {
+                width: 100%;
+                height: 100%;
+                background: url(https://p5.ssl.qhimg.com/d/inn/8ea324d2998b/images/lottery.png) no-repeat center .1rem / 3.24rem 2.7rem
+            }
+        
+            .wrap .main_container .container .rewards-container .lottery-box .lottery-chance {
+                position: absolute;
+                left: 0;
+                bottom: .16rem;
+                width: 100%;
+                text-align: center;
+                font-size: .3rem
+            }
+        
+            .wrap .main_container .container .rewards-container .lottery-box .lottery-chance span {
+                color: #ffd800;
+                font-size: .36rem
+            }
+        
+            .wrap .main_container .container .rule-box .rule-con {
+                width: 10.34rem;
+                margin: .35rem auto 0;
+                font-size: .3rem
+            }
+        
+            .wrap .main_container .container .rule-box .rule-con div {
+                margin-bottom: .1rem;
+                position: relative;
+                line-height: .54rem;
+                background: #173719;
+                border: .01rem #325c2d solid;
+                color: #fff4e6;
+                display: flex;
+                align-items: center
+            }
+        
+            .wrap .main_container .container .rule-box .rule-con div .num {
+                top: .13rem;
+                left: .16rem;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                font-size: .3rem;
+                width: .43rem;
+                height: .38rem;
+                margin-left: .1rem;
+                background: url(https://p1.ssl.qhimg.com/d/inn/4cb6d0977f64/num_icon.png) no-repeat 0 0 / cover
+            }
+        
+            .wrap .main_container .container .rule-box .rule-con div p:nth-child(2) {
+                flex: 1;
+                margin-left: .1rem
+            }
+        
+            .wrap .main_container .container .rule-box .rule-con div:last-child {
+                margin-bottom: 0
+            }
+        
+            .modal {
+                padding-top: .68rem;
+                padding-bottom: .3rem;
+                width: 9.94rem;
+                background: url(https://p5.ssl.qhimg.com/d/inn/42dc16e98949/images/modal_bg.png) 0 0 / 100% 100%
+            }
+        
+            .modal-close {
+                top: .14rem;
+                right: .28rem;
+                width: .65rem;
+                height: .65rem;
+                background: url(https://p5.ssl.qhimg.com/d/inn/42dc16e98949/images/close.png) no-repeat 0 0 / 100% 100%
+            }
+        
+            .modal-title {
+                font-weight: bold;
+                font-size: .58rem;
+                text-align: center
+            }
+        
+            .modal-content {
+                padding: .3rem .5rem;
+                font-size: .46rem
+            }
+        
+            .modal-footer .btn {
+                display: block;
+                width: 4.25rem;
+                height: 1.06rem;
+                line-height: 1.06rem;
+                font-size: .56rem;
+                font-weight: bold;
+                color: #991802;
+                text-align: center;
+                margin: 0 auto .18rem;
+                background: url(https://p5.ssl.qhimg.com/d/inn/8ea324d2998b/images/btn_bg.png) 0 0 / cover
+            }
+        
+            .modal-bind .wx-code img {
+                width: 3.83rem;
+                height: 3.83rem
+            }
+        
+            .modal-bind .wx-code .wx-tips {
+                font-size: .4rem;
+                padding: 0 .5rem;
+                color: #f6d177
+            }
+        
+            .modal-address .tips {
+                font-size: .3rem;
+                color: #ff9023
+            }
+        
+            .modal-address .address-form {
+                margin: .3rem auto 0;
+                width: 7.7rem;
+                font-size: .24rem;
+                color: #f6d177
+            }
+        
+            .modal-address .address-form .address-form-item {
+                margin-bottom: .2rem
+            }
+        
+            .modal-address .address-form .address-form-item label {
+                float: left;
+                vertical-align: middle;
+                margin-right: .1rem;
+                line-height: .72rem;
+                text-align: right;
+                font-size: .36rem
+            }
+        
+            .modal-address .address-form .address-form-item input,
+            .modal-address .address-form .address-form-item textarea {
+                width: 5.54rem;
+                background-color: #eee;
+                font-size: .36rem;
+                color: #272727
+            }
+        
+            .modal-address .address-form .address-form-item input {
+                vertical-align: middle;
+                padding-left: .5em;
+                height: .72rem
+            }
+        
+            .modal-address .address-form .address-form-item textarea {
+                padding: .5em;
+                height: 1.5rem;
+                resize: none
+            }
+        
+            .modal-address .address-form .add-error {
+                color: #f00;
+                font-size: .3rem
+            }
+        
+            .modal-prize .modal-content {
+                color: #f6d177;
+                font-size: .46rem
+            }
+        
+            .modal-prize .modal-content .tips {
+                font-size: .3rem;
+                color: #ff9023;
+                margin-bottom: 0
+            }
+        
+            .prize-img p {
+                font-size: .46rem;
+                margin-bottom: .4rem;
+                font-weight: bold;
+                color: #f6d177
+            }
+        
+            .prize-img img {
+                max-width: 2.4rem
+            }
+        
+            .prize-img .prize-code {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                padding-right: .6rem;
+                color: #fff
+            }
+        
+            .prize-img .prize-code .icon {
+                background: url(https://p5.ssl.qhimg.com/d/inn/26bf3a9fa8f5/images/suc.png) no-repeat 0 0 / cover;
+                width: .41rem;
+                height: .27rem;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                -webkit-transform: translate(0, -50%);
+                -moz-transform: translate(0, -50%);
+                -ms-transform: translate(0, -50%);
+                -o-transform: translate(0, -50%);
+                transform: translate(0, -50%);
+                display: none
+            }
+        
+            .prize-img .prize-code .icon.ok_ico {
+                display: block
+            }
+        
+            .prize-img .prize-code .cell_title {
+                display: flex;
+                align-items: center
+            }
+        
+            .prize-img .copy_btn {
+                width: 1.59rem;
+                height: .9rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: url(https://p5.ssl.qhimg.com/d/inn/42dc16e98949/images/btn_copy.png) no-repeat center / 100%
+            }
+        
+            .prize-img .copy_content {
+                color: #fff;
+                width: 4.8rem;
+                height: .9rem;
+                padding: 0 .1rem;
+                border: .01rem solid #534f39;
+                background-color: #161714;
+                word-break: break-all;
+                text-align: left;
+                resize: none
+            }
+        
+            .modal-myprize {
+                overflow-y: scroll;
+                text-align: left
+            }
+        
+            .modal-myprize .nodata {
+                font-size: .46rem;
+                text-align: center
+            }
+        
+            .modal-myprize .modal-content {
+                max-height: 7rem;
+                overflow-y: scroll
+            }
+        
+            .modal-myprize dt {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: .2rem 0;
+                font-weight: bold;
+                font-size: .42rem;
+                position: sticky;
+                top: -0.3rem;
+                z-index: 6;
+                background: #634830;
+                margin-bottom: .02rem
+            }
+        
+            .modal-myprize dt .prize-num {
+                width: 18%;
+                text-align: center
+            }
+        
+            .modal-myprize dt .prize-name {
+                width: 57%
+            }
+        
+            .modal-myprize dt .prize-date {
+                width: 25%
+            }
+        
+            .modal-myprize dd {
+                background: #634830;
+                padding: .2rem 0;
+                margin-bottom: .02rem;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                position: relative;
+                font-size: .36rem
+            }
+        
+            .modal-myprize dd .prize-name {
+                width: 57%
+            }
+        
+            .modal-myprize dd .prize-num {
+                width: 18%;
+                font-weight: bold;
+                text-align: center
+            }
+        
+            .modal-myprize dd .prize-date {
+                width: 25%;
+                font-size: .28rem
+            }
+        
+            .modal-myprize dd .reward-content {
+                width: 55%;
+                margin-left: 18%;
+                margin-top: .1rem
+            }
+        
+            .modal-myprize dd .copy_content {
+                color: #fff;
+                padding: 0 .1rem;
+                background: rgba(36, 35, 24, 0.58);
+                border: none;
+                width: 100%;
+                border-radius: .05rem
+            }
+        
+            .modal-myprize dd .btncopy {
+                width: 1.55rem;
+                height: .51rem;
+                text-align: center;
+                line-height: .51rem;
+                color: #242318;
+                font-size: .36rem;
+                margin-left: .2rem;
+                margin-top: .1rem;
+                background: url(https://p5.ssl.qhimg.com/d/inn/2abdbf889456/copy_bg.png) no-repeat 0 0 / cover
+            }
+        
+            .modal-myprize dd .btncopy.ok_ico {
+                display: none
+            }
+        
+            .modal-myprize dd .icon {
+                background: url(https://p5.ssl.qhimg.com/d/inn/2abdbf889456/ok.png) no-repeat 0 0 / cover;
+                width: .65rem;
+                height: .45rem;
+                margin-left: .2rem;
+                margin-top: .1rem;
+                display: none
+            }
+        
+            .modal-myprize dd .icon.ok_ico {
+                display: block
+            }
+        
+            .returnTop {
+                width: 1.54rem;
+                height: 1.54rem;
+                background: url(https://p5.ssl.qhimg.com/d/inn/42dc16e98949/images/top.png) no-repeat center;
+                background-size: 100% 100%;
+                position: fixed;
+                right: .25rem;
+                bottom: .32rem;
+                display: none;
+                z-index: 5
+            }

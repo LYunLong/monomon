@@ -13,7 +13,21 @@ import ez_3d_show from '../../../views/ez_3d_show.vue'
       <HelloWorld msg="You did it!" />
     </div>
   </header>
-  <ez_3d_show class="ezs" ></ez_3d_show>
+  <ez_3d_show class="ezs" 
+    :mtlURL="'https://cgdl.qihucdn.com/wargame/AX2.mtl'"
+    :objURL="'https://cgdl.qihucdn.com/wargame/AX.obj'" 
+    :sceneWidth = "500"
+    :sceneHeight = "800"
+  ></ez_3d_show>
+  <ez_3d_show class="ezs" 
+    :mtlURL="'https://cgdl.qihucdn.com/wargame/AX2.mtl'"
+    :objURL="'https://cgdl.qihucdn.com/wargame/AX.obj'" 
+    :sceneWidth = "500"
+    :sceneHeight = "800"
+    :options="{
+      id: 'tnd'
+    }"
+  ></ez_3d_show>
   <main>
     <TheWelcome />
   </main>
@@ -40,6 +54,7 @@ main {
 .ezs {
   margin-top: -10rem;
   margin-bottom: -30rem;
+  margin-left: -2rem;
   position: relative;
   z-index: 0;
 }
