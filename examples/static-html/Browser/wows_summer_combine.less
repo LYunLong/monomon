@@ -81,8 +81,125 @@ body {
             right: 0;
             width: 7.8rem;
             height: 4.5rem;
+            overflow: visible;
 
             .block-inner-contain {
+                transition: opacity .5s;
+                &.hide {
+                    &.bilan {
+                        transition: opacity .3s;
+                        transition-delay: 0;
+                        opacity: 0;
+                        pointer-events: none;
+                    }
+                    &.sanguo {
+                        transition: opacity .5s;
+                        transition-delay: .2s;
+                        opacity: 0;
+                        pointer-events: none;
+                    }
+                    &.star {
+                        transition: opacity .5s;
+                        transition-delay: .4s;
+                        opacity: 0;
+                        pointer-events: none;
+                    }
+                    &.jihe {
+                        transition: opacity .5s;
+                        transition-delay: .6s;
+                        opacity: 0;
+                        pointer-events: none;
+                    }
+                    &.kh {
+                        transition: opacity .5s;
+                        transition-delay: .8s;
+                        opacity: 0;
+                        pointer-events: none;
+                    }
+                    &.qs {
+                        transition: opacity .5s;
+                        transition-delay: 1s;
+                        opacity: 0;
+                        pointer-events: none;
+                    }
+                    &.wowo {
+                        transition: opacity .5s;
+                        transition-delay: 1.2s;
+                        opacity: 0;
+                        pointer-events: none;
+                    }
+                }
+
+                &.cur {
+                    .icons {
+                        // pointer-events: none;
+                        // opacity: 0;
+                        display: none;
+                    }
+                    .hide-show-btn {
+                        display: block;
+                    }
+                    .ground {
+                        opacity: 0;
+                    }
+                    .ground-cur {
+                        opacity: 1!important;
+                    }
+                }
+
+                .icons {
+                    cursor: pointer;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                }
+                .hide-show-btn {
+                    display: none;
+                    &:hover {
+                        transform: scale(1.05);
+                        .btn-outline {
+                            animation: btnBoot .8s infinite ease-in-out;
+                        }
+                    }
+                    @keyframes btnBoot {
+                        0% {
+                            transform: translate(-50%, -50%) scale(1);
+                        }
+                        80% {
+                            transform: translate(-50%, -50%) scale(1.1);
+                        }
+                        100% {
+                            opacity: 0;
+                            transform: translate(-50%, -50%) scale(1.1);
+                        }
+                    }
+                }
+                &:hover {
+                    .ground {
+                        opacity: 0;
+                    }
+                    .ground-cur {
+                        opacity: 1!important;
+                    }
+                    .title-show {
+                        .icons {
+                            .ic {
+                                transition: transform 0.3s!important;
+                                overflow: visible;
+                                transform: translateY(-.05rem) scale(1.1);
+                            }
+                        }
+                        .name {
+                            transform: translateY(.03rem) scale(1.2);
+                        }
+                    }
+                }
+
+                .title-show{
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                }
 
                 &.bilan {
                     position: absolute;
@@ -95,7 +212,7 @@ body {
                         left: 0.05rem;
                         display: block;
                         height: 2.56rem;
-                        transition: opacity .2s;
+                        transition: opacity .5s;
                     }
                     .ground-cur {
                         position: absolute;
@@ -104,7 +221,7 @@ body {
                         display: block;
                         height: 2.65rem;
                         opacity: 0;
-                        transition: opacity .2s;
+                        transition: opacity .5s;
                     }
                     
                     .title-show {
@@ -116,7 +233,7 @@ body {
                                 left: -.5rem;
                                 display: block;
                                 height: 2.3rem;
-                                transition: transform .3s;
+                                transition: transform 0.1s;
                             }
                         }
                         .hide-show-btn {
@@ -150,25 +267,6 @@ body {
                             transition: transform .3s;
                         }
                     }
-                    &:hover {
-                        .ground {
-                            // filter: drop-shadow(.08rem .04rem 0.1rem #ff0000);
-                            opacity: 0;
-                        }
-                        .ground-cur {
-                            opacity: 1;
-                        }
-                        .title-show {
-                            .icons {
-                                .ic {
-                                    transform: translateY(-.03rem) scale(1.1);
-                                }
-                            }
-                            .name {
-                                transform: translateY(.03rem) scale(1.1,1.1);
-                            }
-                        }
-                    }
                 }
 
                 &.sanguo {
@@ -183,7 +281,7 @@ body {
                         left: -0.35rem;
                         display: block;
                         height: 2.33rem;
-                        transition: opacity 0.5s;
+                        transition: opacity .5s;
                     }
                     .ground-cur {
                         position: absolute;
@@ -192,7 +290,7 @@ body {
                         display: block;
                         height: 2.45rem;
                         opacity: 0;
-                        transition: opacity 0.5s;
+                        transition: opacity .5s;
                     }
                     
                     .title-show {
@@ -204,7 +302,7 @@ body {
                                 left: 1.1rem;
                                 display: block;
                                 height: 1.04rem;
-                                transition: transform 0.3s;
+                                transition: transform 0.1s;
                             }
                         }
                         .hide-show-btn {
@@ -238,25 +336,6 @@ body {
                             transition: transform .3s;
                         }
                     }
-                    &:hover {
-                        .ground {
-                            // filter: drop-shadow(.08rem .04rem 0.1rem #ff0000);
-                            opacity: 0;
-                        }
-                        .ground-cur {
-                            opacity: 1;
-                        }
-                        .title-show {
-                            .icons {
-                                .ic {
-                                    transform: translateY(-.1rem) scale(1.1);
-                                }
-                            }
-                            .name {
-                                transform: translateY(.03rem) scale(1.2,1.2);
-                            }
-                        }
-                    }
                 }
 
                 &.star {
@@ -270,17 +349,17 @@ body {
                         top: 0.24rem;
                         right: 0;
                         display: block;
-                        height: 2.28rem;
-                        transition: opacity 0.5s;
+                        height: 2.18rem;
+                        transition: opacity .5s;
                     }
                     .ground-cur {
                         position: absolute;
                         top: .24rem;
                         right: 0;
                         display: block;
-                        height: 2.4rem;
+                        height: 2.3rem;
                         opacity: 0;
-                        transition: opacity 0.5s;
+                        transition: opacity .5s;
                     }
                     
                     .title-show {
@@ -292,7 +371,7 @@ body {
                                 left: .5rem;
                                 display: block;
                                 height: 1.04rem;
-                                transition: transform 0.3s;
+                                transition: transform 0.1s;
                             }
                         }
                         .hide-show-btn {
@@ -326,25 +405,6 @@ body {
                             transition: transform 0.3s;
                         }
                     }
-                    &:hover {
-                        .ground {
-                            // filter: drop-shadow(.08rem .04rem 0.1rem #ff0000);
-                            opacity: 0;
-                        }
-                        .ground-cur {
-                            opacity: 1;
-                        }
-                        .title-show {
-                            .icons {
-                                .ic {
-                                    transform: translateY(-.1rem) scale(1.1);
-                                }
-                            }
-                            .name {
-                                transform: translateY(.03rem) scale(1.2,1.2);
-                            }
-                        }
-                    }
                 }
 
                 &.jihe {
@@ -359,7 +419,7 @@ body {
                         left: 0rem;
                         display: block;
                         height: 2.19rem;
-                        transition: opacity 0.2s;
+                        transition: opacity .5s;
                     }
                     .ground-cur {
                         position: absolute;
@@ -368,7 +428,7 @@ body {
                         display: block;
                         height: 2.27rem;
                         opacity: 0;
-                        transition: opacity 0.2s;
+                        transition: opacity .5s;
                     }
                     
                     .title-show {
@@ -380,7 +440,7 @@ body {
                                 left: -.1rem;
                                 display: block;
                                 height: 1.3rem;
-                                transition: transform .3s;
+                                transition: transform 0.1s;
                             }
                         }
                         .hide-show-btn {
@@ -414,30 +474,262 @@ body {
                             transition: transform .3s;
                         }
                     }
-                    &:hover {
-                        .ground {
-                            // filter: drop-shadow(.08rem .04rem 0.1rem #ff0000);
-                            opacity: 0;
-                        }
-                        .ground-cur {
-                            opacity: 1;
-                        }
-                        .title-show {
-                            .icons {
-                                .ic {
-                                    transform: translateY(-.03rem) scale(1.1);
-                                }
+                }
+
+                &.kh {
+                    position: absolute;
+                    z-index: 5;
+                    bottom: 0;
+                    left: 2rem;
+                    width: 2rem;
+                    height: 2.3rem;
+                    .ground {
+                        position: absolute;
+                        bottom: 0.1rem;
+                        left: -.06rem;
+                        display: block;
+                        height: 2.19rem;
+                        transition: opacity .5s;
+                    }
+                    .ground-cur {
+                        position: absolute;
+                        bottom: 0.105rem;
+                        left: -.09rem;
+                        display: block;
+                        height: 2.28rem;
+                        opacity: 0;
+                        transition: opacity .5s;
+                    }
+                    
+                    .title-show {
+                        position: absolute;
+                        .icons {
+                            .ic {
+                                position: absolute;
+                                top: 0.5rem;
+                                left: 0.3rem;
+                                display: block;
+                                height: .9rem;
+                                transition: transform 0.1s;
                             }
-                            .name {
-                                transform: translateY(.03rem) scale(1.1,1.1);
+                        }
+                        .hide-show-btn {
+                            position: absolute;
+                            width: 0.6rem;
+                            height: 0.6rem;
+                            top: .7rem;
+                            left: .7rem;
+                            cursor: pointer;
+                            .btn-self {
+                                position: absolute;
+                                width: .5rem;
+                                top:50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
                             }
+                            .btn-outline {
+                                width: .6rem;
+                                top:50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                position: absolute;
+                            }
+                        }
+                        .name {
+                            position: absolute;
+                            display: block;
+                            height: 0.18rem;
+                            left: .68rem;
+                            top: 1.5rem;
+                            transition: transform .3s;
                         }
                     }
                 }
 
+                &.qs {
+                    position: absolute;
+                    z-index: 5;
+                    bottom: 0;
+                    left: 4rem;
+                    width: 2rem;
+                    height: 2.5rem;
+                    .ground {
+                        position: absolute;
+                        bottom: 0.06rem;
+                        left: -.2rem;
+                        display: block;
+                        height: 2.5rem;
+                        transition: opacity .5s;
+                    }
+                    .ground-cur {
+                        position: absolute;
+                        bottom: 0.06rem;
+                        left: -0.23rem;
+                        display: block;
+                        height: 2.58rem;
+                        opacity: 0;
+                        transition: opacity .5s;
+                    }
+                    
+                    .title-show {
+                        position: absolute;
+                        .icons {
+                            .ic {
+                                position: absolute;
+                                top: 0.7rem;
+                                left: 0.45rem;
+                                display: block;
+                                height: 0.9rem;
+                                transition: transform 0.1s;
+                            }
+                        }
+                        .hide-show-btn {
+                            position: absolute;
+                            width: 0.6rem;
+                            height: 0.6rem;
+                            top: .7rem;
+                            left: .6rem;
+                            cursor: pointer;
+                            .btn-self {
+                                position: absolute;
+                                width: .5rem;
+                                top:50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                            }
+                            .btn-outline {
+                                width: .6rem;
+                                top:50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                position: absolute;
+                            }
+                        }
+                        .name {
+                            position: absolute;
+                            display: block;
+                            height: 0.18rem;
+                            left: .5rem;
+                            top: 1.5rem;
+                            transition: transform .3s;
+                        }
+                    }
+                }
+
+                &.wowo {
+                    position: absolute;
+                    z-index: 5;
+                    bottom: 0;
+                    right: 0;
+                    width: 2rem;
+                    height: 2.78rem;
+                    .ground {
+                        position: absolute;
+                        bottom: 0rem;
+                        left: -.3rem;
+                        display: block;
+                        height: 2.78rem;
+                        transition: opacity .5s;
+                    }
+                    .ground-cur {
+                        position: absolute;
+                        bottom: 0;
+                        left: -0.37rem;
+                        display: block;
+                        height: 2.85rem;
+                        opacity: 0;
+                        transition: opacity .5s;
+                    }
+                    
+                    .title-show {
+                        position: absolute;
+                        .icons {
+                            .ic {
+                                position: absolute;
+                                top: 0.7rem;
+                                left: 0.45rem;
+                                display: block;
+                                height: 1.2rem;
+                                transition: transform 0.1s;
+                            }
+                        }
+                        .hide-show-btn {
+                            position: absolute;
+                            width: 0.6rem;
+                            height: 0.6rem;
+                            top: 1rem;
+                            left: .6rem;
+                            cursor: pointer;
+                            .btn-self {
+                                position: absolute;
+                                width: .5rem;
+                                top:50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                            }
+                            .btn-outline {
+                                width: .6rem;
+                                top:50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                position: absolute;
+                            }
+                        }
+                        .name {
+                            position: absolute;
+                            display: block;
+                            height: 0.18rem;
+                            left: 0.3rem;
+                            top: 1.8rem;
+                            transition: transform 0.3s;
+                        }
+                    }
+                    
+                }
             }
 
             .block-open-contain {
+
+                &.cur {
+                    .open-img1, .open-img2, .open-img3, .open-img4, .open-img5, .open-img6, .open-img7, .open-img8 { 
+                        transition: opacity 1s;
+                        transition-delay: .5s;
+                        opacity: 1;
+                    }
+                    .view-more-btn, .view-more-btn2, .view-more-btn3, .view-more-btn4, .view-more-btn5 {
+                        transition: opacity 1s;
+                        transition-delay: 1s;
+                        opacity: 1;
+                    }
+                }
+                .open-img1, .open-img2, .open-img3, .open-img4, .open-img5, .open-img6, .open-img7, .open-img8 { 
+                    opacity: 0;
+                 }
+                
+
+                .view-more-btn, .view-more-btn2, .view-more-btn3, .view-more-btn4, .view-more-btn5 {
+                    opacity: 0;
+                    &:hover {
+                        transform: scale(1.1, 1.1);
+                    }
+                    .btn-outline {
+                        animation: VMBtnWave 1s infinite ease-in-out;
+                    }
+                }
+                @keyframes VMBtnWave {
+                    0% {
+                        transform: translate(-50%, -50%) scale(0.9, 0.9);
+                    }
+                    90% {
+                        transform: translate(-50%, -50%) scale(1.2, 1.2);
+                    }
+                    100% {
+                        transform: translate(-50%, -50%) scale(1.2, 1.2);
+                        opacity: 0;
+                    }
+                }
+
+
                 &.bilan {
                     position: absolute;
                     top: 0;
@@ -565,9 +857,13 @@ body {
                         left: 3.9rem;
                         bottom: 1.8rem;
                         .btn-icon {
+                            cursor: pointer;
                             position: absolute;
                             height: .52rem;
                             left: .1rem;
+                            &:hover {
+                                transform: scale(1.1);
+                            }
                         }
                         .btn-name {
                             position: absolute;
@@ -634,16 +930,16 @@ body {
                     height: 100%;
                     .open-img1 {
                         position: absolute;
-                        height: 1.1rem;
-                        top: .6rem;
-                        right: .46rem;
+                        height: 0.8rem;
+                        top: 0.52rem;
+                        left: 0.8rem;
                     }
                     .view-more-btn {
                         position: absolute;
                         width: 1.09rem;
                         height: 0.4rem;
-                        top: 1.8rem;
-                        right: 2.1rem;
+                        top: 1.4rem;
+                        left: 1.3rem;
                         cursor: pointer;
                         .btn-self {
                             position: absolute;
@@ -662,22 +958,22 @@ body {
                     }
                     .open-img2 {
                         position: absolute;
-                        height: 2.18rem;
-                        right: .9rem;
-                        bottom: .1rem;
+                        height: 0.88rem;
+                        left: 0.84rem;
+                        top: 1.8rem;
                     }
                     .open-img3 {
                         position: absolute;
-                        height: .1rem;
-                        bottom: .5rem;
-                        left: 1rem;
+                        height: 0.8rem;
+                        top: 0.52rem;
+                        left: 2.95rem;
                     }
                     .view-more-btn2 {
                         position: absolute;
                         width: 1.09rem;
                         height: 0.4rem;
-                        top: 1.8rem;
-                        right: 2.1rem;
+                        top: 1.4rem;
+                        left: 3.5rem;
                         cursor: pointer;
                         .btn-self {
                             position: absolute;
@@ -696,11 +992,273 @@ body {
                     }
                     .open-img4 {
                         position: absolute;
-                        height: 2.18rem;
-                        right: .9rem;
+                        height: 0.88rem;
+                        left: 3.1rem;
+                        top: 1.8rem;
+                    }
+                    .open-img5 {
+                        position: absolute;
+                        height: 0.8rem;
+                        top: 0.52rem;
+                        left: 5.2rem;
+                    }
+                    .view-more-btn3 {
+                        position: absolute;
+                        width: 1.09rem;
+                        height: 0.4rem;
+                        top: 1.4rem;
+                        left: 5.8rem;
+                        cursor: pointer;
+                        .btn-self {
+                            position: absolute;
+                            width: 1.09rem;
+                            top:50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                        .btn-outline {
+                            width: 1.16rem;
+                            top:50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            position: absolute;
+                        }
+                    }
+                    .open-img6 {
+                        position: absolute;
+                        height: 0.88rem;
+                        left: 5.35rem;
+                        top: 1.8rem;
+                    }
+
+                    .open-img7 {
+                        position: absolute;
+                        height: 0.62rem;
+                        bottom: 1.1rem;
+                        left: 2.8rem;
+                    }
+                    .view-more-btn4 {
+                        position: absolute;
+                        width: 1.09rem;
+                        height: 0.4rem;
+                        bottom: .6rem;
+                        left: 3.5rem;
+                        cursor: pointer;
+                        .btn-self {
+                            position: absolute;
+                            width: 1.09rem;
+                            top:50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                        .btn-outline {
+                            width: 1.16rem;
+                            top:50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            position: absolute;
+                        }
+                    }
+                    .open-img8 {
+                        position: absolute;
+                        height: 0.62rem;
+                        bottom: 1.1rem;
+                        left: 5.1rem;
+                    }
+                    .view-more-btn5 {
+                        position: absolute;
+                        width: 1.09rem;
+                        height: 0.4rem;
+                        bottom: 0.6rem;
+                        left: 5.8rem;
+                        cursor: pointer;
+                        .btn-self {
+                            position: absolute;
+                            width: 1.09rem;
+                            top:50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                        .btn-outline {
+                            width: 1.16rem;
+                            top:50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            position: absolute;
+                        }
+                    }
+                }
+
+                &.kh {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    .open-img1 {
+                        position: absolute;
+                        height: 0.8rem;
+                        top: 0.7rem;
+                        left: 2.2rem;
+                    }
+                    .view-more-btn {
+                        position: absolute;
+                        width: 1.09rem;
+                        height: 0.4rem;
+                        top: 1.6rem;
+                        left: 3.2rem;
+                        cursor: pointer;
+                        .btn-self {
+                            position: absolute;
+                            width: 1.09rem;
+                            top:50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                        .btn-outline {
+                            width: 1.16rem;
+                            top:50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            position: absolute;
+                        }
+                    }
+                    .open-img2 {
+                        position: absolute;
+                        height: 1.85rem;
+                        left: 0.28rem;
+                        top: 2.2rem;
+                    }
+                    .open-img3 {
+                        position: absolute;
+                        height: 2.3rem;
+                        bottom: 0.52rem;
+                        right: .4rem;
+                    }
+                }
+
+                &.qs {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    .open-img1 {
+                        position: absolute;
+                        height: 0.8rem;
+                        top: 0.7rem;
+                        left: .7rem;
+                    }
+                    .open-img2 {
+                        position: absolute;
+                        height: 2.2rem;
+                        left: 0.58rem;
+                        top: 1.8rem;
+                    }
+                    .open-img3 {
+                        position: absolute;
+                        height: 0.8rem;
+                        bottom: 1.2rem;
+                        right: 1.4rem;
+                    }
+                    .open-img4 {
+                        position: absolute;
+                        height: 1.3rem;
+                        bottom: 2.2rem;
+                        right: .8rem;
+                    }
+                    
+                }
+
+                &.wowo {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    .open-img1 {
+                        position: absolute;
+                        height: 1.2rem;
+                        top: 0.7rem;
+                        left: 2.2rem;
+                    }
+                    .view-more-btn {
+                        position: absolute;
+                        width: 1.09rem;
+                        height: 0.4rem;
+                        top: 2rem;
+                        left: 3.2rem;
+                        cursor: pointer;
+                        .btn-self {
+                            position: absolute;
+                            width: 1.09rem;
+                            top:50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                        .btn-outline {
+                            width: 1.16rem;
+                            top:50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            position: absolute;
+                        }
+                    }
+                    .open-img2 {
+                        position: absolute;
+                        height: 3.2rem;
+                        left: 0.1rem;
                         bottom: .1rem;
                     }
                 }
+            }
+        }
+    }
+
+    .video-dialog {
+        display: none;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        background-color: rgba(0,0,0,.7);
+        z-index: 10;
+        .inner {
+            position: absolute;
+            height: 3rem;
+            width: 5.26rem;
+            top: 1rem;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            background-image: url(https://p2.ssl.qhimg.com/t11b673bcd69fe5945b16ac4f04.png);
+            background-size: 100% 100%;
+            .video-play {
+                position: absolute;
+                z-index: 1;
+                height: .46rem;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                top: 1.2rem;
+                cursor: pointer;
+            }
+            video {
+                position: absolute;
+                display: block;
+                left: .5%;
+                top: .5%;
+                height: 99%;
+                width: 99%;
+            }
+            .close-video-dialog-btn {
+                position: absolute;
+                height: .2rem;
+                width: .2rem;
+                right: 0;
+                top: -.26rem;
+                cursor: pointer;
             }
         }
     }
