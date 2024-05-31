@@ -62,7 +62,7 @@
 
                 <div class="block-open-contain bilan" hidden>
                     <img class="open-img1" src="https://p2.ssl.qhimg.com/t11b673bcd649b2e790d06b638b.png">
-                    <div class="view-more-btn">
+                    <div class="view-more-btn" onclick="jumpOut('bilan')">
                         <img class="btn-self" src="https://p4.ssl.qhimg.com/t11b673bcd6db46f8f2592fdf69.png">
                         <img class="btn-outline" src="https://p5.ssl.qhimg.com/t11b673bcd647de1562648840c4.png">
                     </div>
@@ -147,14 +147,14 @@
                 <div class="block-open-contain jihe" hidden >
 
                     <img class="open-img1" src="https://p1.ssl.qhimg.com/t11b673bcd6c91cb6a10d30aad2.png">
-                    <div class="view-more-btn">
+                    <div class="view-more-btn" onclick="jumpOut('kmse')">
                         <img class="btn-self" src="https://p4.ssl.qhimg.com/t11b673bcd6db46f8f2592fdf69.png">
                         <img class="btn-outline" src="https://p5.ssl.qhimg.com/t11b673bcd647de1562648840c4.png">
                     </div>
                     <img class="open-img2" src="https://p5.ssl.qhimg.com/t11b673bcd697354c843f2906bc.png">
 
                     <img class="open-img3" src="https://p1.ssl.qhimg.com/t11b673bcd6098b8c52b9dac87e.png">
-                    <div class="view-more-btn2">
+                    <div class="view-more-btn2" onclick="jumpOut('dday')">
                         <img class="btn-self" src="https://p4.ssl.qhimg.com/t11b673bcd6db46f8f2592fdf69.png">
                         <img class="btn-outline" src="https://p5.ssl.qhimg.com/t11b673bcd647de1562648840c4.png">
                     </div>
@@ -168,7 +168,7 @@
                     <img class="open-img6" src="https://p1.ssl.qhimg.com/t11b673bcd6f9fd14282a5bf421.png">
 
                     <img class="open-img7" src="https://p4.ssl.qhimg.com/t11b673bcd6123a12e011147645.png">
-                    <div class="view-more-btn4">
+                    <div class="view-more-btn4" onclick="jumpOut('aiyicl')">
                         <img class="btn-self" src="https://p4.ssl.qhimg.com/t11b673bcd6db46f8f2592fdf69.png">
                         <img class="btn-outline" src="https://p5.ssl.qhimg.com/t11b673bcd647de1562648840c4.png">
                     </div>
@@ -221,7 +221,7 @@
                 </div>
 
                 <div class="block-open-contain qs" hidden>
-                    <img class="open-img1" src="https://p2.ssl.qhimg.com/t11b673bcd6d86013874869fef2.png">
+                    <img class="open-img1" src="https://p1.ssl.qhimg.com/t11b673bcd621c599dda1867ff4.png">
                     <img class="open-img2" src="https://p0.ssl.qhimg.com/t11b673bcd67de3aa14b42845de.png">
                     <img class="open-img3" src="https://p5.ssl.qhimg.com/t11b673bcd64fbae983da4d3fab.png">
                     <img class="open-img4" src="https://p0.ssl.qhimg.com/t11b673bcd6da9eb79be47ffe7a.png">
@@ -335,6 +335,26 @@
         $('.video-area .video-btn').on('click', function(e){
             $('.video-dialog').show()
         })
+    </script>
+     <script>
+        function jumpOut(type) {
+            switch (type){
+                case 'bilan':
+                    window.open('https://wowsgame.cn/zh-cn/news/update/1303_Patch_Note/')
+                    break;
+                case 'kmse':
+                    window.open('https://wowsgame.cn/zh-cn/news/update/patchnote_1304/#armory')
+                    break;
+                case 'dday':
+                    window.open('https://wowsgame.cn/zh-cn/news/activate/dday_1304/')
+                    break;
+                case 'aiyicl':
+                    window.open('https://wows.360.cn/event/recall/202405/')
+                    break;
+                
+
+            }
+        }
     </script>
 </body>
 

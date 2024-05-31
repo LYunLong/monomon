@@ -1,0 +1,311 @@
+body {
+    background-color: #000;
+}
+.container {
+    width: 100vw;
+    overflow: hidden;
+    .top-bar {
+        padding-top: .32rem;
+        display: flex;
+        align-items: center;
+        .wows-logo {
+            display: block;
+            height: .78rem;
+            margin-right: auto;
+            margin-left: .26rem;
+        }
+        .home {
+            display: block;
+            height: .74rem;
+            margin-right: .185rem;
+        }
+        .cloud {
+            display: block;
+            height: .74rem;
+            margin-right: .185rem;
+        }
+        .login {
+            display: block;
+            height: .74rem;
+            margin-right: .185rem;
+        }
+    }
+    .title-bar {
+        width: 100%;
+        padding-top: .6rem;
+        .title-slogan {
+            margin: 0 auto;
+            display: block;
+            height: 1rem;
+        }
+        .title-video-btn {
+            margin: 0 auto;
+            display: block;
+            margin-top: -1rem;
+            height: 1.06rem;
+        }
+    }
+    .block-container {
+        margin-top: -2.7rem;
+        width: 100%;
+        height: 17.78rem;
+        background-image: url(https://p5.ssl.qhimg.com/t11b673bcd6f77b321b563d6fde.png);
+        background-size: 100% auto;
+        background-position: top;
+        .block {
+            display: block;
+            position: absolute;
+            &.bilan {
+                width: 3.5rem;
+                top: 4.3rem;
+                left: 1.4rem;
+            }
+            &.star {
+                width: 3rem;
+                top: 4.6rem;
+                right: 1.2rem;
+            }
+            &.sanguo {
+                width: 2.6rem;
+                top: 9rem;
+                left: 1.5rem;
+            }
+            &.banben {
+                width: 3.1rem;
+                top: 8rem;
+                right: 1.6rem;
+            }
+            &.kh {
+                width: 2.3rem;
+                top: 11.5rem;
+                right: 2.2rem;
+            }
+            &.qingshu {
+                width: 2.2rem;
+                top: 14.6rem;
+                left: 1.2rem;
+            }
+            &.wowo {
+                width: 2.3rem;
+                top: 14.8rem;
+                right: 2.2rem;
+            }
+        }
+    } 
+    .block-details-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        .bg {
+            background-color: rgb(206,191,160);
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+        .block-detail {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            &::after {
+                content: '';
+                display: block;
+                width: 100%;
+                height: .16rem;
+                margin-top: .83rem;
+                background-image: url(https://p5.ssl.qhimg.com/t11b673bcd67821a9bcb61baf8f.png);
+                background-size: cover;
+            }
+            .b { 
+                height: .76rem;
+                margin: .37rem auto;
+            }
+            &.bilan {
+                .t1 {
+                    height: 3.42rem; 
+                    margin-top: .92rem;
+                }
+                .t2 {
+                    height: 6rem;
+                }
+                .t3 {
+                    height: .4rem;
+                }
+            }
+            &.sanguo {
+                .t1 {
+                    height: .6rem;
+                    margin-top: .9rem;
+                }
+                .b1 {
+                    height: 1.85rem;
+                    margin-top: .6rem;
+                }
+                .t2 {
+                    height: 2.22rem;
+                    margin-top: .3rem;
+                }
+                .t3 {
+                    height: 6rem;
+                }
+                .t4 {
+                    height: 2.15rem;
+                    margin-top: .4rem;
+                }
+                .t5 {
+                    height: 7.4rem;
+                }
+            }
+            &.star {
+                .t1 {
+                    margin-top: .83rem;
+                    height: 2.96rem;
+                }
+                .t2 {
+                    height: 6rem;
+                }
+                .t3 {
+                    height: .32rem;
+                }
+            }
+            &.banben {
+                .t1 {
+                    margin-top: .83rem;
+                    height: .62rem;
+                }
+                .t2 {
+                    margin-top: .83rem;
+                    height: 2.22rem;
+                }
+                .t3 {
+                    height: 4.07rem;
+                }
+                .t4 {
+                    margin-top: .83rem;
+                    height: 2.13rem;
+                }
+                .t5 {
+                    height: 4.07rem;
+                }
+                .t6 {
+                    margin-top: .83rem;
+                    height: 2.68rem;
+                }
+                .t7 {
+                    height: 4.07rem;
+                }
+                .t8 {
+                    margin-top: .83rem;
+                    height: 2.28rem;
+                }
+                .t9 {
+                    height: 4.62rem;
+                }
+                .t10 {
+                    margin-top: .83rem;
+                    height: 2.22rem;
+                }
+                .t11 {
+                    height: 4.35rem;
+                }
+            }
+            &.kh {
+                .t1 {
+                    margin-top: .83rem;
+                    height: 2.26rem;
+                }
+                .t2 {
+                    height: 5.55rem;
+                }
+            }
+            &.qingshu {
+                .t1 {
+                    margin-top: .83rem;
+                    height: 2.22rem;
+                }
+                .t2 {
+                    height: 5.75rem;
+                }
+            }
+            &.wowo {
+                .t1 {
+                    margin-top: .83rem;
+                    height: 3.15rem;
+                }
+                .t2 {
+                    height: 9.25rem;
+                }
+            }
+        }
+    }
+    .back-top-btn {
+        position: fixed;
+        margin: 0 auto;
+        z-index: 2;
+        left: 0;
+        right: 0;
+        bottom: .5rem;
+        display: block;
+        height: 1.66rem;
+        width: 1.66rem;
+        animation: btb .8s infinite alternate-reverse;
+    }
+    @keyframes btb {
+        0% { transform: translateY(0rem); opacity: 1;}
+        100% { transform: translateY(-.3rem); opacity: 1;}
+    }
+
+    .video-dialog {
+        display: none;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        background-color: rgba(0,0,0,.7);
+        z-index: 10;
+        .inner {
+            position: absolute;
+            height: 5.66rem;
+            width: 100%;
+            top: calc(50% - 3rem);
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            background-image: url(https://p2.ssl.qhimg.com/t11b673bcd69fe5945b16ac4f04.png);
+            background-size: 100% 100%;
+            .video-play {
+                position: absolute;
+                z-index: 1;
+                height: 1.46rem;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                top: calc(50% - .7rem);
+                cursor: pointer;
+            }
+            video {
+                position: absolute;
+                display: block;
+                left: .5%;
+                top: .5%;
+                height: 99%;
+                width: 99%;
+            }
+            .close-video-dialog-btn {
+                position: absolute;
+                height: 0.8rem;
+                width: 0.8rem;
+                right: .2rem;
+                top: -1rem;
+                cursor: pointer;
+            }
+        }
+    }
+
+}
