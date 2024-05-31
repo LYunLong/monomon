@@ -93,37 +93,37 @@ body {
 }
 .container .full-block-stack .block-stack .block-inner-contain.hide.sanguo {
   transition: opacity 0.5s;
-  transition-delay: 0.2s;
+  transition-delay: 0.05s;
   opacity: 0;
   pointer-events: none;
 }
 .container .full-block-stack .block-stack .block-inner-contain.hide.star {
   transition: opacity 0.5s;
-  transition-delay: 0.4s;
+  transition-delay: 0.1s;
   opacity: 0;
   pointer-events: none;
 }
 .container .full-block-stack .block-stack .block-inner-contain.hide.jihe {
   transition: opacity 0.5s;
-  transition-delay: 0.6s;
+  transition-delay: 0.15s;
   opacity: 0;
   pointer-events: none;
 }
 .container .full-block-stack .block-stack .block-inner-contain.hide.kh {
   transition: opacity 0.5s;
-  transition-delay: 0.8s;
+  transition-delay: 0.2s;
   opacity: 0;
   pointer-events: none;
 }
 .container .full-block-stack .block-stack .block-inner-contain.hide.qs {
   transition: opacity 0.5s;
-  transition-delay: 1s;
+  transition-delay: 0.25s;
   opacity: 0;
   pointer-events: none;
 }
 .container .full-block-stack .block-stack .block-inner-contain.hide.wowo {
   transition: opacity 0.5s;
-  transition-delay: 1.2s;
+  transition-delay: 0.3s;
   opacity: 0;
   pointer-events: none;
 }
@@ -187,8 +187,8 @@ body {
 }
 .container .full-block-stack .block-stack .block-inner-contain.bilan {
   position: absolute;
-  z-index: 5;
-  width: 2rem;
+  z-index: 6;
+  width: 2.5rem;
   height: 2.5rem;
 }
 .container .full-block-stack .block-stack .block-inner-contain.bilan .ground {
@@ -383,7 +383,7 @@ body {
   position: absolute;
   z-index: 5;
   bottom: 0;
-  width: 2rem;
+  width: 2.2rem;
   height: 2.3rem;
 }
 .container .full-block-stack .block-stack .block-inner-contain.jihe .ground {
