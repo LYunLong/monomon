@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-    <title>主播招募</title>
+    <title>夏日狂欢 燃情三国</title>
     <meta name="description" content="无惧骇浪，只为荣誉而战！《战舰世界》全新版本将带你驶向传奇海域，操控各系高能战舰鏖战大洋；超清3D建模高度还原战舰每层细节；多种战斗机制全面考验你的战略部署，快在风暴、闪电等异常气候与敌军密集炮火的双重威胁下，在立体式的战场上用火炮烈焰吞噬敌军吧！">
     <meta name="keywords" content="战舰世界,哥斯拉大战金刚,哥斯拉,金刚,战舰世界官网,战舰哥斯拉,战舰金刚,Godzilla,King Kong">
+    <link rel="shortcut icon" href="https://p5.ssl.qhimg.com/t01140cfe01fe73d869.png" type="image/x-icon">
         <script src="https://wg.360.cn/wgCommonSdk.min.js"></script>
         <style>
             * {
               padding: 0;
               margin: 0;
-              font-size: 10vw;
+            }
+            html {
+                font-size: 5vw;
+                scrollbar-width: none;
+                scrollbar-color: transparent transparent;
             }
             ::-webkit-scrollbar {
                 width: 0;
@@ -21,6 +26,7 @@
                 user-select: none;
                 user-drag: none;
                 -webkit-user-drag: none;
+                
             }
 
         </style>
@@ -31,11 +37,12 @@
         <img class="main-bg" preload src="https://p2.ssl.qhimg.com/t11b673bcd66bd4a106c276d4e8.png">
         <!-- <img class="spark" preload src="https://p4.ssl.qhimg.com/t11b673bcd6827f582b736081ca.png"> -->
         <div class="top-bar">
-            <img class="logo" src="https://p5.ssl.qhimg.com/t11b673bcd63642987c74fd3914.png">
-            <img class="home" src="https://p0.ssl.qhimg.com/t11b673bcd6447cf402386e739c.png">
-            <img class="cloud" src="https://p3.ssl.qhimg.com/t11b673bcd6d7b27d8f45ff0154.png">
-            <img class="download" src="https://p2.ssl.qhimg.com/t11b673bcd622ad91637716d43a.png">
-            <img class="login" src="https://p5.ssl.qhimg.com/t11b673bcd6e0fd00b518485189.png">
+            <img class="logo" onclick="window.open('https://wows.360.cn/')" src="https://p5.ssl.qhimg.com/t11b673bcd63642987c74fd3914.png">
+            
+            <div class="home" onclick="window.open('https://wows.360.cn/')"><img src="https://p0.ssl.qhimg.com/t11b673bcd63edce3fea2d8ee16.png">官网首页</div>
+            <div class="cloud" onclick="window.open('https://play.wows.360.cn/yun.html#/!')"><img src="https://p4.ssl.qhimg.com/t11b673bcd6990ae8ed621252d5.png">云游戏</div>
+            <div class="download" onclick="window.open('https://redir.wggames.cn/vugc3agi/')"><img src="https://p4.ssl.qhimg.com/t11b673bcd686e97bcf2f5df818.png">游戏下载</div>
+            <div class="login js-signUp"><img src="https://p0.ssl.qhimg.com/t11b673bcd649f1abff460e7180.png">登录/注册</div>
         </div>
         <div class="video-area">
             <img class="slogan" src="https://p2.ssl.qhimg.com/t11b673bcd60ea52a6bf3af9297.png">
@@ -72,7 +79,7 @@
 
                 <div class="block-inner-contain sanguo" >
                     <img class="ground" src="https://p2.ssl.qhimg.com/t11b673bcd628e9c62b94ed2acb.png">
-                    <img class="ground-cur" src="https://p3.ssl.qhimg.com/t11b673bcd66fa7d0df9bc8bbcc.png">
+                    <img class="ground-cur" src="https://p1.ssl.qhimg.com/t11b673bcd6919cf83c03269ea0.png">
                     <div class="title-show">
                         <div class="icons">
                             <img class="ic ic1" src="https://p0.ssl.qhimg.com/t11b673bcd6883b26efd35f5ad9.png">
@@ -86,9 +93,11 @@
                 </div>
 
                 <div class="block-open-contain sanguo" hidden>
-                    <img class="open-img1" src="https://p1.ssl.qhimg.com/t11b673bcd672f0d4e7adaab820.png">
+                    <!-- <img class="open-img1" src="https://p1.ssl.qhimg.com/t11b673bcd672f0d4e7adaab820.png"> -->
+                    <img class="open-img1" src="https://p4.ssl.qhimg.com/t11b673bcd6aceb3b6a50a01bdd.png">
                     <div class="view-more-btn">
-                        <img class="btn-self" src="https://p4.ssl.qhimg.com/t11b673bcd6db46f8f2592fdf69.png">
+                        <!-- <img class="btn-self" src="https://p4.ssl.qhimg.com/t11b673bcd6db46f8f2592fdf69.png"> -->
+                        <img class="btn-self" src="https://p0.ssl.qhimg.com/t11b673bcd68a0e57a7313548da.png">
                         <img class="btn-outline" src="https://p5.ssl.qhimg.com/t11b673bcd647de1562648840c4.png">
                     </div>
                     <img class="open-img2" src="https://p5.ssl.qhimg.com/t11b673bcd684dd6f191140a55f.png">
@@ -97,9 +106,11 @@
                         <img class="btn-name" src="https://p0.ssl.qhimg.com/t11b673bcd66d9a4da2a27783e9.png">
                     </div>
                     <img class="open-img3" src="https://p5.ssl.qhimg.com/t11b673bcd6f86dcc1dfb18556a.png">
-                    <img class="open-img4" src="https://p2.ssl.qhimg.com/t11b673bcd68780d48afe73ca52.png">
+                    <!-- <img class="open-img4" src="https://p2.ssl.qhimg.com/t11b673bcd68780d48afe73ca52.png"> -->
+                    <img class="open-img4" src="https://p0.ssl.qhimg.com/t11b673bcd65f6b32e59d49b704.png">
                     <div class="view-more-btn2">
-                        <img class="btn-self" src="https://p4.ssl.qhimg.com/t11b673bcd6db46f8f2592fdf69.png">
+                        <!-- <img class="btn-self" src="https://p4.ssl.qhimg.com/t11b673bcd6db46f8f2592fdf69.png"> -->
+                        <img class="btn-self" src="https://p0.ssl.qhimg.com/t11b673bcd68a0e57a7313548da.png">
                         <img class="btn-outline" src="https://p5.ssl.qhimg.com/t11b673bcd647de1562648840c4.png">
                     </div>
                 </div>
@@ -109,13 +120,15 @@
                     <img class="ground-cur" src="https://p2.ssl.qhimg.com/t11b673bcd689ca3b6a34b6c64f.png">
                     <div class="title-show">
                         <div class="icons">
-                            <img class="ic ic1" src="https://p1.ssl.qhimg.com/t11b673bcd670b3cb508c50d023.png">
+                            <!-- <img class="ic ic1" src="https://p1.ssl.qhimg.com/t11b673bcd670b3cb508c50d023.png"> -->
+                            <img class="ic ic1" src="https://p4.ssl.qhimg.com/t11b673bcd6541c7357ffd93b06.png">
                         </div>
                         <div class="hide-show-btn">
                             <img class="btn-self" src="https://p0.ssl.qhimg.com/t11b673bcd649de00f28a3d3300.png">
                             <img class="btn-outline" src="https://p5.ssl.qhimg.com/t11b673bcd68a7b89338d1c9d3c.png">
                         </div>
-                        <img class="name" src="https://p2.ssl.qhimg.com/t11b673bcd65506af8e979b36f9.png">
+                        <!-- <img class="name" src="https://p2.ssl.qhimg.com/t11b673bcd65506af8e979b36f9.png"> -->
+                        <img class="name" src="https://p2.ssl.qhimg.com/t11b673bcd6138c5abb4624180b.png">
                     </div>
                 </div>
 
@@ -152,6 +165,7 @@
                         <img class="btn-outline" src="https://p5.ssl.qhimg.com/t11b673bcd647de1562648840c4.png">
                     </div>
                     <img class="open-img2" src="https://p5.ssl.qhimg.com/t11b673bcd697354c843f2906bc.png">
+                    <img class="scale-img1" src="https://p4.ssl.qhimg.com/t11b673bcd6ed6a111328b65d8d.png">
 
                     <img class="open-img3" src="https://p1.ssl.qhimg.com/t11b673bcd6098b8c52b9dac87e.png">
                     <div class="view-more-btn2" onclick="jumpOut('dday')">
@@ -159,15 +173,20 @@
                         <img class="btn-outline" src="https://p5.ssl.qhimg.com/t11b673bcd647de1562648840c4.png">
                     </div>
                     <img class="open-img4" src="https://p4.ssl.qhimg.com/t11b673bcd636d4e023e869747d.png">
+                    <!-- <img class="scale-img2" src="https://p4.ssl.qhimg.com/t11b673bcd6ed6a111328b65d8d.png"> -->
+
 
                     <img class="open-img5" src="https://p1.ssl.qhimg.com/t11b673bcd6d32a1908579c8107.png">
                     <div class="view-more-btn3">
-                        <img class="btn-self" src="https://p4.ssl.qhimg.com/t11b673bcd6db46f8f2592fdf69.png">
+                        <img class="btn-self" src="https://p0.ssl.qhimg.com/t11b673bcd68a0e57a7313548da.png">
+                        <!-- <img class="btn-self" src="https://p4.ssl.qhimg.com/t11b673bcd6db46f8f2592fdf69.png"> -->
                         <img class="btn-outline" src="https://p5.ssl.qhimg.com/t11b673bcd647de1562648840c4.png">
                     </div>
                     <img class="open-img6" src="https://p1.ssl.qhimg.com/t11b673bcd6f9fd14282a5bf421.png">
+                    <img class="scale-img3" src="https://p4.ssl.qhimg.com/t11b673bcd6ed6a111328b65d8d.png">
 
-                    <img class="open-img7" src="https://p4.ssl.qhimg.com/t11b673bcd6123a12e011147645.png">
+
+                    <img class="open-img7" src="https://p3.ssl.qhimg.com/t11b673bcd673237a08ebc4de5c.png">
                     <div class="view-more-btn4" onclick="jumpOut('aiyicl')">
                         <img class="btn-self" src="https://p4.ssl.qhimg.com/t11b673bcd6db46f8f2592fdf69.png">
                         <img class="btn-outline" src="https://p5.ssl.qhimg.com/t11b673bcd647de1562648840c4.png">
@@ -175,7 +194,8 @@
 
                     <img class="open-img8" src="https://p4.ssl.qhimg.com/t11b673bcd6218c9efb47e91961.png">
                     <div class="view-more-btn5">
-                        <img class="btn-self" src="https://p4.ssl.qhimg.com/t11b673bcd6db46f8f2592fdf69.png">
+                        <img class="btn-self" src="https://p0.ssl.qhimg.com/t11b673bcd68a0e57a7313548da.png">
+                        <!-- <img class="btn-self" src="https://p4.ssl.qhimg.com/t11b673bcd6db46f8f2592fdf69.png"> -->
                         <img class="btn-outline" src="https://p5.ssl.qhimg.com/t11b673bcd647de1562648840c4.png">
                     </div>
                 </div>
@@ -198,7 +218,8 @@
                 <div class="block-open-contain kh" hidden>
                     <img class="open-img1" src="https://p1.ssl.qhimg.com/t11b673bcd68ff94e43166ef8c4.png">
                     <div class="view-more-btn">
-                        <img class="btn-self" src="https://p4.ssl.qhimg.com/t11b673bcd6db46f8f2592fdf69.png">
+                        <img class="btn-self" src="https://p0.ssl.qhimg.com/t11b673bcd68a0e57a7313548da.png">
+                        <!-- <img class="btn-self" src="https://p4.ssl.qhimg.com/t11b673bcd6db46f8f2592fdf69.png"> -->
                         <img class="btn-outline" src="https://p5.ssl.qhimg.com/t11b673bcd647de1562648840c4.png">
                     </div>
                     <img class="open-img2" src="https://p3.ssl.qhimg.com/t11b673bcd60d1c78ab990b1c39.png">
@@ -221,7 +242,7 @@
                 </div>
 
                 <div class="block-open-contain qs" hidden>
-                    <img class="open-img1" src="https://p1.ssl.qhimg.com/t11b673bcd621c599dda1867ff4.png">
+                    <img class="open-img1" src="https://p0.ssl.qhimg.com/t11b673bcd69c61cabfb6ad0479.png">
                     <img class="open-img2" src="https://p0.ssl.qhimg.com/t11b673bcd67de3aa14b42845de.png">
                     <img class="open-img3" src="https://p5.ssl.qhimg.com/t11b673bcd64fbae983da4d3fab.png">
                     <img class="open-img4" src="https://p0.ssl.qhimg.com/t11b673bcd6da9eb79be47ffe7a.png">
@@ -243,9 +264,10 @@
                 </div>
 
                 <div class="block-open-contain wowo" hidden>
-                    <img class="open-img1" src="https://p5.ssl.qhimg.com/t11b673bcd653bf49d62bb6a155.png">
+                    <img class="open-img1" src="https://p3.ssl.qhimg.com/t11b673bcd6b5a4600c251efebd.png">
                     <div class="view-more-btn">
-                        <img class="btn-self" src="https://p4.ssl.qhimg.com/t11b673bcd6db46f8f2592fdf69.png">
+                        <img class="btn-self" src="https://p0.ssl.qhimg.com/t11b673bcd68a0e57a7313548da.png">
+                        <!-- <img class="btn-self" src="https://p4.ssl.qhimg.com/t11b673bcd6db46f8f2592fdf69.png"> -->
                         <img class="btn-outline" src="https://p5.ssl.qhimg.com/t11b673bcd647de1562648840c4.png">
                     </div>
                     <img class="open-img2" src="https://p1.ssl.qhimg.com/t11b673bcd6ceecd38344b43e97.png">
@@ -261,11 +283,1397 @@
                 <img class="close-video-dialog-btn" src="https://p4.ssl.qhimg.com/t11b673bcd63d7f4c03752bcf53.png">
             </div>
         </div>
+
+        <div class="img-dialog">
+            <div class="inner">
+                <img class="img-big ib1" hidden src="https://p4.ssl.qhimg.com/t11b673bcd618d30a62a46ea44a.jpg">
+                <img class="img-big ib2" hidden src="https://p2.ssl.qhimg.com/t11b673bcd6a89c4ac682333582.jpg">
+                <img class="close-img-dialog-btn" src="https://p4.ssl.qhimg.com/t11b673bcd63d7f4c03752bcf53.png">
+            </div>
+        </div>
+
+
+        <div class="footer_wrap"></div>
+
     </div>
+
+
+    
 
     <div class="loading"></div>
 
-    <link rel="stylesheet" href="./wows_summer_combine.css">
+
+    <style>
+        body {
+  background-color: #000;
+}
+.container .main-bg {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: block;
+  z-index: -1;
+}
+.container .top-bar {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  top: 0.2em;
+  height: 0.8em;
+}
+.container .top-bar .logo {
+  width: 10vw;
+  height: auto;
+  margin-left: 0.8em;
+  display: block;
+  margin-right: auto;
+  cursor: pointer;
+}
+.container .top-bar .home {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 10em;
+  margin-right: 2em;
+  display: block;
+  cursor: pointer;
+  font-size: 0.16em;
+  color: white;
+  border: 0.02rem solid rgba(255, 255, 255, 0.4);
+  line-height: 2.8em;
+  font-weight: bold;
+  border-radius: 0.3em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .top-bar .home img {
+  display: block;
+  height: 1.4em;
+  margin-right: 0.1rem;
+}
+.container .top-bar .cloud {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 10em;
+  margin-right: 2em;
+  display: block;
+  cursor: pointer;
+  font-size: 0.16em;
+  color: white;
+  border: 0.02rem solid rgba(255, 255, 255, 0.4);
+  line-height: 2.8em;
+  font-weight: bold;
+  border-radius: 0.3em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .top-bar .cloud img {
+  display: block;
+  height: 1.4em;
+  margin-right: 0.1rem;
+}
+.container .top-bar .download {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 10em;
+  margin-right: 2em;
+  display: block;
+  cursor: pointer;
+  font-size: 0.16em;
+  color: white;
+  border: 0.02rem solid rgba(255, 255, 255, 0.4);
+  line-height: 2.8em;
+  font-weight: bold;
+  border-radius: 0.3em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .top-bar .download img {
+  display: block;
+  height: 1.4em;
+  margin-right: 0.1rem;
+}
+.container .top-bar .login {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 10em;
+  margin-right: 2em;
+  display: block;
+  cursor: pointer;
+  font-size: 0.16em;
+  color: white;
+  border: 0.02rem solid rgba(255, 255, 255, 0.4);
+  line-height: 2.8em;
+  font-weight: bold;
+  border-radius: 0.3em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .top-bar .login img {
+  display: block;
+  height: 1.4em;
+  margin-right: 0.1rem;
+}
+.container .video-area {
+  position: absolute;
+  left: 1.4em;
+  top: 1.52em;
+}
+.container .video-area .slogan {
+  display: block;
+  position: relative;
+  height: 7.8em;
+}
+.container .video-area .video-btn {
+  position: absolute;
+  top: 3.52em;
+  left: -0.16em;
+  display: block;
+  height: 0.8em;
+  cursor: pointer;
+}
+.container .video-area .video-btn:hover {
+  transform: scale(1.1, 1.1);
+}
+.container .full-block-stack {
+  width: 100vw;
+}
+.container .full-block-stack .block-stack {
+  position: absolute;
+  top: 1.2em;
+  right: 0;
+  width: 15.6em;
+  height: 9em;
+  overflow: visible;
+}
+.container .full-block-stack .block-stack .block-inner-contain {
+  transition: opacity 0.5s;
+}
+.container .full-block-stack .block-stack .block-inner-contain.hide.bilan {
+  transition: opacity 0.3s;
+  transition-delay: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.container .full-block-stack .block-stack .block-inner-contain.hide.sanguo {
+  transition: opacity 0.5s;
+  transition-delay: 0.05s;
+  opacity: 0;
+  pointer-events: none;
+}
+.container .full-block-stack .block-stack .block-inner-contain.hide.star {
+  transition: opacity 0.5s;
+  transition-delay: 0.1s;
+  opacity: 0;
+  pointer-events: none;
+}
+.container .full-block-stack .block-stack .block-inner-contain.hide.jihe {
+  transition: opacity 0.5s;
+  transition-delay: 0.15s;
+  opacity: 0;
+  pointer-events: none;
+}
+.container .full-block-stack .block-stack .block-inner-contain.hide.kh {
+  transition: opacity 0.5s;
+  transition-delay: 0.2s;
+  opacity: 0;
+  pointer-events: none;
+}
+.container .full-block-stack .block-stack .block-inner-contain.hide.qs {
+  transition: opacity 0.5s;
+  transition-delay: 0.25s;
+  opacity: 0;
+  pointer-events: none;
+}
+.container .full-block-stack .block-stack .block-inner-contain.hide.wowo {
+  transition: opacity 0.5s;
+  transition-delay: 0.3s;
+  opacity: 0;
+  pointer-events: none;
+}
+.container .full-block-stack .block-stack .block-inner-contain.cur .icons {
+  display: none;
+}
+.container .full-block-stack .block-stack .block-inner-contain.cur .hide-show-btn {
+  display: block;
+}
+.container .full-block-stack .block-stack .block-inner-contain.cur .ground {
+  opacity: 0;
+}
+.container .full-block-stack .block-stack .block-inner-contain.cur .ground-cur {
+  opacity: 1!important;
+}
+.container .full-block-stack .block-stack .block-inner-contain .icons {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.container .full-block-stack .block-stack .block-inner-contain .hide-show-btn {
+  display: none;
+}
+.container .full-block-stack .block-stack .block-inner-contain .hide-show-btn:hover {
+  transform: scale(1.05);
+}
+.container .full-block-stack .block-stack .block-inner-contain .hide-show-btn:hover .btn-outline {
+  animation: btnBoot 0.8s infinite ease-in-out;
+}
+@keyframes btnBoot {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  80% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+.container .full-block-stack .block-stack .block-inner-contain:hover .ground {
+  opacity: 0;
+}
+.container .full-block-stack .block-stack .block-inner-contain:hover .ground-cur {
+  opacity: 1!important;
+}
+.container .full-block-stack .block-stack .block-inner-contain:hover .title-show .icons .ic {
+  transition: transform 0.3s !important;
+  overflow: visible;
+  transform: translateY(-0.05em) scale(1.1);
+}
+.container .full-block-stack .block-stack .block-inner-contain:hover .title-show .name {
+  transform: translateY(0.03em) scale(1.2);
+}
+.container .full-block-stack .block-stack .block-inner-contain .title-show {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.container .full-block-stack .block-stack .block-inner-contain.bilan {
+  position: absolute;
+  z-index: 6;
+  width: 5em;
+  height: 5em;
+}
+.container .full-block-stack .block-stack .block-inner-contain.bilan .ground {
+  position: absolute;
+  top: 0.14em;
+  left: 0.1em;
+  display: block;
+  height: 5.12em;
+  transition: opacity 0.5s;
+}
+.container .full-block-stack .block-stack .block-inner-contain.bilan .ground-cur {
+  position: absolute;
+  top: 0.14em;
+  left: 0.02em;
+  display: block;
+  height: 5.3em;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.container .full-block-stack .block-stack .block-inner-contain.bilan .title-show {
+  position: absolute;
+}
+.container .full-block-stack .block-stack .block-inner-contain.bilan .title-show .icons .ic {
+  position: absolute;
+  top: -1.2em;
+  left: -1em;
+  display: block;
+  height: 4.6em;
+  transition: transform 0.1s;
+}
+.container .full-block-stack .block-stack .block-inner-contain.bilan .title-show .hide-show-btn {
+  position: absolute;
+  width: 1.2em;
+  height: 1.2em;
+  top: 2em;
+  left: 1.4em;
+  cursor: pointer;
+}
+.container .full-block-stack .block-stack .block-inner-contain.bilan .title-show .hide-show-btn .btn-self {
+  position: absolute;
+  width: 1em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .full-block-stack .block-stack .block-inner-contain.bilan .title-show .hide-show-btn .btn-outline {
+  width: 1.2em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.container .full-block-stack .block-stack .block-inner-contain.bilan .title-show .name {
+  position: absolute;
+  display: block;
+  height: 0.4em;
+  left: 0.6em;
+  top: 3.4em;
+  transition: transform 0.3s;
+}
+.container .full-block-stack .block-stack .block-inner-contain.sanguo {
+  position: absolute;
+  z-index: 5;
+  left: 4em;
+  width: 7.4em;
+  height: 5em;
+}
+.container .full-block-stack .block-stack .block-inner-contain.sanguo .ground {
+  position: absolute;
+  top: 0.212em;
+  left: -0.7em;
+  display: block;
+  height: 4.66em;
+  transition: opacity 0.5s;
+}
+.container .full-block-stack .block-stack .block-inner-contain.sanguo .ground-cur {
+  position: absolute;
+  top: 0.19em;
+  left: -0.84em;
+  display: block;
+  height: 4.9em;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.container .full-block-stack .block-stack .block-inner-contain.sanguo .title-show {
+  position: absolute;
+}
+.container .full-block-stack .block-stack .block-inner-contain.sanguo .title-show .icons .ic {
+  position: absolute;
+  top: 1em;
+  left: 2.2em;
+  display: block;
+  height: 2.08em;
+  transition: transform 0.1s;
+}
+.container .full-block-stack .block-stack .block-inner-contain.sanguo .title-show .hide-show-btn {
+  position: absolute;
+  width: 1.2em;
+  height: 1.2em;
+  top: 2em;
+  left: 3em;
+  cursor: pointer;
+}
+.container .full-block-stack .block-stack .block-inner-contain.sanguo .title-show .hide-show-btn .btn-self {
+  position: absolute;
+  width: 1em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .full-block-stack .block-stack .block-inner-contain.sanguo .title-show .hide-show-btn .btn-outline {
+  width: 1.2em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.container .full-block-stack .block-stack .block-inner-contain.sanguo .title-show .name {
+  position: absolute;
+  display: block;
+  height: 0.36em;
+  left: 2.2em;
+  top: 3.4em;
+  transition: transform 0.3s;
+}
+.container .full-block-stack .block-stack .block-inner-contain.star {
+  position: absolute;
+  z-index: 5;
+  right: 0;
+  width: 4.6em;
+  height: 4.6em;
+}
+.container .full-block-stack .block-stack .block-inner-contain.star .ground {
+  position: absolute;
+  top: 0.48em;
+  right: 0;
+  display: block;
+  height: 4.36em;
+  transition: opacity 0.5s;
+}
+.container .full-block-stack .block-stack .block-inner-contain.star .ground-cur {
+  position: absolute;
+  top: 0.48em;
+  right: 0;
+  display: block;
+  height: 4.6em;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.container .full-block-stack .block-stack .block-inner-contain.star .title-show {
+  position: absolute;
+}
+.container .full-block-stack .block-stack .block-inner-contain.star .title-show .icons .ic {
+  position: absolute;
+  top: 0.6em;
+  left: 1em;
+  display: block;
+  height: 2.08em;
+  transition: transform 0.1s;
+}
+.container .full-block-stack .block-stack .block-inner-contain.star .title-show .hide-show-btn {
+  position: absolute;
+  width: 1.2em;
+  height: 1.2em;
+  top: 1.2em;
+  left: 1.6em;
+  cursor: pointer;
+}
+.container .full-block-stack .block-stack .block-inner-contain.star .title-show .hide-show-btn .btn-self {
+  position: absolute;
+  width: 1em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .full-block-stack .block-stack .block-inner-contain.star .title-show .hide-show-btn .btn-outline {
+  width: 1.2em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.container .full-block-stack .block-stack .block-inner-contain.star .title-show .name {
+  position: absolute;
+  display: block;
+  height: 0.36em;
+  left: 0.8em;
+  top: 2.6em;
+  transition: transform 0.3s;
+}
+.container .full-block-stack .block-stack .block-inner-contain.jihe {
+  position: absolute;
+  z-index: 5;
+  bottom: 0;
+  width: 4.4em;
+  height: 4.6em;
+}
+.container .full-block-stack .block-stack .block-inner-contain.jihe .ground {
+  position: absolute;
+  bottom: 0.34em;
+  left: 0em;
+  display: block;
+  height: 4.38em;
+  transition: opacity 0.5s;
+}
+.container .full-block-stack .block-stack .block-inner-contain.jihe .ground-cur {
+  position: absolute;
+  bottom: 0.34em;
+  left: 0em;
+  display: block;
+  height: 4.54em;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.container .full-block-stack .block-stack .block-inner-contain.jihe .title-show {
+  position: absolute;
+}
+.container .full-block-stack .block-stack .block-inner-contain.jihe .title-show .icons .ic {
+  position: absolute;
+  top: 0.4em;
+  left: -0.2em;
+  display: block;
+  height: 2.6em;
+  transition: transform 0.1s;
+}
+.container .full-block-stack .block-stack .block-inner-contain.jihe .title-show .hide-show-btn {
+  position: absolute;
+  width: 1.2em;
+  height: 1.2em;
+  top: 1.4em;
+  left: 1.4em;
+  cursor: pointer;
+}
+.container .full-block-stack .block-stack .block-inner-contain.jihe .title-show .hide-show-btn .btn-self {
+  position: absolute;
+  width: 1em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .full-block-stack .block-stack .block-inner-contain.jihe .title-show .hide-show-btn .btn-outline {
+  width: 1.2em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.container .full-block-stack .block-stack .block-inner-contain.jihe .title-show .name {
+  position: absolute;
+  display: block;
+  height: 0.36em;
+  left: 1.36em;
+  top: 3em;
+  transition: transform 0.3s;
+}
+.container .full-block-stack .block-stack .block-inner-contain.kh {
+  position: absolute;
+  z-index: 5;
+  bottom: 0;
+  left: 4em;
+  width: 4em;
+  height: 4.6em;
+}
+.container .full-block-stack .block-stack .block-inner-contain.kh .ground {
+  position: absolute;
+  bottom: 0.2em;
+  left: -0.12em;
+  display: block;
+  height: 4.38em;
+  transition: opacity 0.5s;
+}
+.container .full-block-stack .block-stack .block-inner-contain.kh .ground-cur {
+  position: absolute;
+  bottom: 0.21em;
+  left: -0.18em;
+  display: block;
+  height: 4.56em;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.container .full-block-stack .block-stack .block-inner-contain.kh .title-show {
+  position: absolute;
+}
+.container .full-block-stack .block-stack .block-inner-contain.kh .title-show .icons .ic {
+  position: absolute;
+  top: 1em;
+  left: 0.6em;
+  display: block;
+  height: 1.8em;
+  transition: transform 0.1s;
+}
+.container .full-block-stack .block-stack .block-inner-contain.kh .title-show .hide-show-btn {
+  position: absolute;
+  width: 1.2em;
+  height: 1.2em;
+  top: 1.4em;
+  left: 1.4em;
+  cursor: pointer;
+}
+.container .full-block-stack .block-stack .block-inner-contain.kh .title-show .hide-show-btn .btn-self {
+  position: absolute;
+  width: 1em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .full-block-stack .block-stack .block-inner-contain.kh .title-show .hide-show-btn .btn-outline {
+  width: 1.2em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.container .full-block-stack .block-stack .block-inner-contain.kh .title-show .name {
+  position: absolute;
+  display: block;
+  height: 0.36em;
+  left: 1.36em;
+  top: 3em;
+  transition: transform 0.3s;
+}
+.container .full-block-stack .block-stack .block-inner-contain.qs {
+  position: absolute;
+  z-index: 5;
+  bottom: 0;
+  left: 8em;
+  width: 4em;
+  height: 5em;
+}
+.container .full-block-stack .block-stack .block-inner-contain.qs .ground {
+  position: absolute;
+  bottom: 0.12em;
+  left: -0.4em;
+  display: block;
+  height: 5em;
+  transition: opacity 0.5s;
+}
+.container .full-block-stack .block-stack .block-inner-contain.qs .ground-cur {
+  position: absolute;
+  bottom: 0.12em;
+  left: -0.46em;
+  display: block;
+  height: 5.16em;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.container .full-block-stack .block-stack .block-inner-contain.qs .title-show {
+  position: absolute;
+}
+.container .full-block-stack .block-stack .block-inner-contain.qs .title-show .icons .ic {
+  position: absolute;
+  top: 1.4em;
+  left: 0.9em;
+  display: block;
+  height: 1.8em;
+  transition: transform 0.1s;
+}
+.container .full-block-stack .block-stack .block-inner-contain.qs .title-show .hide-show-btn {
+  position: absolute;
+  width: 1.2em;
+  height: 1.2em;
+  top: 1.4em;
+  left: 1.2em;
+  cursor: pointer;
+}
+.container .full-block-stack .block-stack .block-inner-contain.qs .title-show .hide-show-btn .btn-self {
+  position: absolute;
+  width: 1em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .full-block-stack .block-stack .block-inner-contain.qs .title-show .hide-show-btn .btn-outline {
+  width: 1.2em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.container .full-block-stack .block-stack .block-inner-contain.qs .title-show .name {
+  position: absolute;
+  display: block;
+  height: 0.36em;
+  left: 1em;
+  top: 3em;
+  transition: transform 0.3s;
+}
+.container .full-block-stack .block-stack .block-inner-contain.wowo {
+  position: absolute;
+  z-index: 5;
+  bottom: 0;
+  right: 0;
+  width: 4em;
+  height: 5.56em;
+}
+.container .full-block-stack .block-stack .block-inner-contain.wowo .ground {
+  position: absolute;
+  bottom: 0em;
+  left: -0.6em;
+  display: block;
+  height: 5.56em;
+  transition: opacity 0.5s;
+}
+.container .full-block-stack .block-stack .block-inner-contain.wowo .ground-cur {
+  position: absolute;
+  bottom: 0;
+  left: -0.74em;
+  display: block;
+  height: 5.7em;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.container .full-block-stack .block-stack .block-inner-contain.wowo .title-show {
+  position: absolute;
+}
+.container .full-block-stack .block-stack .block-inner-contain.wowo .title-show .icons .ic {
+  position: absolute;
+  top: 1.4em;
+  left: 0.9em;
+  display: block;
+  height: 2.4em;
+  transition: transform 0.1s;
+}
+.container .full-block-stack .block-stack .block-inner-contain.wowo .title-show .hide-show-btn {
+  position: absolute;
+  width: 1.2em;
+  height: 1.2em;
+  top: 2em;
+  left: 1.2em;
+  cursor: pointer;
+}
+.container .full-block-stack .block-stack .block-inner-contain.wowo .title-show .hide-show-btn .btn-self {
+  position: absolute;
+  width: 1em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .full-block-stack .block-stack .block-inner-contain.wowo .title-show .hide-show-btn .btn-outline {
+  width: 1.2em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.container .full-block-stack .block-stack .block-inner-contain.wowo .title-show .name {
+  position: absolute;
+  display: block;
+  height: 0.36em;
+  left: 0.6em;
+  top: 3.6em;
+  transition: transform 0.3s;
+}
+.container .full-block-stack .block-stack .block-open-contain.cur .open-img1,
+.container .full-block-stack .block-stack .block-open-contain.cur .open-img2,
+.container .full-block-stack .block-stack .block-open-contain.cur .open-img3,
+.container .full-block-stack .block-stack .block-open-contain.cur .open-img4,
+.container .full-block-stack .block-stack .block-open-contain.cur .open-img5,
+.container .full-block-stack .block-stack .block-open-contain.cur .open-img6,
+.container .full-block-stack .block-stack .block-open-contain.cur .open-img7,
+.container .full-block-stack .block-stack .block-open-contain.cur .open-img8 {
+  transition: opacity 1s;
+  transition-delay: 0.5s;
+  opacity: 1;
+}
+.container .full-block-stack .block-stack .block-open-contain.cur .view-more-btn,
+.container .full-block-stack .block-stack .block-open-contain.cur .view-more-btn2,
+.container .full-block-stack .block-stack .block-open-contain.cur .view-more-btn3,
+.container .full-block-stack .block-stack .block-open-contain.cur .view-more-btn4,
+.container .full-block-stack .block-stack .block-open-contain.cur .view-more-btn5 {
+  transition: opacity 1s;
+  transition-delay: 1s;
+  opacity: 1;
+}
+.container .full-block-stack .block-stack .block-open-contain .open-img1,
+.container .full-block-stack .block-stack .block-open-contain .open-img2,
+.container .full-block-stack .block-stack .block-open-contain .open-img3,
+.container .full-block-stack .block-stack .block-open-contain .open-img4,
+.container .full-block-stack .block-stack .block-open-contain .open-img5,
+.container .full-block-stack .block-stack .block-open-contain .open-img6,
+.container .full-block-stack .block-stack .block-open-contain .open-img7,
+.container .full-block-stack .block-stack .block-open-contain .open-img8 {
+  opacity: 0;
+}
+.container .full-block-stack .block-stack .block-open-contain .view-more-btn,
+.container .full-block-stack .block-stack .block-open-contain .view-more-btn2,
+.container .full-block-stack .block-stack .block-open-contain .view-more-btn3,
+.container .full-block-stack .block-stack .block-open-contain .view-more-btn4,
+.container .full-block-stack .block-stack .block-open-contain .view-more-btn5 {
+  opacity: 0;
+}
+.container .full-block-stack .block-stack .block-open-contain .view-more-btn:hover,
+.container .full-block-stack .block-stack .block-open-contain .view-more-btn2:hover,
+.container .full-block-stack .block-stack .block-open-contain .view-more-btn3:hover,
+.container .full-block-stack .block-stack .block-open-contain .view-more-btn4:hover,
+.container .full-block-stack .block-stack .block-open-contain .view-more-btn5:hover {
+  transform: scale(1.1, 1.1);
+}
+.container .full-block-stack .block-stack .block-open-contain .view-more-btn .btn-outline,
+.container .full-block-stack .block-stack .block-open-contain .view-more-btn2 .btn-outline,
+.container .full-block-stack .block-stack .block-open-contain .view-more-btn3 .btn-outline,
+.container .full-block-stack .block-stack .block-open-contain .view-more-btn4 .btn-outline,
+.container .full-block-stack .block-stack .block-open-contain .view-more-btn5 .btn-outline {
+  animation: VMBtnWave 1s infinite ease-in-out;
+}
+@keyframes VMBtnWave {
+  0% {
+    transform: translate(-50%, -50%) scale(0.9, 0.9);
+  }
+  90% {
+    transform: translate(-50%, -50%) scale(1.2, 1.2);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.2, 1.2);
+    opacity: 0;
+  }
+}
+.container .full-block-stack .block-stack .block-open-contain.bilan {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.container .full-block-stack .block-stack .block-open-contain.bilan .open-img1 {
+  position: absolute;
+  height: 2.2em;
+  top: 1.2em;
+  right: 0.92em;
+}
+.container .full-block-stack .block-stack .block-open-contain.bilan .view-more-btn {
+  position: absolute;
+  width: 2.18em;
+  height: 0.8em;
+  top: 3.6em;
+  right: 4.2em;
+  cursor: pointer;
+}
+.container .full-block-stack .block-stack .block-open-contain.bilan .view-more-btn .btn-self {
+  position: absolute;
+  width: 2.18em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .full-block-stack .block-stack .block-open-contain.bilan .view-more-btn .btn-outline {
+  width: 2.32em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.container .full-block-stack .block-stack .block-open-contain.bilan .open-img2 {
+  position: absolute;
+  height: 4.36em;
+  right: 1.8em;
+  bottom: 0.2em;
+}
+.container .full-block-stack .block-stack .block-open-contain.bilan .open-img3 {
+  position: absolute;
+  height: 0.2em;
+  bottom: 1em;
+  left: 2em;
+}
+.container .full-block-stack .block-stack .block-open-contain.sanguo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.container .full-block-stack .block-stack .block-open-contain.sanguo .open-img1 {
+  position: absolute;
+  height: 1.8em;
+  top: 1.8em;
+  left: -0.2em;
+}
+.container .full-block-stack .block-stack .block-open-contain.sanguo .view-more-btn {
+  position: absolute;
+  width: 2.18em;
+  height: 0.8em;
+  top: 3.72em;
+  left: 1em;
+  cursor: pointer;
+}
+.container .full-block-stack .block-stack .block-open-contain.sanguo .view-more-btn .btn-self {
+  position: absolute;
+  width: 2.18em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .full-block-stack .block-stack .block-open-contain.sanguo .view-more-btn .btn-outline {
+  width: 2.32em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.container .full-block-stack .block-stack .block-open-contain.sanguo .open-img2 {
+  position: absolute;
+  height: 4em;
+  left: 0.8em;
+  bottom: 0.4em;
+}
+.container .full-block-stack .block-stack .block-open-contain.sanguo .open-img3 {
+  position: absolute;
+  height: 4em;
+  bottom: 0.6em;
+  right: 1.6em;
+}
+.container .full-block-stack .block-stack .block-open-contain.sanguo .open-img4 {
+  position: absolute;
+  height: 1.9em;
+  top: 1.6em;
+  right: 0.2em;
+}
+.container .full-block-stack .block-stack .block-open-contain.sanguo .view-more-btn2 {
+  position: absolute;
+  width: 2.18em;
+  height: 0.8em;
+  top: 3.72em;
+  right: 1.4em;
+  cursor: pointer;
+}
+.container .full-block-stack .block-stack .block-open-contain.sanguo .view-more-btn2 .btn-self {
+  position: absolute;
+  width: 2.18em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .full-block-stack .block-stack .block-open-contain.sanguo .view-more-btn2 .btn-outline {
+  width: 2.32em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.container .full-block-stack .block-stack .block-open-contain.sanguo .open-btn1 {
+  position: absolute;
+  left: 7.8em;
+  bottom: 3.6em;
+}
+.container .full-block-stack .block-stack .block-open-contain.sanguo .open-btn1 .btn-icon {
+  cursor: pointer;
+  position: absolute;
+  height: 1.04em;
+  left: 0.2em;
+}
+.container .full-block-stack .block-stack .block-open-contain.sanguo .open-btn1 .btn-icon:hover {
+  transform: scale(1.1);
+}
+.container .full-block-stack .block-stack .block-open-contain.sanguo .open-btn1 .btn-name {
+  position: absolute;
+  height: 0.24em;
+  top: 1.1em;
+}
+.container .full-block-stack .block-stack .block-open-contain.star {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.container .full-block-stack .block-stack .block-open-contain.star .open-img1 {
+  position: absolute;
+  height: 3.12em;
+  top: 1.8em;
+  left: 1em;
+}
+.container .full-block-stack .block-stack .block-open-contain.star .view-more-btn {
+  position: absolute;
+  width: 2.18em;
+  height: 0.8em;
+  top: 5.4em;
+  left: 3em;
+  cursor: pointer;
+}
+.container .full-block-stack .block-stack .block-open-contain.star .view-more-btn .btn-self {
+  position: absolute;
+  width: 2.18em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .full-block-stack .block-stack .block-open-contain.star .view-more-btn .btn-outline {
+  width: 2.32em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.container .full-block-stack .block-stack .block-open-contain.star .open-img2 {
+  position: absolute;
+  height: 4.2em;
+  right: 1.6em;
+  bottom: 0.8em;
+}
+.container .full-block-stack .block-stack .block-open-contain.star .open-img3 {
+  position: absolute;
+  height: 0.2em;
+  bottom: 0.7em;
+  left: 1.6em;
+}
+.container .full-block-stack .block-stack .block-open-contain.jihe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.container .full-block-stack .block-stack .block-open-contain.jihe .open-img1 {
+  position: absolute;
+  height: 1.6em;
+  top: 1.04em;
+  left: 1.6em;
+}
+.container .full-block-stack .block-stack .block-open-contain.jihe .view-more-btn {
+  position: absolute;
+  width: 2.18em;
+  height: 0.8em;
+  top: 2.8em;
+  left: 2.6em;
+  cursor: pointer;
+}
+.container .full-block-stack .block-stack .block-open-contain.jihe .view-more-btn .btn-self {
+  position: absolute;
+  width: 2.18em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .full-block-stack .block-stack .block-open-contain.jihe .view-more-btn .btn-outline {
+  width: 2.32em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.container .full-block-stack .block-stack .block-open-contain.jihe .open-img2 {
+  position: absolute;
+  height: 1.76em;
+  left: 1.68em;
+  top: 3.6em;
+}
+.container .full-block-stack .block-stack .block-open-contain.jihe .scale-img1 {
+  position: absolute;
+  display: block;
+  width: 0.2em;
+  left: 5.2em;
+  top: 5em;
+  z-index: 2;
+  cursor: pointer;
+}
+.container .full-block-stack .block-stack .block-open-contain.jihe .open-img3 {
+  position: absolute;
+  height: 1.6em;
+  top: 1.04em;
+  left: 5.9em;
+}
+.container .full-block-stack .block-stack .block-open-contain.jihe .view-more-btn2 {
+  position: absolute;
+  width: 2.18em;
+  height: 0.8em;
+  top: 2.8em;
+  left: 7em;
+  cursor: pointer;
+}
+.container .full-block-stack .block-stack .block-open-contain.jihe .view-more-btn2 .btn-self {
+  position: absolute;
+  width: 2.18em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .full-block-stack .block-stack .block-open-contain.jihe .view-more-btn2 .btn-outline {
+  width: 2.32em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.container .full-block-stack .block-stack .block-open-contain.jihe .open-img4 {
+  position: absolute;
+  height: 1.76em;
+  left: 6.2em;
+  top: 3.6em;
+}
+.container .full-block-stack .block-stack .block-open-contain.jihe .scale-img2 {
+  position: absolute;
+  display: block;
+  width: 0.2em;
+  left: 9.7em;
+  top: 5em;
+  z-index: 2;
+  cursor: pointer;
+}
+.container .full-block-stack .block-stack .block-open-contain.jihe .open-img5 {
+  position: absolute;
+  height: 1.6em;
+  top: 1.04em;
+  left: 10.4em;
+}
+.container .full-block-stack .block-stack .block-open-contain.jihe .view-more-btn3 {
+  position: absolute;
+  width: 2.18em;
+  height: 0.8em;
+  top: 2.8em;
+  left: 11.6em;
+  cursor: pointer;
+}
+.container .full-block-stack .block-stack .block-open-contain.jihe .view-more-btn3 .btn-self {
+  position: absolute;
+  width: 2.18em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .full-block-stack .block-stack .block-open-contain.jihe .view-more-btn3 .btn-outline {
+  width: 2.32em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.container .full-block-stack .block-stack .block-open-contain.jihe .open-img6 {
+  position: absolute;
+  height: 1.76em;
+  left: 10.7em;
+  top: 3.6em;
+}
+.container .full-block-stack .block-stack .block-open-contain.jihe .scale-img3 {
+  position: absolute;
+  display: block;
+  width: 0.2em;
+  left: 14.2em;
+  top: 5em;
+  z-index: 2;
+  cursor: pointer;
+}
+.container .full-block-stack .block-stack .block-open-contain.jihe .open-img7 {
+  position: absolute;
+  height: 1.24em;
+  bottom: 2.2em;
+  left: 5.6em;
+}
+.container .full-block-stack .block-stack .block-open-contain.jihe .view-more-btn4 {
+  position: absolute;
+  width: 2.18em;
+  height: 0.8em;
+  bottom: 1.2em;
+  left: 7em;
+  cursor: pointer;
+}
+.container .full-block-stack .block-stack .block-open-contain.jihe .view-more-btn4 .btn-self {
+  position: absolute;
+  width: 2.18em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .full-block-stack .block-stack .block-open-contain.jihe .view-more-btn4 .btn-outline {
+  width: 2.32em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.container .full-block-stack .block-stack .block-open-contain.jihe .open-img8 {
+  position: absolute;
+  height: 1.24em;
+  bottom: 2.2em;
+  left: 10.2em;
+}
+.container .full-block-stack .block-stack .block-open-contain.jihe .view-more-btn5 {
+  position: absolute;
+  width: 2.18em;
+  height: 0.8em;
+  bottom: 1.2em;
+  left: 11.6em;
+  cursor: pointer;
+}
+.container .full-block-stack .block-stack .block-open-contain.jihe .view-more-btn5 .btn-self {
+  position: absolute;
+  width: 2.18em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .full-block-stack .block-stack .block-open-contain.jihe .view-more-btn5 .btn-outline {
+  width: 2.32em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.container .full-block-stack .block-stack .block-open-contain.kh {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.container .full-block-stack .block-stack .block-open-contain.kh .open-img1 {
+  position: absolute;
+  height: 1.6em;
+  top: 1.4em;
+  left: 4.4em;
+}
+.container .full-block-stack .block-stack .block-open-contain.kh .view-more-btn {
+  position: absolute;
+  width: 2.18em;
+  height: 0.8em;
+  top: 3.2em;
+  left: 6.4em;
+  cursor: pointer;
+}
+.container .full-block-stack .block-stack .block-open-contain.kh .view-more-btn .btn-self {
+  position: absolute;
+  width: 2.18em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .full-block-stack .block-stack .block-open-contain.kh .view-more-btn .btn-outline {
+  width: 2.32em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.container .full-block-stack .block-stack .block-open-contain.kh .open-img2 {
+  position: absolute;
+  height: 3.7em;
+  left: 0.56em;
+  top: 4.4em;
+}
+.container .full-block-stack .block-stack .block-open-contain.kh .open-img3 {
+  position: absolute;
+  height: 4.6em;
+  bottom: 1.04em;
+  right: 0.8em;
+}
+.container .full-block-stack .block-stack .block-open-contain.qs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.container .full-block-stack .block-stack .block-open-contain.qs .open-img1 {
+  position: absolute;
+  height: 1.6em;
+  top: 1.4em;
+  left: 1.4em;
+}
+.container .full-block-stack .block-stack .block-open-contain.qs .open-img2 {
+  position: absolute;
+  height: 4.4em;
+  left: 1.16em;
+  top: 3.6em;
+}
+.container .full-block-stack .block-stack .block-open-contain.qs .open-img3 {
+  position: absolute;
+  height: 1.6em;
+  bottom: 2.4em;
+  right: 2.8em;
+}
+.container .full-block-stack .block-stack .block-open-contain.qs .open-img4 {
+  position: absolute;
+  height: 2.6em;
+  bottom: 4.4em;
+  right: 1.6em;
+}
+.container .full-block-stack .block-stack .block-open-contain.wowo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.container .full-block-stack .block-stack .block-open-contain.wowo .open-img1 {
+  position: absolute;
+  height: 2.4em;
+  top: 1.4em;
+  left: 4.4em;
+}
+.container .full-block-stack .block-stack .block-open-contain.wowo .view-more-btn {
+  position: absolute;
+  width: 2.18em;
+  height: 0.8em;
+  top: 4em;
+  left: 6.4em;
+  cursor: pointer;
+}
+.container .full-block-stack .block-stack .block-open-contain.wowo .view-more-btn .btn-self {
+  position: absolute;
+  width: 2.18em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .full-block-stack .block-stack .block-open-contain.wowo .view-more-btn .btn-outline {
+  width: 2.32em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.container .full-block-stack .block-stack .block-open-contain.wowo .open-img2 {
+  position: absolute;
+  height: 6.4em;
+  left: 0.2em;
+  bottom: 0.2em;
+}
+.container .video-dialog {
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+.container .video-dialog .inner {
+  position: absolute;
+  height: 6em;
+  width: 10.52em;
+  top: 2em;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-image: url(https://p2.ssl.qhimg.com/t11b673bcd69fe5945b16ac4f04.png);
+  background-size: 100% 100%;
+}
+.container .video-dialog .inner .video-play {
+  position: absolute;
+  z-index: 1;
+  height: 0.92em;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 2.4em;
+  cursor: pointer;
+}
+.container .video-dialog .inner video {
+  position: absolute;
+  display: block;
+  left: 0.5%;
+  top: 0.5%;
+  height: 99%;
+  width: 99%;
+}
+.container .video-dialog .inner .close-video-dialog-btn {
+  position: absolute;
+  height: 0.4em;
+  width: 0.4em;
+  right: 0;
+  top: -0.52em;
+  cursor: pointer;
+}
+.container .img-dialog {
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+.container .img-dialog .inner {
+  position: absolute;
+  height: 6em;
+  width: 10.52em;
+  top: 2em;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-image: url(https://p2.ssl.qhimg.com/t11b673bcd69fe5945b16ac4f04.png);
+  background-size: 100% 100%;
+}
+.container .img-dialog .inner .img-big {
+  position: absolute;
+  display: block;
+  left: 0.5%;
+  top: 0.5%;
+  height: 99%;
+  width: 99%;
+}
+.container .img-dialog .inner .close-img-dialog-btn {
+  position: absolute;
+  height: 0.4em;
+  width: 0.4em;
+  right: 0;
+  top: -0.52em;
+  cursor: pointer;
+}
+.container .footer {
+  background-color: #000;
+}
+.loading {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 999;
+}
+
+    </style>
+    <!-- <link rel="stylesheet" href="./wows_summer_combine.css"> -->
 
     <script>
         console.info(navigator.userAgent)
@@ -284,13 +1692,17 @@
         }
     </script>
     <script>
-        // wgCommonSdk.wgFoot({ root: '.footer_wrap' });
+        wgCommonSdk.wgFoot({ root: '.footer_wrap' });
     </script>
     <script src="//s4.ssl.qhres2.com/!42519d2a/theme/js/jquery-2.1.4.min.js"></script>
     <script>
+
+        $('.loading').hide();
+
         let cur = null;
         $('.block-inner-contain .ic').on('click', function(e){
             cur = e.target.parentNode.parentNode.parentNode.className.split(' ')[1]
+            if (cur == 'star') {return}
             $(`.block-open-contain.${cur}`).show()
             setTimeout(function(){$(`.block-open-contain.${cur}`).addClass('cur')}, 0)
             hideInners(cur)
@@ -336,11 +1748,27 @@
             $('.video-dialog').show()
         })
     </script>
+    <script>
+        $('.scale-img1').on('click', function(){
+            $('.img-dialog .img-big.ib1').show()
+            $('.img-dialog').show()
+        })
+        $('.scale-img3').on('click', function(){
+            $('.img-dialog .img-big.ib2').show()
+            $('.img-dialog').show()
+        })
+        $('.close-img-dialog-btn').on('click', function(){
+            $('.img-dialog .img-big').hide()
+            $('.img-dialog').hide()
+        })
+        
+        
+    </script>
      <script>
         function jumpOut(type) {
             switch (type){
                 case 'bilan':
-                    window.open('https://wowsgame.cn/zh-cn/news/update/1303_Patch_Note/')
+                    window.open('https://wowsgame.cn/zh-cn/news/guide/azur_1304_guide/')
                     break;
                 case 'kmse':
                     window.open('https://wowsgame.cn/zh-cn/news/update/patchnote_1304/#armory')
@@ -356,6 +1784,93 @@
             }
         }
     </script>
+    <script>
+        const global = {
+            isSignIn: false,
+            isPC: !/Android|webOS|iPhone|iPod|BlackBerry|iPad/i.test(navigator.userAgent),
+            signUp: true,
+            userInfo:{}
+        };
+        (function QHPassInit() {
+            console.info('QHPassInit')
+            let hostname = window.location.host;
+            if (hostname.indexOf('beta') !== -1) {
+                hostname = hostname.substring(5, hostname.length);
+            }
+            if (hostname.indexOf('360.cn') !== -1) {
+                hostname = '360.cn';
+            }
+
+            $.getScript('//s.ssl.qhimg.com/quc/quc7.js').then(function () {
+                console.info('quc')
+                QHPass.init({
+                    src: 'pcw_wargame',
+                    domainList: ['so.com', '360.cn', 'wot.youxi.com', 'wows.youxi.com', 'wg.youxi.com'],
+                    signUp: { types: ['mobile', 'email'] },
+                    signIn: {
+                        panelSize: 'middle',
+                        thirdPart: { providers: [] },
+                        hideKeepAlive: false,
+                        types: ["normal","mobile" ],
+                    },
+                    primaryColor: '#314c88',
+                });
+                QHPass.setConfig('currentDomain', hostname);
+                QHPass.getUserInfo(hostname, function (userInfo) {
+                    console.info('userInfo', userInfo)
+                    global.isSignIn = true;
+                    global.userInfo = userInfo;
+                    //$('.js-username').html(userInfo.username);
+                    //获取wgid
+                    // event.getWgId(userInfo.username)
+                    $('.js-no-signIn').hide();
+                    $('.js-has-signIn').show().css('display', 'flex');
+                    $('.js-signUp')
+                        .removeClass('js-signUp')
+                        .html('个人中心')
+                        .off()
+                        .on('click', function () {
+                            window.open('//i.360.cn/', '_blank');
+                        });
+                    // event.getChance(); //获取抽奖次数
+                    // event.damageChange(); //伤害增加次数
+                });
+                const signUpPC = function (isRefresh) {
+                    //QHPass.signUp(!!isRefresh);
+                    QHPass.signIn(!!isRefresh);
+                };
+                const signUpM = function () {
+                    window.location.href = '//i.360.cn/login?src=pcw_wargame&destUrl=' + window.location.href;
+                };
+                global.signUp = global.isPC ? signUpPC : signUpM;
+                $(document).on('click', '.js-signUp', function () {
+                    global.signUp(true);
+                });
+                $(document).on('click', '.js-signOut', function () {
+                    QHPass.signOut(true);
+                });
+            });
+        })();
+        if (!global.isPC) {
+            $.getScript('//s.ssl.qhimg.com/static/d5bd246bbd05987a.js').then(function () {
+                $(' body').append(' <button class="btnShare" style="display: none"></button>');
+                $('.btnShare').share({
+                    appkey: 'WOT_360',
+                    title: '《战舰世界》8周年抽奖盛典',
+                    description: '抽奖好礼相赠，限量周边，诸多福利。快来《战舰世界》',
+                    image: 'https://p5.ssl.qhimg.com/d/inn/df10f5c3f090/share-wows.jpg',
+                    url: window.location.href,
+                });
+            });
+            //返回顶部
+            goTopFn.returnTop();
+        }
+    </script>
+    <!-- 打点js start -->
+    <script src='//s3.ssl.qhres2.com/!a745e67a/monitor_analytic.js'></script>
+    <script>monitor.setProject("QH_246_2").getTrack().getClickAndKeydown().getClickHeatmap(10,1)</script>
+    <script id="wg_bi_js"  src="//wg.360.cn/date/bi.min.js?web_wows"></script><!--数据打点-->
+    <!-- 打点JS end-->
 </body>
 
 </html>

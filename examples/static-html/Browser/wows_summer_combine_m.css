@@ -18,18 +18,36 @@ body {
 }
 .container .top-bar .home {
   display: block;
-  height: 0.74rem;
+  height: 0.64rem;
   margin-right: 0.185rem;
+  color: white;
+  line-height: 0.64rem;
+  font-size: 0.3rem;
+  padding: 0 0.2rem;
+  border: thin solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.7rem;
 }
 .container .top-bar .cloud {
   display: block;
-  height: 0.74rem;
+  height: 0.64rem;
   margin-right: 0.185rem;
+  color: white;
+  line-height: 0.64rem;
+  font-size: 0.3rem;
+  padding: 0 0.2rem;
+  border: thin solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.7rem;
 }
 .container .top-bar .login {
   display: block;
-  height: 0.74rem;
+  height: 0.64rem;
   margin-right: 0.185rem;
+  color: white;
+  line-height: 0.64rem;
+  font-size: 0.3rem;
+  padding: 0 0.2rem;
+  border: thin solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.7rem;
 }
 .container .title-bar {
   width: 100%;

@@ -5,16 +5,19 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-    <title>主播招募</title>
+    <title>夏日狂欢 燃情三国</title>
     <meta name="description" content="无惧骇浪，只为荣誉而战！《战舰世界》全新版本将带你驶向传奇海域，操控各系高能战舰鏖战大洋；超清3D建模高度还原战舰每层细节；多种战斗机制全面考验你的战略部署，快在风暴、闪电等异常气候与敌军密集炮火的双重威胁下，在立体式的战场上用火炮烈焰吞噬敌军吧！">
     <meta name="keywords" content="战舰世界,哥斯拉大战金刚,哥斯拉,金刚,战舰世界官网,战舰哥斯拉,战舰金刚,Godzilla,King Kong">
-        <!-- <script src="https://wg.360.cn/wgCommonSdk.min.js"></script> -->
+        <script src="https://wg.360.cn/wgCommonSdk.min.js"></script>
         <style>
             * {
               padding: 0;
               margin: 0;
-              font-size: 10vw;
+              
                 scroll-behavior:smooth;
+            }
+            html {
+                font-size: 10vw;
             }
             ::-webkit-scrollbar {
                 width: 0;
@@ -31,10 +34,12 @@
 <body>
     <div class="container">
         <div class="top-bar">
-            <img class="wows-logo" src="https://p3.ssl.qhimg.com/t11b673bcd615450a02096f0dea.png">
-            <img class="home" src="https://p1.ssl.qhimg.com/t11b673bcd6f532bbeba26b6b91.png">
-            <img class="cloud" src="https://p5.ssl.qhimg.com/t11b673bcd6b008ab3b375e2780.png">
-            <img class="login" src="https://p5.ssl.qhimg.com/t11b673bcd6f985eb002aebccac.png">
+            <img class="wows-logo" onclick="window.open('https://wows.360.cn/')" src="https://p3.ssl.qhimg.com/t11b673bcd615450a02096f0dea.png">
+            
+            <div class="home" onclick="window.open('https://wows.360.cn/')">官网首页</div>
+            <div class="cloud" onclick="window.open('https://play.wows.360.cn/yun.html#/!')">云游戏</div>
+            <div class="login js-signUp ">登录/注册</div>
+            <!-- <img class="login js-signUp" src="https://p5.ssl.qhimg.com/t11b673bcd6f985eb002aebccac.png"> -->
         </div>
         <div class="title-bar">
             <img class="title-slogan" src="https://p3.ssl.qhimg.com/t11b673bcd63b992b870dfcbb48.png">
@@ -42,7 +47,8 @@
         </div>
         <div class="block-container">
             <img class="block bilan" src="https://p4.ssl.qhimg.com/t11b673bcd6adadfd979562cf1a.png">
-            <img class="block star" src="https://p0.ssl.qhimg.com/t11b673bcd64b4164bea43afd80.png">
+            <!-- <img class="block star" src="https://p0.ssl.qhimg.com/t11b673bcd64b4164bea43afd80.png"> -->
+            <img class="block star" src="https://p4.ssl.qhimg.com/t11b673bcd6ed6ea9c75efa0c54.png">
             <img class="block sanguo" src="https://p3.ssl.qhimg.com/t11b673bcd6d7a2dd992be1613f.png">
             <img class="block banben" src="https://p5.ssl.qhimg.com/t11b673bcd637839030e04172b8.png">
             <img class="block kh" src="https://p2.ssl.qhimg.com/t11b673bcd6b61e1fc80fec9d2e.png">
@@ -76,12 +82,12 @@
                 <img class="b b3" src="https://p2.ssl.qhimg.com/t11b673bcd611efd33b2ede2be0.png">
                 <img class="t t5" src="https://p2.ssl.qhimg.com/t11b673bcd6f65459298f316439.png">
             </div>
-            <div class="block-detail star">
+            <!-- <div class="block-detail star">
                 <img class="t t1" src="https://p4.ssl.qhimg.com/t11b673bcd605e325e9d6de1f6c.png">
                 <img class="b b1" src="https://p2.ssl.qhimg.com/t11b673bcd611efd33b2ede2be0.png">
                 <img class="t t2" src="https://p0.ssl.qhimg.com/t11b673bcd62e21c166b6cee5d1.png">
                 <img class="t t3" src="https://p1.ssl.qhimg.com/t11b673bcd6d14de045ec98c5b5.png">
-            </div>
+            </div> -->
             <div class="block-detail banben">
                 <img class="t t1" src="https://p1.ssl.qhimg.com/t11b673bcd6b0fa062d4f520e2c.png">
                 <img class="t t2" src="https://p4.ssl.qhimg.com/t11b673bcd6ee623400a9289f90.png">
@@ -127,6 +133,8 @@
         </div>
     </div>
 
+    <div class="footer_wrap"></div>
+
     <div class="loading"></div>
 
     <link rel="stylesheet" href="./wows_summer_combine_m.css">
@@ -148,7 +156,7 @@
         }
     </script>
     <script>
-        // wgCommonSdk.wgFoot({ root: '.footer_wrap' });
+        wgCommonSdk.wgFoot({ root: '.footer_wrap' });
     </script>
     <script src="//s4.ssl.qhres2.com/!42519d2a/theme/js/jquery-2.1.4.min.js"></script>
 
@@ -207,6 +215,7 @@
             $('.video-dialog').show()
         })
     </script>
+    
 </body>
 
 </html>
