@@ -251,6 +251,7 @@ body {
 }
 .container .full-block-stack .block-stack .block-inner-contain.bilan {
   position: absolute;
+  top: -0.01em;
   z-index: 6;
   width: 5em;
   height: 5em;
@@ -325,15 +326,15 @@ body {
   top: 0.212em;
   left: -0.7em;
   display: block;
-  height: 4.66em;
+  height: 4.76em;
   transition: opacity 0.5s;
 }
 .container .full-block-stack .block-stack .block-inner-contain.sanguo .ground-cur {
   position: absolute;
-  top: 0.19em;
+  top: 0.212em;
   left: -0.84em;
   display: block;
-  height: 4.9em;
+  height: 5em;
   opacity: 0;
   transition: opacity 0.5s;
 }
@@ -407,10 +408,10 @@ body {
 }
 .container .full-block-stack .block-stack .block-inner-contain.star .title-show .icons .ic {
   position: absolute;
-  top: 0.6em;
+  top: 0.7em;
   left: 1em;
   display: block;
-  height: 2.08em;
+  height: 2em;
   transition: transform 0.1s;
 }
 .container .full-block-stack .block-stack .block-inner-contain.star .title-show .hide-show-btn {
@@ -587,7 +588,7 @@ body {
   bottom: 0.12em;
   left: -0.4em;
   display: block;
-  height: 5em;
+  height: 4.8em;
   transition: opacity 0.5s;
 }
 .container .full-block-stack .block-stack .block-inner-contain.qs .ground-cur {
@@ -595,7 +596,7 @@ body {
   bottom: 0.12em;
   left: -0.46em;
   display: block;
-  height: 5.16em;
+  height: 5em;
   opacity: 0;
   transition: opacity 0.5s;
 }
