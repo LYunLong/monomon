@@ -152,6 +152,7 @@
             </div>
         </div>
 
+
         
     </div>
 
@@ -159,8 +160,11 @@
 
     <div class="loading"></div>
 
+    <div class="wait-toast">敬请期待</div>
+    
+
     <style>
-        body {
+      body {
   background-color: #000;
 }
 .container {
@@ -488,6 +492,23 @@
   z-index: 999;
   background-color: #000;
 }
+.wait-toast {
+  position: fixed;
+  display: none;
+  height: 1rem;
+  width: 4rem;
+  left: 50%;
+  font-size: 0.44rem;
+  color: white;
+  /* left: 0; */
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  line-height: 1rem;
+  border-radius: 0.2rem;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.7);
+}
 
     </style>
     <!-- <link rel="stylesheet" href="./wows_summer_combine_m.css"> -->
@@ -550,6 +571,14 @@
         }
     </script>
     <script>
+        let toastShow = null
+        function showToast() {
+          $('.wait-toast').show()
+          toastShow && clearTimeout(toastShow)
+          toastShow = setTimeout(() => {
+            $('.wait-toast').hide()
+          }, 3000);
+        }
         
         $('.video-dialog.vd .video-play').on('click', function(e) {
             $('.video-dialog.vd video')[0].play()
@@ -567,10 +596,11 @@
             $('.video-dialog.vd').hide()
         })
         $('.title-bar .title-video-btn').on('click', function(e){
+          showToast()
             // $('.video-dialog.vd').show()
         })
-    </script>
-    <script>
+    
+    
         
         $('.video-dialog.vd2 .video-play').on('click', function(e) {
             $('.video-dialog.vd2 video')[0].play()
@@ -588,6 +618,7 @@
             $('.video-dialog.vd2').hide()
         })
         $('.block-detail.sanguo .b1').on('click', function(e){
+          showToast()
             // $('.video-dialog.vd2').show()
         })
     </script>
