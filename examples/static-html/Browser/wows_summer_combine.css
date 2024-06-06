@@ -1340,7 +1340,6 @@ body {
 }
 .container .img-dialog .inner .img-big {
   position: absolute;
-  display: block;
   left: 0.5%;
   top: 0.5%;
   height: 99%;

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <title>封禁账号公示_坦克世界</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="《坦克世界》全球最新1.10版本强势登场，经典还原，历史级复刻，数百辆经典战车高清重现任君驾驭；深入沙漠、丘陵等地形，亲临让人肾上腺素飙升的火爆场面，完成海量传奇战役。电影级引擎特效完美重制真实战场，极具临场感的坦克突击战，带你深入前线阵地，在超大规模战场中尽情驰骋！" />
+	<meta name="keywords" content="坦克世界,坦克世界官网,坦克世界游戏下载,wot,tksj,坦克世界公测,wot官网,坦克世界新版,坦克装甲,坦克百科,坦克贴吧,坦克世界官方下载,WOT官网,坦克世界下载,战争网游,新兵指南,轻型坦克,中型坦克,重型坦克,自行反坦克,坦克歼击车,坦克射击游戏,坦克游戏,战争游戏,360战争网游,360战游,360战游平台,军事游戏,二战题材,MMOTPS,TPS,坦克世界亚服,美系坦克,德系坦克,苏系坦克,中系坦克,法系坦克,虎式坦克,T34坦克,黑豹坦克,M4谢尔曼,丘吉尔坦克,克伦威尔,97式坦克,4号坦克 ,kv-1坦克,is-2,猎虎反坦克炮" />
+	<link rel="shortcut icon" href="//s0.ssl.qhres2.com/static/7f869ffdfa617939.ico" />
+	<link rel="stylesheet" type="text/css" href="https://s4.ssl.qhres2.com/!3b66c76f/index.css" />
+	<script src="https://s1.ssl.qhres2.com/!a38d4058/theme/js/jquery-2.1.4.min.js"></script>
+	<script src="https://s5.ssl.qhres2.com/!a38d4058/theme/js/rem.js"></script>
+    <style>
+        body .footer{background-color:#0c0f13;}
+        .nav_list{z-index:1;}
+        .btn_jump{font-size:20px;color:#e31010;position:absolute;left:50%;transform:translateX(-50%);padding:10px;margin:10px;}
+        .btn_jump:hover{color:#fd4444;}
+    </style>
+</head>
+
+<body>
+<!--[if lte IE 8]>
+<p class="chromeframe">您使用的IE浏览器版本过低，本站不再支持<a href="http://windows.microsoft.com/" target="_blank" rel="noopener noreferrer">升级您的IE浏览器</a>，或使用<a href="http://www.google.cn/intl/zh-CN/chrome/" target="_blank" rel="noopener noreferrer">Google Chrome</a>、<a href="http://www.firefox.com.cn/download/" target="_blank" rel="noopener noreferrer">Firefox</a>等高级浏览器。</p>
+<![endif]-->
+<div class="wrap">
+	<div class="mainWrap">
+		<a class="logo "  href="/" target="_blank">
+			<img  src="https://p1.ssl.qhimg.com/d/inn/4188a38d4058/theme/images/logo.png" />
+		</a>
+		<div class="nav_list">
+			<a href="#" target="_blank" class="bi_event" data-event="web" data-biparams="banner">官网首页</a>
+			<a href="https://redir.wggames.cn/hd5d3cvf/" class="download bi_event" data-event="download_exe" data-biparams="banner">游戏下载</a>
+			<a href="javascript:;" class="btn-reg bi_event" data-event="rg" data-biparams="banner"><span class="J_btn-reg">快速注册</span></a>
+		</div>
+		<div class="mainCon">
+			<div class="actText">
+				<h2 class="tit1 titDate"></h2>
+				<h3 class="tit2"><i>周新增封禁数：</i><span class="weekCnt"></span></h3>
+			</div>
+			<div class="playerBox">
+				<div class="playerBox_top">
+					<div class="dropdownMenu">
+						<i>- 请选择日期 -</i><em></em>
+						<div class='slectOption'> </div>
+					</div>
+					<a href="javascript:;" class="downList">下载封禁名单</a>
+					<a href="https://wotgame.cn/zh-cn/news/announcement/Fair-Play-bot/" target="_blank" class="ruleBtn">封禁规则</a>
+				</div>
+				<div class="playerList">
+					<ul class="listTit">
+						<li>封禁时间</li>
+						<li>玩家昵称</li>
+						<li>封禁原因</li>
+						<li>封禁时长</li>
+					</ul>
+					<div class="player" id="FontScroll">
+						<ul class="playerListCon" ></ul>
+						<ul class="playerListCon copy" ></ul>
+					</div>
+				</div>
+           <a  href="https://wotgame.cn/zh-cn/news/announcement/ban/" target="_blank" class="btn_jump">往期封停公告>></a>
+			</div>
+		</div>
+        <style>
+            .playerListCon {
+                animation: listRoll 100s infinite linear;
+            }
+            .player:hover .playerListCon {
+                animation-play-state: paused;
+            }
+            @keyframes listRoll {
+                from { transform: translateY(0); }
+                to { transform: translateY(-100%); }
+            }
+        </style>
+	</div>
+    {qcms_block id="211287763" qcms-label-hint="pc通用底部（自适应）"}
+</div>
+{qcms_script id="610477538" qcms-label-hint="pc通用js--登录"}    
+<!--{qcms_script id="211291052" qcms-label-hint="文字向上滚动"}-->
+<script>
+	$(function(){
+    	var event={
+    	    host: '//profile.wg.360.cn',
+			  downLink:'/wstop/down', //下载名单地址
+    	    //页面数据
+    	    getPageData:function(){
+    	        var $this = this;
+    	        $.ajax({
+    	            type: 'GET',
+    	            url: $this.host + '/wstop/index',
+    	            dataType: 'jsonp',
+    	            success: function (data) {
+    	                console.log(data)
+    	                if(data.errno == 0){
+									var dateArr= data.data.days;//日期列表
+									var optionHtml='';
+									for(var i=0;i<dateArr.length;i++){
+										optionHtml+="<a href='javascript:;' value="+dateArr[i]+">"+dateArr[i]+"</a>";
+									}
+									$(".slectOption").html(optionHtml); //展示日期列表
+									$(".dropdownMenu .slectOption a").eq(0).click();//默认显示第一个
+									$this.showPlayerList(data.data.items);//名单滚动展示
+									$(".titDate").html('-  '+data.data.date+'  -'); //更新日期
+									$(".weekCnt").html(data.data.week_cnt); //周新增禁数
+    	                }
+    	            }
+    	        })
+    	    },
+    	    //下拉选择--下载名单
+    	    downMenu:function(){
+    	        var $this = this;
+					$(".dropdownMenu i").click(function(event){
+                 event.stopPropagation();
+	   					var selC=$(this).siblings(".slectOption");
+	  					if(selC.css("display")=="none"){
+					  		selC.show();
+	  					}else{
+					  		selC.hide();  
+	  					}
+  					});
+              $(document).on("click",function(){
+                    $('.slectOption').hide();
+              });
+    	        $(document).on("click", ".dropdownMenu .slectOption a",function(){
+						var slectVal=$(this).attr("value");
+						var slectText=$(this).html();
+						$(this).addClass("selected").siblings().removeClass("selected");
+						$(this).parent().siblings(".sel_schedule").val(slectVal);
+						$(this).parent().siblings("i").html(slectText);
+						$(this).parent().hide();
+						$(".downList").attr("href",$this.host+$this.downLink+'?day='+slectText); //下载名单
+  					});
+    	    },
+    	    //封禁名单展示
+    	    showPlayerList:function(playerList){
+    	        var $this = this;
+					var playerHtml=''
+					for(var i=0;i<playerList.length;i++){
+						playerHtml+='<li>'
+							+'<span>'+playerList[i].day+'</span>'
+							+'<span>'+playerList[i].nickname+'</span>'
+							+'<span>'+playerList[i].reason+'</span>'
+							+'<span>'+playerList[i].duration+'</span>'
+						+'</li>'
+					}
+					$(".playerListCon").html(playerHtml);
+					$('#FontScroll').FontScroll({Time: 3000,isHover:false,direction:'down'}); //滚动效果
+    	    },
+    	    init:function(){
+    	        var $this = this;
+    	        $this.getPageData();
+					$this.downMenu();
+    	    }
+    	}
+    	event.init();
+	})
+</script>
+</body>
+</html>
