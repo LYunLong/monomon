@@ -93,8 +93,8 @@
                 </div>
 
                 <div class="block-open-contain sanguo" hidden>
-                    <!-- <img class="open-img1" src="https://p1.ssl.qhimg.com/t11b673bcd672f0d4e7adaab820.png"> -->
-                    <img class="open-img1" src="https://p4.ssl.qhimg.com/t11b673bcd6aceb3b6a50a01bdd.png">
+                    <img class="open-img1" src="https://p1.ssl.qhimg.com/t11b673bcd672f0d4e7adaab820.png">
+                    <!-- <img class="open-img1" src="https://p4.ssl.qhimg.com/t11b673bcd6aceb3b6a50a01bdd.png"> -->
                     <div class="view-more-btn">
                         <!-- <img class="btn-self" src="https://p4.ssl.qhimg.com/t11b673bcd6db46f8f2592fdf69.png"> -->
                         <img class="btn-self" src="https://p0.ssl.qhimg.com/t11b673bcd68a0e57a7313548da.png">
@@ -106,8 +106,8 @@
                         <img class="btn-name" src="https://p0.ssl.qhimg.com/t11b673bcd66d9a4da2a27783e9.png">
                     </div>
                     <img class="open-img3" src="https://p5.ssl.qhimg.com/t11b673bcd6f86dcc1dfb18556a.png">
-                    <!-- <img class="open-img4" src="https://p2.ssl.qhimg.com/t11b673bcd68780d48afe73ca52.png"> -->
-                    <img class="open-img4" src="https://p0.ssl.qhimg.com/t11b673bcd65f6b32e59d49b704.png">
+                    <img class="open-img4" src="https://p4.ssl.qhimg.com/t11b673bcd641f73a4f4487b542.png">
+                    <!-- <img class="open-img4" src="https://p0.ssl.qhimg.com/t11b673bcd65f6b32e59d49b704.png"> -->
                     <div class="view-more-btn2" onclick="jumpOut('caochuan')">
                         <!-- <img class="btn-self" src="https://p0.ssl.qhimg.com/t11b673bcd68a0e57a7313548da.png"> -->
                         <img class="btn-self" src="https://p4.ssl.qhimg.com/t11b673bcd6db46f8f2592fdf69.png">
@@ -120,15 +120,15 @@
                     <img class="ground-cur" src="https://p2.ssl.qhimg.com/t11b673bcd689ca3b6a34b6c64f.png">
                     <div class="title-show">
                         <div class="icons">
-                            <img class="ic ic1" src="https://p1.ssl.qhimg.com/t11b673bcd670b3cb508c50d023.png">
-                            <!-- <img class="ic ic1" src="https://p4.ssl.qhimg.com/t11b673bcd6541c7357ffd93b06.png"> -->
+                            <!-- <img class="ic ic1" src="https://p1.ssl.qhimg.com/t11b673bcd670b3cb508c50d023.png"> -->
+                            <img class="ic ic1" src="https://p4.ssl.qhimg.com/t11b673bcd6541c7357ffd93b06.png">
                         </div>
                         <div class="hide-show-btn">
                             <img class="btn-self" src="https://p0.ssl.qhimg.com/t11b673bcd649de00f28a3d3300.png">
                             <img class="btn-outline" src="https://p5.ssl.qhimg.com/t11b673bcd68a7b89338d1c9d3c.png">
                         </div>
-                        <img class="name" src="https://p2.ssl.qhimg.com/t11b673bcd65506af8e979b36f9.png">
-                        <!-- <img class="name" src="https://p2.ssl.qhimg.com/t11b673bcd6138c5abb4624180b.png"> -->
+                        <!-- <img class="name" src="https://p2.ssl.qhimg.com/t11b673bcd65506af8e979b36f9.png"> -->
+                        <img class="name" src="https://p2.ssl.qhimg.com/t11b673bcd6138c5abb4624180b.png">
                     </div>
                 </div>
 
@@ -1712,7 +1712,7 @@
         let cur = null;
         $('.block-inner-contain .ic').on('click', function(e){
             cur = e.target.parentNode.parentNode.parentNode.className.split(' ')[1]
-            // if (cur == 'star') {return}
+            if (cur == 'star') {return}
             $(`.block-open-contain.${cur}`).show()
             setTimeout(function(){$(`.block-open-contain.${cur}`).addClass('cur')}, 0)
             hideInners(cur)
