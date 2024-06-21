@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <audio id="aud" controls src="./1.WAV"></audio>
+        <script>
+            // 检查浏览器是否支持getUserMedia API
+            if (navigator.mediaDevices.getUserMedia) {
+                // 设置录制音频的参数
+                const audioConstraints = { audio: true };
+
+                // 获取音频流
+                navigator.mediaDevices.getUserMedia(audioConstraints)
+                    .then(function (stream) {
+                        // 创建一个MediaRecorder实例
+                        const mediaRecorder = new MediaRecorder(stream);
+
+                        // 当数据可用时的事件处理
+                        mediaRecorder.ondataavailable = event => {
+                            // 处理录制的音频数据
+                            const audioChunk = event.data;
+                            const audioBlob = new Blob([audioChunk], { type: 'audio/webm' });
+
+                            // 创建一个用于读取Blob的FileReader实例
+                            const reader = new FileReader();
+                            reader.onload = function (e) {
+                                // 转换为Base64编码
+                                const base64Audio = btoa(e.target.result);
+                                console.log(base64Audio); // 输出Base64编码的音频字符串
+
+                                document.getElementById('aud').setAttribute('src', 'data:audio/wav;base64,' + base64Audio) 
+
+                                testAudio()
+
+                            };
+                            reader.readAsBinaryString(audioBlob);
+                        };
+
+                        // 开始录制
+                        // mediaRecorder.start();
+
+                        
+
+                        // 在需要停止录制的时候调用
+                        window.addEventListener('keydown', function(e){
+                            if (e.key == '4') {
+                                mediaRecorder.stop();
+                            }    
+                            // e.key == '1' && mediaRecorder.start();
+                            // console.info(e)
+                        })
+                        // mediaRecorder.stop();
+                    })
+                    .catch(function (error) {
+                        console.error('录制音频出错:', error);
+                    });
+            } else {
+                console.error('不支持getUserMedia API');
+            }
+
+            testAudio()
+
+            async function testAudio () {
+                // 创建一个 AudioContext 环境
+                const ac = new (window.AudioContext || window.webkitAudioContext)();
+
+                // 从 video 或 audio 标签元素中拿到输入源
+                const audio = document.getElementById('aud');
+                // const audio = document.querySelector("audio");
+
+                console.info(11, audio)
+
+                // 创建并获取输入源
+                const audioSource = ac.createMediaElementSource(audio);
+
+
+                console.info(22, audioSource)
+
+
+                // 创建音频处理器
+                await ac.audioWorklet.addModule('./processor.js');
+
+                console.info(33)
+
+                const node = new AudioWorkletNode(ac, 'mu-processor');
+
+                console.info(44, node)
+
+
+                // 链接音频处理器
+                audioSource.connect(node).connect(ac.destination);
+                // connect到扬声器
+                audioSource.connect(ac.destination);
+
+                console.info(55, audioSource)
+
+                // 监听音频处理器每次处理的样本帧
+                node.port.onmessage = (evt) => {
+
+                    //注： 声轨（声道）的数量是 取决于 当前播放的视音频本身有的声轨（声道）！！
+
+                    const [l, r, sl, sr, ...more] = evt.data;
+
+                    // 声轨1（左声道）样本帧数据
+                    console.log('左声道样本帧数据：', l);
+
+                    // 声轨2（右声道）样本帧数据
+                    console.log('右声道样本帧数据：', r);
+
+                    // 声轨3（左环绕声道）样本帧数据
+                    console.log('左环绕声道样本帧数据：', sl);
+
+                    // 声轨4（右环绕声道）样本帧数据
+                    console.log('右环绕声道样本帧数据：', sr);
+
+                    // 其他更多声轨
+                    console.log('其他更多声道样本帧数据：', more);
+                };
+            }
+
+        </script>
+
+        <script>
+            
+
+        </script>
+        
+    </body>
+</html>
