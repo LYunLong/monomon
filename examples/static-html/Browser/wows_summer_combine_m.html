@@ -78,8 +78,8 @@
                 <img class="b b1" src="https://p2.ssl.qhimg.com/t11b673bcd67c38727e20dd91ef.png">
                 <img class="t t2" src="https://p4.ssl.qhimg.com/t11b673bcd661d257b15d22c435.png">
                 <!-- <img class="t t2" src="https://p3.ssl.qhimg.com/t11b673bcd61f8efe7c0e35381c.png"> -->
-                <!-- <img class="b b2" src="https://p2.ssl.qhimg.com/t11b673bcd611efd33b2ede2be0.png"> -->
-                <img class="b b2" src="https://p5.ssl.qhimg.com/t11b673bcd6bf9e451b66fcce76.png">
+                <img class="b b2" onclick="jumpOut('zhanhuo')" src="https://p2.ssl.qhimg.com/t11b673bcd611efd33b2ede2be0.png">
+                <!-- <img class="b b2" src="https://p5.ssl.qhimg.com/t11b673bcd6bf9e451b66fcce76.png"> -->
                 <img class="t t3" src="https://p3.ssl.qhimg.com/t11b673bcd63190ee24cfb58986.png">
                 <img class="t t4" src="https://p1.ssl.qhimg.com/t11b673bcd6ff507cf34c52052a.png">
                 <!-- <img class="t t4" src="https://p2.ssl.qhimg.com/t11b673bcd652839b4f6c0318a2.png"> -->
@@ -147,8 +147,7 @@
 
         <div class="video-dialog vd2">
             <div class="inner">
-                <img class="video-play" src="https://p4.ssl.qhimg.com/t11b673bcd68b459c1dddd91ccc.png">
-                <video src="https://cdn.wg.360.cn/wargame/wowsbg.mp4" loop ></video>
+              <iframe id="bilibili-iframe" src="//player.bilibili.com/player.html?isOutside=true&aid=1355836284&bvid=BV16z421B7ck&cid=1590241696&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
                 <img class="close-video-dialog-btn" src="https://p4.ssl.qhimg.com/t11b673bcd63d7f4c03752bcf53.png">
             </div>
         </div>
@@ -514,6 +513,13 @@
     </style>
     <!-- <link rel="stylesheet" href="./wows_summer_combine_m.css"> -->
 
+    <style>
+      .video-dialog iframe {
+        height: 5.66rem;
+        width: 100%;
+      }
+    </style>
+
     <script>
         console.info(navigator.userAgent)
         console.info(window.innerWidth)
@@ -584,6 +590,9 @@
                 case 'caochuan':  //草船借箭
                     window.open('https://wows.360.cn/mini-game/202406/')
                     break;
+                case 'zhanhuo':  //战火重燃
+                    window.open('https://wowsgame.cn/zh-cn/news/shop/three_kingdoms_event_1305/')
+                    break;
                         
                 
 
@@ -633,13 +642,14 @@
             }
         })
         $('.video-dialog.vd2 .close-video-dialog-btn').on('click', function(e){
-            $('.video-dialog.vd2 video')[0].pause()
-            $('.video-dialog.vd2 .video-play').show()
+            // $('.video-dialog.vd2 video')[0].pause()
+            // $('.video-dialog.vd2 .video-play').show()
+            $('.video-dialog.vd2 iframe')[0].setAttribute('src', $('.video-dialog.vd2 iframe')[0].getAttribute('src'))
             $('.video-dialog.vd2').hide()
         })
+
         $('.block-detail.sanguo .b1').on('click', function(e){
-          showToast()
-            // $('.video-dialog.vd2').show()
+            $('.video-dialog.vd2').show()
         })
     </script>
     <script>

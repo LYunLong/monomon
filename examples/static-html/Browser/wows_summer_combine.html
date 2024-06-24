@@ -95,14 +95,14 @@
                 <div class="block-open-contain sanguo" hidden>
                     <img class="open-img1" src="https://p1.ssl.qhimg.com/t11b673bcd672f0d4e7adaab820.png">
                     <!-- <img class="open-img1" src="https://p4.ssl.qhimg.com/t11b673bcd6aceb3b6a50a01bdd.png"> -->
-                    <div class="view-more-btn">
-                        <!-- <img class="btn-self" src="https://p4.ssl.qhimg.com/t11b673bcd6db46f8f2592fdf69.png"> -->
-                        <img class="btn-self" src="https://p0.ssl.qhimg.com/t11b673bcd68a0e57a7313548da.png">
-                        <!-- <img class="btn-outline" src="https://p5.ssl.qhimg.com/t11b673bcd647de1562648840c4.png"> -->
+                    <div class="view-more-btn" onclick="jumpOut('zhanhuo')">
+                        <img class="btn-self" src="https://p4.ssl.qhimg.com/t11b673bcd6db46f8f2592fdf69.png">
+                        <!-- <img class="btn-self" src="https://p0.ssl.qhimg.com/t11b673bcd68a0e57a7313548da.png"> -->
+                        <img class="btn-outline" src="https://p5.ssl.qhimg.com/t11b673bcd647de1562648840c4.png">
                     </div>
                     <img class="open-img2" src="https://p5.ssl.qhimg.com/t11b673bcd684dd6f191140a55f.png">
                     <div class="open-btn1">
-                        <img class="btn-icon" title="敬请期待" src="https://p3.ssl.qhimg.com/t11b673bcd6e732120e17f1f865.png">
+                        <img class="btn-icon" src="https://p3.ssl.qhimg.com/t11b673bcd6e732120e17f1f865.png">
                         <img class="btn-name" src="https://p0.ssl.qhimg.com/t11b673bcd66d9a4da2a27783e9.png">
                     </div>
                     <img class="open-img3" src="https://p5.ssl.qhimg.com/t11b673bcd6f86dcc1dfb18556a.png">
@@ -287,8 +287,9 @@
 
         <div class="video-dialog vd2">
           <div class="inner">
-              <img class="video-play" src="https://p4.ssl.qhimg.com/t11b673bcd68b459c1dddd91ccc.png">
-              <video src="https://cdn.wg.360.cn/wargame/wowsbg.mp4" loop ></video>
+              <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=1355836284&bvid=BV16z421B7ck&cid=1590241696&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+              <!-- <img class="video-play" src="https://p4.ssl.qhimg.com/t11b673bcd68b459c1dddd91ccc.png"> -->
+              <!-- <video src="https://cdn.wg.360.cn/wargame/wowsbg.mp4" loop ></video> -->
               <img class="close-video-dialog-btn" src="https://p4.ssl.qhimg.com/t11b673bcd63d7f4c03752bcf53.png">
           </div>
       </div>
@@ -1684,6 +1685,13 @@
     </style>
     <!-- <link rel="stylesheet" href="./wows_summer_combine.css"> -->
 
+    <style>
+      .video-dialog iframe {
+        height: 6em;
+        width: 10.52em;
+      }
+    </style>
+
     <script>
         console.info(navigator.userAgent)
         console.info(window.innerWidth)
@@ -1771,12 +1779,14 @@
             }
         })
         $('.video-dialog.vd2 .close-video-dialog-btn').on('click', function(e){
-            $('.video-dialog.vd2 video')[0].pause()
-            $('.video-dialog.vd2 .video-play').show()
+            // $('.video-dialog.vd2 video')[0].pause()
+            // $('.video-dialog.vd2 .video-play').show()
+            $('.video-dialog.vd2 iframe')[0].setAttribute('src', $('.video-dialog.vd2 iframe')[0].getAttribute('src'))
             $('.video-dialog.vd2').hide()
         })
         $('.block-open-contain.sanguo .open-btn1').on('click', function(e){
-            // $('.video-dialog.vd2').show()
+            $('.video-dialog.vd2').show()
+            // window.open('https://www.bilibili.com/video/BV16z421B7ck/?share_source=copy_web&vd_source=a8f43eae77d7c64f6a14b0e3389fe04f')
         })
 
     </script>
@@ -1825,6 +1835,9 @@
                     break;    
                 case 'caochuan':  //草船借箭
                     window.open('https://wows.360.cn/mini-game/202406/')
+                    break;
+                case 'zhanhuo':  //战火重燃
+                    window.open('https://wowsgame.cn/zh-cn/news/shop/three_kingdoms_event_1305/')
                     break;
                 
 
