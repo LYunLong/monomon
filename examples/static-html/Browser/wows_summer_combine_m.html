@@ -140,8 +140,8 @@
 
         <div class="video-dialog vd">
             <div class="inner">
-                <img class="video-play" src="https://p4.ssl.qhimg.com/t11b673bcd68b459c1dddd91ccc.png">
-                <video src="https://cdn.wg.360.cn/wargame/wowsbg.mp4" loop ></video>
+                <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=1405944501&bvid=BV1B6421Z7LP&cid=1596796159&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
                 <img class="close-video-dialog-btn" src="https://p4.ssl.qhimg.com/t11b673bcd63d7f4c03752bcf53.png">
             </div>
         </div>
@@ -611,23 +611,25 @@
         }
         
         $('.video-dialog.vd .video-play').on('click', function(e) {
-            $('.video-dialog.vd video')[0].play()
-            $('.video-dialog.vd .video-play').hide()
+            // $('.video-dialog.vd video')[0].play()
+            // $('.video-dialog.vd .video-play').hide()
         })
         $('.video-dialog.vd video').on('click', function(e) {
-            if (!$('.video-dialog.vd video')[0].paused) {
-                $('.video-dialog.vd video')[0].pause()
-                $('.video-dialog.vd .video-play').show()
-            }
+            // if (!$('.video-dialog.vd video')[0].paused) {
+            //     $('.video-dialog.vd video')[0].pause()
+            //     $('.video-dialog.vd .video-play').show()
+            // }
         })
         $('.video-dialog.vd .close-video-dialog-btn').on('click', function(e){
-            $('.video-dialog.vd video')[0].pause()
-            $('.video-dialog.vd .video-play').show()
+            // $('.video-dialog.vd video')[0].pause()
+            // $('.video-dialog.vd .video-play').show()
+            // $('.video-dialog.vd').hide()
+            $('.video-dialog.vd iframe')[0].setAttribute('src', $('.video-dialog.vd iframe')[0].getAttribute('src'))
             $('.video-dialog.vd').hide()
         })
         $('.title-bar .title-video-btn').on('click', function(e){
-          showToast()
-            // $('.video-dialog.vd').show()
+          // showToast()
+            $('.video-dialog.vd').show()
         })
     
     
