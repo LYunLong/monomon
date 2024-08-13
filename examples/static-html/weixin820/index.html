@@ -389,11 +389,14 @@
                 z-index: 5
             }
         
+            .prize-img {
+                /* color: #634830; */
+            }
             .prize-img p {
                 font-size: .46rem;
                 margin-bottom: .4rem;
                 font-weight: 700;
-                color: #f6d177
+                color: #634830;
             }
         
             .prize-img img {
@@ -455,7 +458,7 @@
             }
         
             .modal-prize .modal-content {
-                color: #f6d177;
+                color: #7e2c10;
                 font-size: .46rem
             }
         
@@ -465,10 +468,11 @@
                 align-items: center;
                 position: relative;
                 padding-right: .6rem;
-                color: #fff
+                color: #7e2c10;
             }
         
             .prize-img .copy_btn {
+                color: white;
                 width: 1.59rem;
                 height: .9rem;
                 display: flex;
@@ -752,15 +756,16 @@
 		<!-- {qcms_script id="190021713" qcms-label-hint="主页"}  -->
         <script>
             $(function () {
-                if ($(".btnShare").share) {
-                    $(".btnShare").share({
+                // if ($(".btnShare").share) {
+                    
+                // }
+                $(".btnShare").share({
                         appkey: "WOT_360",
                         title: "周年庆每日福利！",
                         description: "参与周年庆每日签到，海量豪礼相送！",
                         image: "https://p5.ssl.qhimg.com/d/inn/10577999e89c/wx_share.png",
                         url: window.location.href,
                     });
-                }
                 
 
 	const rewardData = [
