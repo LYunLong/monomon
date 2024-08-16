@@ -59,6 +59,7 @@
         }
         .total-income {
             display: flex;
+            align-items: center;
         }
         .total-income .label {
             font-size: .4rem;
@@ -66,6 +67,7 @@
             font-weight: bold;
             font-family: 'DDINBOLD';
             color: white;
+            opacity: .6;
             margin-right: .2rem;
         }
         .total-income .values {
@@ -121,6 +123,7 @@
             color: rgba(229, 76, 76, 1);
         }
         .income-area {
+            box-sizing: border-box;
             padding-left: .5rem;
         } 
         #income {
@@ -128,7 +131,7 @@
             height: 1080px; */
         }
         #gifts {
-            margin-left: .3rem;
+            /* margin-left: .3rem; */
         }
 
 
@@ -156,10 +159,10 @@
 </head>
 <body>
     <div class="container">
-        <div class="title">2024 坦克世界 820 活动数据<span id="time_camp"></span></div>
+        <div class="title"><span id="time_camp"></span></div>
         <div class="income-area">
             <div class="total-income">
-                <div class="label">售卖金额</div>
+                <div class="label">实时金额</div>
                 <div class="values">
                     <div class="up">¥<span id="yuanIncome">
                         <div id="yuanIncomeList" class="content">
@@ -187,6 +190,7 @@
     <script>
         jQuery.fn.extend({
             rollNumber({ num }) {
+                console.info('rollNumber', num)
                 let _this = this;
                 this.checkLength = function(num) {
                     let $children = $(this).children()
@@ -203,6 +207,7 @@
                 }
                 function updateNum(num) {
                     _this.checkLength(num)  //空间已准备
+                    console.info('updateNum', num)
                     let nums = num.toString().split("")
                     Array.from($(_this).children()).forEach((rollBox, i) => {
                          $(rollBox).children().css('transform', `translateY(-${( nums[i] == '.' ? 10: nums[i] ) || 0}00%)`)
@@ -210,7 +215,7 @@
                 }
                 setTimeout(() => {
                     updateNum(num)
-                }, 100)
+                }, 10)
                 return updateNum
             }
         })
@@ -233,24 +238,24 @@
 
 
         const boxKeyVal = {
-            CN_aug2024_x5: '5个补给箱礼包',
-            CN_aug2024_x25: '25个补给箱礼包',
-            CN_aug2024_x50: '50个补给箱礼包',
-            CN_aug2024_x100: '100个补给箱礼包',
-            CN_aug2024_x500: '500个补给箱礼包'
+            CN_aug2024_x5: '[x5] - 初级礼包',
+            CN_aug2024_x30: '[x30] - 中级礼包',
+            CN_aug2024_x80: '[x80] - 高级礼包',
+            CN_aug2024_x160: '[x160] - 究极礼包',
+            CN_aug2024_x500: '[x500] - 限定礼包'
         }
         const boxKeyColor = {
             CN_aug2024_x5: 'rgba(40, 176, 255, 1)',
-            CN_aug2024_x25: 'rgba(20, 255, 225, 1)',
-            CN_aug2024_x50: 'rgba(238, 20, 255, 1)',
-            CN_aug2024_x100: 'rgba(255, 117, 20, 1)',
+            CN_aug2024_x30: 'rgba(20, 255, 225, 1)',
+            CN_aug2024_x80: 'rgba(238, 20, 255, 1)',
+            CN_aug2024_x160: 'rgba(255, 117, 20, 1)',
             CN_aug2024_x500: 'rgba(255, 219, 20, 1)'
         }
         const boxKeyCount = {
             CN_aug2024_x5: 0,
-            CN_aug2024_x25: 0,
-            CN_aug2024_x50: 0,
-            CN_aug2024_x100: 0,
+            CN_aug2024_x30: 0,
+            CN_aug2024_x80: 0,
+            CN_aug2024_x160: 0,
             CN_aug2024_x500: 0
         }
         
@@ -302,12 +307,15 @@
                     }, 2000);
                 }
                 if (maxIncome) {
+                    console.info(Number(maxIncome).toFixed(2))
+                    console.info(updateYuanIncome)
                     updateYuanIncome(Number(maxIncome).toFixed(2))
                 }
                 updateDaoIncome((maxIncome / transNum ).toFixed(2))
                 incomeInfos.length = 0;
                 income.forEach(function(i){
                     let thisTime = i.time.replaceAll('-','/')
+                    // thisTime = new Date(thisTime)
                     incomeInfos.push({
                         name: thisTime,
                         value: [ thisTime, i.mySum ]
@@ -341,14 +349,14 @@
             }
 
         }
-        setInterval(update, 120000)
+        setInterval(update, 60000)
         update()
 
         
 
 
         var chartDom = document.getElementById('income');
-        incomeChart = echarts.init(chartDom, 'dark', { width: 740 / baseWidth * browserWidth , height: 660 / baseHeight * browserHeight });
+        incomeChart = echarts.init(chartDom, 'dark', { width: 950 / baseWidth * browserWidth , height: 740 / baseHeight * browserHeight });
         var incomeOption ;
         incomeOption = {
             textStyle:{
@@ -360,7 +368,7 @@
                     params = params[0];
                     var date = new Date(params.name);
                     return (
-                        'Sales: ' +
+                        '金额: ' +
                         params.value[1]
                     );
                 },
@@ -373,11 +381,21 @@
                 splitLine: {
                     show: false
                 },
-                minInterval: 1000 * 60,
-                maxInterval: 1000 * 60 * 60, 
+                // minInterval: 1000 * 60,
+                // maxInterval: 1000 * 60 * 60, 
                 axisLabel: {
-                    fontSize: 14 / baseWidth * browserWidth,
-                    showMinLabel: false
+                    fontSize: 20 / baseWidth * browserWidth,
+                    hideOverlap: true,
+                    interval: 20000 * 60 * 60,
+                    margin: 20 / baseWidth * browserWidth,
+                    rotate: 35,
+                    formatter: function (value) {
+                        // 将时间格式化为统一的格式
+                        const date = new Date(value);
+                        const hours = date.getHours().toString().padStart(2, '0');
+                        const minutes = date.getMinutes().toString().padStart(2, '0');
+                        return `${hours}:${minutes}`;
+                    }
                 },
                 axisPointer: {
                     type: 'shadow',
@@ -399,7 +417,7 @@
                 type: 'value',
                 scale: true,
                 axisLabel: {
-                    fontSize: 14 / baseWidth * browserWidth
+                    fontSize: 18 / baseWidth * browserWidth
                 },
                 splitLine: {
                     show: true
@@ -423,7 +441,7 @@
 
         var chartDom = document.getElementById('gifts');
         boxChart = echarts.init(chartDom, 'dark', {
-            width: 900 / baseWidth * browserWidth,
+            width: 890 / baseWidth * browserWidth,
             height: 800 / baseHeight * browserHeight
         });
         var boxOption;
@@ -433,7 +451,8 @@
                 text: '售卖数量',
                 textStyle: {
                     fontFamily: 'DDINBOLD',
-                    fontSize: 40 / baseWidth * browserWidth
+                    fontSize: 40 / baseWidth * browserWidth,
+                    opacity: .6
                 }
             },
             textStyle:{
@@ -442,7 +461,7 @@
         xAxis: {
             max: 'dataMax',
             axisLabel: {
-                    fontSize: 14 / baseWidth * browserWidth
+                    fontSize: 20 / baseWidth * browserWidth
                 },
             gridIndex: 0
         },
@@ -454,9 +473,9 @@
             type: 'category',
             data: [
                 'CN_aug2024_x5',
-                'CN_aug2024_x25',
-                'CN_aug2024_x50',
-                'CN_aug2024_x100',
+                'CN_aug2024_x30',
+                'CN_aug2024_x80',
+                'CN_aug2024_x160',
                 'CN_aug2024_x500'
         ],
             axisLabel: {
@@ -468,12 +487,12 @@
                 color: function (value, index) {
                     return boxKeyColor[value] || 'white';
                 },
-                fontSize: 18 / baseWidth * browserWidth
+                fontSize: 28 / baseWidth * browserWidth
             }, 
             inverse: true,
             animationDuration: 300,
             animationDurationUpdate: 300,
-            max: 5 // only the largest 3 bars will be displayed
+            max: 4 // only the largest 3 bars will be displayed
         },
         series: [
             {
@@ -484,7 +503,7 @@
                 show: true,
                 position: 'right',
                 valueAnimation: true,
-                fontSize: 20 / baseWidth * browserWidth,
+                fontSize: 26 / baseWidth * browserWidth,
             },
             itemStyle: {
                 color: function (param) {
