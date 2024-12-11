@@ -104,14 +104,15 @@
             .wrap {
                 position: relative;
                 width: 100%;
-                background: url(https://p5.ssl.qhimg.com/t110b9a9301a28731138b46beeb.png) no-repeat 0 0 / 100%
+                background: url(https://p0.ssl.qhimg.com/t110b9a93011c3678bdc4c80bef.png) no-repeat 0 0 / 100%
             }
         
             .modal {
                 padding-top: .68rem;
                 padding-bottom: .3rem;
                 width: 9.94rem;
-                background: url(https://p2.ssl.qhimg.com/t110b9a930119a9c3e1ce87b65a.png) 0 0 / 100% 100%
+                background-color: #e0e0cd;
+                /* background: url(https://p2.ssl.qhimg.com/t110b9a930119a9c3e1ce87b65a.png) 0 0 / 100% 100% */
             }
         
             .modal-close {
@@ -156,7 +157,7 @@
             }
         
             .wrap .main_container .container {
-                margin-top: 7.5rem;
+                margin-top: 9.5rem;
                 margin-bottom: .8rem;
             }
         
@@ -181,13 +182,20 @@
             }
 
             .wrap .main_container .container .lottery_btn {
-                width: 8.15rem;
-                height: 2.39rem;
+                width: 5.09rem;
+                height: 1.6rem;
                 margin: 0 auto;
-                background: url(https://p5.ssl.qhimg.com/t110b9a93014883a95b07afa358.png) no-repeat center / 100%
+                background: url(https://p2.ssl.qhimg.com/t110b9a930175b2ca150db22078.png) no-repeat center / 100%
             }
         
             .wrap .main_container .container .userinfo {
+                font-size: .46rem;
+                text-align: center;
+                margin: .1rem 0 .2rem;
+                color: #fc8b09
+            }
+
+            .wrap .main_container .container .lotteryChance {
                 font-size: .46rem;
                 text-align: center;
                 margin: .1rem 0 .32rem;
@@ -196,7 +204,7 @@
         
             .wrap .main_container .container .options {
                 width: 100%;
-                height: .65rem;
+                height: 1.05rem;
                 padding: 0 .48rem;
                 margin: 0 auto;
                 display: flex;
@@ -212,34 +220,37 @@
             .wrap .main_container .container .rewards-container {
                 position: relative;
                 margin: 0 auto;
-                padding: .72rem .6rem .6rem;
-                width: 10.53rem;
+                padding: .72rem .4rem .6rem;
+                /* width: 10.53rem; */
+                width: 100%;
                 /* min-height: 14.43rem; */
-                background: url(https://p2.ssl.qhimg.com/t110b9a930119a9c3e1ce87b65a.png) no-repeat center / 100% 100%;
+                /* background: url(https://p2.ssl.qhimg.com/t110b9a930119a9c3e1ce87b65a.png) no-repeat center / 100% 100%; */
             }
         
             .wrap .main_container .container .options div {
-                width: 4.72rem;
-                height: .73rem;
+                width: 4.37rem;
+                height: 1.05rem;
             }
         
             .wrap .main_container .container .part-tit img {
                 /* width: 5.59rem; */
-                height: 0.86rem
+                height: 0.66rem
             }
         
             .wrap .main_container .container .options .reward-btn {
-                background: url(https://p4.ssl.qhimg.com/t110b9a930189ef93d634207050.png) no-repeat 0 0 / cover
+                background: url(https://p3.ssl.qhimg.com/t110b9a9301e0bde5349ad2a055.png) no-repeat 0 0 / cover
             }
         
             .wrap .main_container .container .options .address-btn {
-                background: url(https://p1.ssl.qhimg.com/t110b9a9301695668830853fe5c.png) no-repeat 0 0 / cover
+                background: url(https://p0.ssl.qhimg.com/t110b9a93017c747a7470750ff2.png) no-repeat 0 0 / cover
             }
         
             .wrap .main_container .container .rewards-container .rewards {
                 width: 100%;
                 font-size: 0;
-                text-align: center
+                text-align: center;
+                display: flex;
+                flex-wrap: wrap;
             }
         
             .wrap .main_container .container .rewards-container .lottery-box {
@@ -267,21 +278,26 @@
                 line-height: .54rem;
                 /* background: #173719; */
                 /* border: .01rem #325c2d solid; */
-                color: #fff4e6;
+                font-size: .36rem;
+                color: #cacaca;
                 display: flex;
                 /* align-items: center */
             }
         
             .wrap .main_container .container .rewards-container .rewards .reward-item {
-                display: inline-block;
+                display: flex;
+                flex-direction: column;
                 position: relative;
                 vertical-align: middle;
-                width: 2.95rem;
+                width: 3.17rem;
+                height: 3.16rem;
                 text-align: center;
                 margin-right: .22rem;
                 margin-bottom: .26rem;
                 justify-content: center;
-                align-items: center
+                align-items: center;
+                background-size: 100% 100%;
+                background-image: url(https://p3.ssl.qhimg.com/t110b9a9301d6d2db2d4711dfc2.png);
             }
         
             .wrap .main_container .container .rewards-container .lottery-box .lottery-start {
@@ -315,7 +331,11 @@
                 height: .38rem;
                 margin-left: .1rem;
                 margin-top: .1rem;
-                background: url(https://p4.ssl.qhimg.com/t110b9a9301ab140ec5ebcfa4a7.png) no-repeat 0 0 / cover
+                /* background: url(https://p4.ssl.qhimg.com/t110b9a9301ab140ec5ebcfa4a7.png) no-repeat 0 0 / cover */
+            }
+            .wrap .main_container .container .rule-box .rule-con div .num::after {
+                content: '、';
+
             }
         
             .wrap .main_container .container .rule-box .rule-con div:last-child {
@@ -333,14 +353,14 @@
         
             .wrap .main_container .container .rewards-container .rewards .reward-item .reward-img {
                 width: 100%;
-                height: 2.76rem;
+                height: 2.2rem;
                 padding: .13rem;
                 line-height: 1.2rem;
                 position: relative;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                background: url(https://p5.ssl.qhimg.com/t110b9a9301b098bf9737e9921a.png) no-repeat center / 100%
+                /* background: url(https://p5.ssl.qhimg.com/t110b9a9301b098bf9737e9921a.png) no-repeat center / 100% */
             }
         
             .wrap .main_container .container .rewards-container .rewards .reward-item .reward-desc {
@@ -349,16 +369,19 @@
                 /* display: flex; */
                 justify-content: center;
                 align-items: center;
-                color: rgb(178,72,32);
-                font-size: .4rem;
+                color: #222;
+                font-size: .28rem;
                 /* background-color: #884015; */
                 /* margin-top: .12rem; */
                 line-height: 1.2;
+                margin: 0 auto;
+                text-align: center;
                 /* border: .01rem solid #b4821f */
             }
         
             .wrap .main_container .container .rewards-container .rewards .reward-item .reward-img img {
-                max-width: 80%
+                max-width: 80%;
+                max-height: 90%;
             }
         
             .wrap .main_container .container .rewards-container .rewards .reward-item .reward-img p {
@@ -675,16 +698,17 @@
 				</header>
 				<div class="container">
 					<div class="time">
-                        <img src="https://p2.ssl.qhimg.com/t110b9a9301dc3e814ae0e0c3dd.png">
+                        <!-- <img src="https://p2.ssl.qhimg.com/t110b9a9301dc3e814ae0e0c3dd.png"> -->
                     </div>
 					<div class="lottery_btn bi_event" data-event="lottery_btn"></div>
 					<div class="userinfo"></div>
+                    <div class="lotteryChance">抽奖次数: <span id="lotteryChance"></span></div>
 					<div class="options">
 						<div class="reward-btn bi_event" data-event="reward-btn"></div>
 						<div class="address-btn bi_event" data-event="address-btn"></div>
 					</div>
 					<h2 class="part-tit">
-						<img src="https://p2.ssl.qhimg.com/t110b9a9301a94d9347ac77e04a.png" alt="" srcset="" />
+						<img src="https://p5.ssl.qhimg.com/t110b9a9301520277622c043408.png" alt="" srcset="" />
 					</h2>
 					<!-- 奖品列表 -->
 					<div class="rewards-container" id="rewards-container">
@@ -694,12 +718,13 @@
 					<!-- 活动规则 -->
 					<div class="rule-box">
 						<h2 class="part-tit">
-							<img src="https://p5.ssl.qhimg.com/t110b9a93015b062213bea0dc11.png" alt="" srcset="" />
+							<img src="https://p2.ssl.qhimg.com/t110b9a9301fb89743b61c1168d.png" alt="" srcset="" />
 						</h2>
+                        
 						<div class="rule-con">
 							<div>
 								<p class="num">1</p>
-								<p> “周年庆典”活动限时开放，活动时间为8月25日0时至8月27日23:59分。</p>
+								<p> “周年庆典”活动限时开放，活动时间为12月26日0时至12月28日23:59分。</p>
 							</div>
 							<div>
 								<p class="num">2</p>
@@ -707,7 +732,7 @@
 							</div>
 							<div>
 								<p class="num">3</p>
-								<p>虚拟兑换码有效期截止至2024年9月1日0点，若到期未兑换视为自动放弃奖励，将不会对未兑换礼包予以更换，还请您抽奖后及时兑换。</p>
+								<p>虚拟兑换码有效期截止至2025年1月1日0点，若到期未兑换视为自动放弃奖励，将不会对未兑换礼包予以更换，还请您抽奖后及时兑换。</p>
 							</div>
 							<div>
 								<p class="num">4</p>
@@ -715,11 +740,11 @@
 							</div>
 							<div>
 								<p class="num">5</p>
-								<p>截至8月8日（含8月8日）未登录游戏且战斗超90天的玩家，在活动期间每日获得两次抽奖机会，其余玩家每日获得一次抽奖机会。</p>
+								<p>参与2024WCI线下观赛的玩家将会根据完成观赛天数额外给与抽奖次数，完成一天观赛给与额外一次，完成两天观赛给与额外两次。</p>
 							</div>
                             <div>
 								<p class="num">6</p>
-								<p>每个账号的抽奖次数将于每日24点更新，请当日使用不可累计。</p>
+								<p>每个账号的抽奖次数将于每日24点更新，请当日使用不可累计（参与2024WCI线下观赛的额外抽奖次数将会累计）。</p>
 							</div>
 							<div>
 								<p class="num">7</p>
@@ -760,6 +785,7 @@
                 // if ($(".btnShare").share) {
                     
                 // }
+
                 $(".btnShare").share({
                         appkey: "WOT_360",
                         title: "周年庆每日福利！",
@@ -770,15 +796,15 @@
                 
 
 	const rewardData = [
-        { id: "1", name: "坦克世界<br />变色马克杯", image: "https://p1.ssl.qhimg.com/d/inn/4cb6d0977f64/reward02.png" },
-        { id: "2", name: "七彩虹耳机<br />坦克联名款", image: "https://p1.ssl.qhimg.com/d/inn/4cb6d0977f64/reward01.png" },
-		{ id: "3", name: "坦克世界<br />豹一3D鼠标垫", image: "https://p0.ssl.qhimg.com/t11b673bcd66afdc177eac212e7.png" },
-        { id: "4", name: "坦克世界<br />漫画鼠标垫", image: "https://p3.ssl.qhimg.com/t11b673bcd67e877184637ba6f4.png" },
-        { id: "5", name: "技嘉Aorus<br />联名k1键盘", image: "https://p4.ssl.qhimg.com/t11b673bcd6b5c6c9b8a68023b7.png" },
-        { id: "6", name: "坦克世界<br />Xcom飞盘", image: "https://p2.ssl.qhimg.com/t110b9a9301b46d28e4c192b240.png" },
-		{ id: "7", name: "五倍胜场*2", image: "https://p1.ssl.qhimg.com/d/inn/4cb6d0977f64/reward09.png" },
-		{ id: "8", name: "天蝎", image: "https://p5.ssl.qhimg.com/t110b9a93019a9ad394e8ab7d90.png" },
-		{ id: "9", name: "IS-3A", image: "https://p3.ssl.qhimg.com/t110b9a930123f1e0b6305fd8ae.png" },
+        { id: "1", name: "111 VI", image: "https://p2.ssl.qhimg.com/t110b9a9301557a34adf8e73a98.png" },
+		{ id: "2", name: "", image: "https://p4.ssl.qhimg.com/t110b9a930123db64cf22548522.png" },
+        { id: "3", name: "查狄伦暴风", image: "https://p1.ssl.qhimg.com/t110b9a9301cc9d7f59b29b85ba.png" },
+        { id: "4", name: "技嘉Aorus联名<br />k1键盘", image: "https://p2.ssl.qhimg.com/t110b9a9301851fa668a8d0cd44.png" },
+        { id: "5", name: "探路者联名背包", image: "https://p2.ssl.qhimg.com/t110b9a93016cbcdc367d449e4c.png" },
+		{ id: "6", name: "坦克世界<br />豹一3D鼠标垫", image: "https://p0.ssl.qhimg.com/t11b673bcd66afdc177eac212e7.png" },
+        { id: "7", name: "坦克世界漫画鼠标垫", image: "https://p3.ssl.qhimg.com/t11b673bcd67e877184637ba6f4.png" },
+		{ id: "8", name: "五倍胜场", image: "https://p1.ssl.qhimg.com/d/inn/4cb6d0977f64/reward09.png" },
+        { id: "9", name: "变色马克杯", image: "https://p1.ssl.qhimg.com/d/inn/4cb6d0977f64/reward02.png" },
         // { id: "3", name: "周边组合<br />礼包", image: "https://p1.ssl.qhimg.com/d/inn/4cb6d0977f64/reward03.png" },
         // { id: "5", name: "T酱抱枕", image: "https://p2.ssl.qhimg.com/t11b673bcd6a58fb0d5779f3013.png" },
         // { id: "8", name: "防腱鞘炎<br />鼠标垫", image: "https://p1.ssl.qhimg.com/d/inn/4cb6d0977f64/reward08.png" },
@@ -790,6 +816,8 @@
 		// { id: "7", name: "Cherry联名款<br />MX3.0S", image: "https://p1.ssl.qhimg.com/d/inn/4cb6d0977f64/reward07.png" },
 		
 	];
+
+    const apiLinkSub = '/app/lottery/lotteryWCIApi/'
 
 	//wx.wg.360.cn
 	//demowx.wg.360.cn
@@ -816,7 +844,7 @@
 			var $this = this;
 			$.ajax({
 				type: "GET",
-				url: $this.host + "/app/reflowLottery/lotteryApi/getUserInfo/mid/3/",
+				url: $this.host + apiLinkSub + "getUserInfo/mid/3/",
 				data: {},
 				dataType: "jsonp",
 				success: function (res) {
@@ -908,7 +936,7 @@
 			var $this = this;
 			$.ajax({
 				type: "POST",
-				url: $this.host + "/app/reflowLottery/lotteryApi/prizelist/mid/3/",
+				url: $this.host + apiLinkSub + "prizelist/mid/3/",
 				data: {},
 				dataType: "jsonp",
 				success: function (res) {
@@ -937,7 +965,7 @@
               </dt>`;
 				$.ajax({
 					type: "POST",
-					url: $this.host + "/app/reflowLottery/lotteryApi/prizelog/mid/3/",
+					url: $this.host + apiLinkSub + "prizelog/mid/3/",
 					data: {},
 					dataType: "jsonp",
 					success: function (res) {
@@ -1029,7 +1057,7 @@
 			$("#addError").html("");
 			$.ajax({
 				type: "POST",
-				url: $this.host + "/app/lottery/lotteryApi/addUserInfo/mid/3",
+				url: $this.host + apiLinkSub + "addUserInfo/mid/3",
 				data: {
 					accepter: accepter,
 					phone: phone,
@@ -1059,13 +1087,14 @@
 					window.canLottery = false;
 					$.ajax({
 						type: "POST",
-						url: $this.host + "/app/reflowLottery/lotteryApi/lottery/mid/3/",
+						url: $this.host + apiLinkSub + "lottery/mid/3/",
 						data: {},
 						dataType: "jsonp",
 						success: function (res) {
+                            event.getEventinfo();
 							window.canLottery = true;
                             console.log("抽奖", res);
-                            console.log($this.host + "/app/reflowLottery/lotteryApi/lottery/mid/3/")
+                            console.log($this.host + apiLinkSub + "lottery/mid/3/")
 							if (res.code == 1) {
 								var prizeImg, prizeName;
 								if (!res.info.data.prizeid) {
