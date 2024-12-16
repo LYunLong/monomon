@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 		<title>坦克世界每日抽奖</title>
-		<meta name="description" content="军武战略巨制《坦克世界》全新版本震撼上线，游戏高度还原战争历史，电影级引擎特效完美重制真实战场，您可身临其境，驾驭数百辆各具特色的经典坦克驰骋沙场！" />
+		<meta name="description" content="军武战略巨制《坦克世界》全新版本震撼上线，游戏高度还原战争历史，电影级引擎特效重制真实战场，您可身临其境，驾驭数百辆各具特色的经典坦克驰骋沙场！" />
 		<meta name="keywords" content="坦克世界,坦克世界抽奖,坦克礼包,坦克世界游戏礼包,坦克游戏礼包,坦克世界周边,坦克世界官方微信公众号" />
 		<link rel="shortcut icon" href="//s0.ssl.qhres2.com/static/7f869ffdfa617939.ico" />
 		<link rel="stylesheet" href="//s2.ssl.qhres2.com/!0a38764f/static/css/modal.css" />
@@ -196,6 +196,7 @@
             }
 
             .wrap .main_container .container .lotteryChance {
+                display: none;
                 font-size: .46rem;
                 text-align: center;
                 margin: .1rem 0 .32rem;
@@ -724,7 +725,7 @@
 						<div class="rule-con">
 							<div>
 								<p class="num">1</p>
-								<p> “周年庆典”活动限时开放，活动时间为12月26日0时至12月28日23:59分。</p>
+								<p> “年终回馈”活动限时开放，活动时间为12月26日0时至12月28日23:59分。</p>
 							</div>
 							<div>
 								<p class="num">2</p>
@@ -744,7 +745,7 @@
 							</div>
                             <div>
 								<p class="num">6</p>
-								<p>每个账号的抽奖次数将于每日24点更新，请当日使用不可累计（参与2024WCI线下观赛的额外抽奖次数将会累计）。</p>
+								<p>每个账号的抽奖次数将于每日24点更新，请当日使用不可累计（参与2024WCI线下观赛的额外抽奖次数将会累计至12月28日23:59分）。</p>
 							</div>
 							<div>
 								<p class="num">7</p>
@@ -947,6 +948,9 @@
 						// 显示用户名
 						$(".userinfo").html(res.info.account);
 						// 获取次数
+                        if (res.info.account) {
+                            $(".lotteryChance").show();
+                        }
 						$("#lotteryChance").html(res.info.lottery_num);
 					}
 				},
